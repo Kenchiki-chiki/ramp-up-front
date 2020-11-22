@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     registerUser() {
-      this.$axios.post('/api/v1/auth/sign_up', this.user).then((response) => {
+      this.$axios.post('http://localhost:3000/api/v1/auth', this.user).then((response) => {
         window.location.href = '/skill'
       })
     },
