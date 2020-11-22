@@ -34,6 +34,7 @@
           </div>
           <div class="my-2">
             <v-btn
+            @click="$router.push('skill')"
             class="ma-2 top-btn"
             outlined
             color="white"
