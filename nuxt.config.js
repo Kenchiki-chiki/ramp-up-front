@@ -55,13 +55,13 @@ export default {
         login: '/',
         logout: '/',
         callback: false,
-        home: '/skill',
+        home: '/build',
     },
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/sign_in', method: 'post', propertyName: 'token' },
-          logout: { url: '/auth/sign_out', method: 'post' },
+          login: { url: 'http://localhost:3000/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          logout: { url: 'http://localhost:3000/api/v1/auth/sign_out', method: 'delete' },
           user: false,
         },
       }

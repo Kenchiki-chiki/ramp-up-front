@@ -36,8 +36,6 @@
 
 <script>
 export default {
-  name: 'App',
-  auth: false,
   data() {
     return {
       password: '',
@@ -45,6 +43,11 @@ export default {
     }
   },
   methods: {
+    middleware({ store, redirect }) {
+    if(store.$auth.loggedIn) {
+      redirect('/build');
+    }
+  },
     // loginメソッドの呼び出し
     async loginWithAuthModule() {
       await this.$auth
