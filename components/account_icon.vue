@@ -26,7 +26,7 @@
             <v-list-item>
               <v-list-item-title
                class="text--darken-3 mb-1"
-               @click="$auth.logout()"
+               @click="logout"
               >
               ログアウト
               </v-list-item-title>
@@ -43,13 +43,27 @@
 
 <script>
 export default {
+  middleware({ store, redirect }) {
+    console.log('===== middleware ====')
+    console.log(store.$auth.loggedIn)
+    if(!store.$auth.loggedIn) {
+      redirect('/login');
+    }
+  },
   name: 'App',
   data() {
     return {
       drawer: false
     }
   },
+  created() {
+    console.log('created')
+  },
   methods: {
+    logout () {
+      console.log(this.$auth.user)
+      this.$auth.logout();
+    },
     deleteUser() {
       this.$axios
         .delete('http://localhost:3000/api/v1/auth', {
