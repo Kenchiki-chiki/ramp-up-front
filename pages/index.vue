@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2>
+    <p>{{ $auth.user }}</p> -->
     <v-container>
       <v-row align="center" justify="center">
       <v-col cols="12" class="">
