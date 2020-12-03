@@ -2,7 +2,7 @@
   <v-app dark>
       
     <v-main>
-      
+        <message />
         <nuxt />
       
     </v-main>
@@ -11,7 +11,12 @@
 </template>
 
 <script>
+// 全てのページでmessage.vueが表示されるようにする
+import Message from '~/components/Message.vue'
 export default {
+  components: {
+    Message
+  },
   data () {
     return {
       clipped: false,
