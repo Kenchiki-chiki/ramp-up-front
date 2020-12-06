@@ -12,13 +12,12 @@
 
 <script>
 // mapStateを使うための記述
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapState({
-      // messageの値をstoreから取ってくる,message: this.$store.state.message.contentと同義
-      message: state => state.message.content
-    })
+    ...mapGetters({
+      message: 'message/content'
+    }),
   }
 }
 </script>

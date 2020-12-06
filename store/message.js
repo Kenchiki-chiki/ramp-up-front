@@ -1,33 +1,27 @@
-// import Vue from 'Vue'
-// import Vuex from 'Vuex'
+export const state = () => ({
+  content: []
+})
 
-// Vue.use(Vuex)
-
-// export default new Vuex.Store({
-//   namespaced: true,
-//   state,
-//   mutations
-// })
-
-const state = {
-  content: ''
-}
-
-// 受け取った引数contentをstateのcontentに代入
-const mutations = {
-  setContent (state, { content, timeout }) {
-    state.content = content
+export const actions = {
+  setContent({ commit }, { content, timeout }) {
+    commit('setContent', content)
 
     if (typeof timeout === 'undefined') {
       timeout = 3000
     }
 
-    setTimeout(() => (state.content = ''), timeout)
+    setTimeout(() => (commit('setContent', '')), timeout)
   }
 }
 
-export default {
-  namespaced: true,
-  state,
-  mutations
+export const mutations = {
+  setContent(state, payload) {
+    state.content = payload
+  }
+}
+
+export const getters = {
+  content(state) {
+    return state.content
+  }
 }

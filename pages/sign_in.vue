@@ -62,7 +62,7 @@ export default {
        .then(
            //ここでメッセージストアのミューテーション呼ぶ
           (response) => {
-            this.$store.commit(`message/setContent`,{
+            this.$store.dispatch(`message/setContent`,{
             content: 'ログインに成功しました',
             timeout: 2000
           })
@@ -71,13 +71,11 @@ export default {
             localStorage.setItem('client', response.headers.client)
             localStorage.setItem('uid', response.headers.uid)
             localStorage.setItem('token-type', response.headers['token-type'])
-            return response         
+            return response
           },
           (error) => {
             return error
           }
-          
-          
         )
     },
   },
