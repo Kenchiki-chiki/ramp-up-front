@@ -12,7 +12,7 @@
 
 <script>
 // 全てのページでmessage.vueが表示されるようにする
-import Message from '~/components/Message.vue'
+import Message from '~/components/message.vue'
 export default {
   components: {
     Message

@@ -60,9 +60,9 @@ export default {
           },
         })
        .then(
-           //ここでメッセージストアのミューテーション呼ぶ
+           //ここでメッセージストアのアクション呼ぶ
           (response) => {
-            this.$store.commit(`message/setContent`,{
+            this.$store.dispatch(`message/setContent`,{
             content: 'ログインに成功しました',
             timeout: 2000
           })

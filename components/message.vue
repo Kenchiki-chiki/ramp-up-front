@@ -11,13 +11,13 @@
 </template>
 
 <script>
-// mapStateを使うための記述
-import { mapState } from 'vuex'
+// mapGetterを使うための記述
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapState({
-      // messageの値をstoreから取ってくる,message: this.$store.state.message.contentと同義
-      message: state => state.message.content
+    ...mapGetters({
+      // messageの値をstoreから取ってくる,message: this.$store.getters.contentと同義
+      message: 'message/content'
     })
   }
 }
@@ -27,7 +27,10 @@ export default {
 .message {
   z-index: 999;
   text-align: center;
-  /* line-height: 60px;
-  background-color: #666666; */
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  
   }
 </style>
