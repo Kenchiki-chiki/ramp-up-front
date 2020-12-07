@@ -3,14 +3,8 @@ export const state = () => ({
 })
 
 export const actions = {
-  setContent({ commit }, { content, timeout }) {
+  setContent({ commit }, content) {
     commit('setContent', content)
-
-    if (typeof timeout === 'undefined') {
-      timeout = 3000
-    }
-
-    setTimeout(() => (commit('setContent', '')), timeout)
   }
 }
 
