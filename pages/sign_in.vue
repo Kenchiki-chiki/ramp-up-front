@@ -62,9 +62,10 @@ export default {
        .then(
            //ここでメッセージストアのミューテーション呼ぶ
           (response) => {
-            this.$store.dispatch(`message/setContent`, 'ログインに成功しました')
-            setTimeout(() => ( this.$store.dispatch(`message/setContent`, '')), 2000)
-
+            this.$store.dispatch('message/setContent',{
+              content: 'ログインに成功しました',
+              timeout: 2000
+            })
             // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
             localStorage.setItem('access-token', response.headers['access-token'])
             localStorage.setItem('client', response.headers.client)
