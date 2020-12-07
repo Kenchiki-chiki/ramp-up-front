@@ -63,6 +63,10 @@ export default {
     logout () {
       console.log(this.$auth.user)
       this.$auth.logout();
+      this.$store.dispatch(`message/setContent`,{
+      content: 'ログアウトしました',
+      timeout: 2000
+      })
     },
     deleteUser() {
       this.$axios

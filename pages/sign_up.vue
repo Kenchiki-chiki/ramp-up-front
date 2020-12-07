@@ -55,8 +55,14 @@ export default {
   },
   methods: {
     registerUser() {
-      this.$axios.post('http://localhost:3000/api/v1/auth', this.user).then((response) => {
-        window.location.href = '/skill'
+      this.$axios.post('http://localhost:3000/api/v1/auth', this.user)
+      .then((response) => {
+        
+        this.$store.dispatch(`message/setContent`,{
+        content: '新規登録に成功しました',
+        timeout: 2000
+      })
+      this.$router.push({ path: '/skill' })
       })
     },
   },
