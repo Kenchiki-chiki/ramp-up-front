@@ -59,7 +59,13 @@
   .app-title {
     font-size: 70px;
     font-weight: 300;
-    margin-top: 250px;
+    position: absolute;
+    top: 280px;
+    right: 0;
+    left: 0;
+    margin: auto; 
+    width: 100%;
+    height: 105px;
     letter-spacing: 0.05em;
   }
   .top-btn {
