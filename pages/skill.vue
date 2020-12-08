@@ -15,7 +15,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 1"
             placeholder="(例)Vue"
             filled
@@ -25,7 +25,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 2"
             placeholder="(例)React"
             filled
@@ -35,7 +35,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 3"
             placeholder="(例)Angular"
             filled
@@ -45,7 +45,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 4"
             placeholder="(例)Rails"
             filled
@@ -55,7 +55,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 5"
             placeholder="(例)AWS"
             filled
@@ -65,7 +65,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skill.name"
+            v-model="skillName"
             label="スキル 6"
             placeholder="(例)英語"
             filled
@@ -94,7 +94,7 @@
 export default {
   data() {
     return{
-      skill: {}
+      skillName: []
     }
   },
   methods: {
