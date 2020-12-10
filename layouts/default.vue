@@ -43,4 +43,10 @@ export default {
 }
 </script>
 
+<style>
+  .comment {
+  text-align: center;
+}
+</style>
+
 
