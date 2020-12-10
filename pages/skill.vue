@@ -77,7 +77,7 @@
           
           <v-card-actions>
             <v-btn
-              @click="onSubmit"
+              @click="onSubmit, $router.push('build')"
               color="#666666"
               class="white--text"
             >
@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     async onSubmit() {
-      await this.$store.dispatch('addSkill', this.skill)
+      await this.$store.dispatch('skill/addSkills', this.skillName)
       this.skill.name = ''
     }
   }

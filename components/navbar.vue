@@ -75,6 +75,7 @@ h1 {
 #navbar {
   visibility: visible !important;
   transform: translateX(0%) !important;
+  text-align: center;
 }
 .navbar-title {
   padding: 25px 0 25px 0;

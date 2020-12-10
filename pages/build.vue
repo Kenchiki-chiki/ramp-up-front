@@ -1,9 +1,12 @@
 <template>
-  <div class="comment">
+  <div>
+    <div class="comment">
+
+      <div>一日お疲れさま。</div>
+      <div>学習時間を入力しましょう。</div>
+    </div>
     <navbar/>
     <account/>
-    <div>一日お疲れさま。</div>
-    <div>学習時間を入力しましょう。</div>
   </div>
 </template>
 
@@ -32,7 +35,15 @@ export default {
 </script>
 
 <style>
-.comment {
-  text-align: center;
-}
+  .comment {
+    z-index: 10;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left:120px;
+    margin: auto; 
+    width: 100%;
+    height: 105px;
+    letter-spacing: 0.05em;
+  }
 </style>
