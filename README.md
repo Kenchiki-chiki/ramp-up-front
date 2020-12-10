@@ -1,20 +1,10 @@
-# ramp-up-front
+## 技術スタック
 
-## Build Setup
+#### 言語・フレームワーク
+- Nust.js @nuxt/cli v2.14.7
 
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+#### 起動
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+$ yarn run dev
+http://localhost:8000
+```
