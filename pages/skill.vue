@@ -15,7 +15,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName1"
             label="スキル 1"
             placeholder="(例)Vue"
             filled
@@ -25,7 +25,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName2"
             label="スキル 2"
             placeholder="(例)React"
             filled
@@ -35,7 +35,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName3"
             label="スキル 3"
             placeholder="(例)Angular"
             filled
@@ -45,7 +45,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName4"
             label="スキル 4"
             placeholder="(例)Rails"
             filled
@@ -55,7 +55,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName5"
             label="スキル 5"
             placeholder="(例)AWS"
             filled
@@ -65,7 +65,7 @@
           cols="4"
         >
           <v-text-field
-            v-model="skillName"
+            v-model="skillName6"
             label="スキル 6"
             placeholder="(例)英語"
             filled
@@ -94,13 +94,20 @@
 export default {
   data() {
     return{
-      skillName: []
+      skillName: [],
+      skillName1: "",
+      skillName2: "",
+      skillName3: "",
+      skillName4: "",
+      skillName5: "",
+      skillName6: ""
     }
   },
   methods: {
+    // this.skillName.push(...["skillName1","skillName2","skillName3","skillName4","skillName5","skillName6"]),
     async onSubmit() {
       await this.$store.dispatch('skill/addSkills', this.skillName)
-      this.skill.name = ''
+      this.skillName.name = ''
     }
   }
 

@@ -1,5 +1,5 @@
 export const state = () => ({
-  skillName: []
+  skillName: ""
 })
 
 export const actions = {
