@@ -107,20 +107,15 @@ export default {
     async onSubmit() {
       console.log('====1==')
       this.skillName.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
-      await this.$store.dispatch('skill/addSkills', this.skillName)
-      .then((response) => {
-       // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
-      localStorage.setItem('access-token', response.headers['access-token'])
-      localStorage.setItem('client', response.headers.client)
-      localStorage.setItem('uid', response.headers.uid)
-      localStorage.setItem('token-type', response.headers['token-type'])
-      this.$router.push({ path: '/skill' })
-      return response
-      },
-      (error) => {
-        return error
-      }      
-      )
+      await this.$store.dispatch('skill/addSkills', this.skillName, {
+        headers: {
+            'access-token': localStorage.getItem('access-token'),
+            uid: localStorage.getItem('uid'),
+            client: localStorage.getItem('client'),
+          },
+      }
+      )  
+      
       this.skillName.name = ''
       this.$router.push('build')
     },
