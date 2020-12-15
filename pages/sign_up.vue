@@ -62,8 +62,18 @@ export default {
         content: '新規登録に成功しました',
         timeout: 2000
       })
+       // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
+      localStorage.setItem('access-token', response.headers['access-token'])
+      localStorage.setItem('client', response.headers.client)
+      localStorage.setItem('uid', response.headers.uid)
+      localStorage.setItem('token-type', response.headers['token-type'])
       this.$router.push({ path: '/skill' })
-      })
+      return response
+      },
+      (error) => {
+        return error
+      }      
+      )
     },
   },
 }

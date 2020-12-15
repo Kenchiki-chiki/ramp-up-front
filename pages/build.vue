@@ -26,7 +26,8 @@ export default {
   },
   components: {
     Navbar,
-    Account
+    Account,
+    Study
   },
   computed: {
     user() {
