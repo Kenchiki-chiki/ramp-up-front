@@ -65,6 +65,9 @@ export default {
       
       )
       .then((response) => {
+        this.$auth.loginWith('local',{
+            data: this.user
+        })
         
         this.$store.dispatch(`message/setContent`,{
         content: '新規登録に成功しました',
@@ -72,11 +75,9 @@ export default {
       })
        // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
       localStorage.setItem('access-token', response.headers['access-token'])
-      console.log('===1===')
       localStorage.setItem('client', response.headers.client)
       localStorage.setItem('uid', response.headers.uid)
       localStorage.setItem('token-type', response.headers['token-type'])
-      console.log('===2===')
       this.$router.push({ path: '/skill' })
       return response
       },

@@ -5,6 +5,7 @@
         <h1 class="display-1">
           スキルを設定しましょう。
         </h1>
+        <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
       </v-card-title>
       <v-card-text>
         <v-form ref="form" lazy-validation>
@@ -105,20 +106,12 @@ export default {
   },
   methods: {
     async onSubmit() {
-      console.log('====1==')
       this.skillName.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
-      await this.$store.dispatch('skill/addSkills', this.skillName, {
-        headers: {
-            'access-token': localStorage.getItem('access-token'),
-            uid: localStorage.getItem('uid'),
-            client: localStorage.getItem('client'),
-          },
-      }
-      )  
-      
+      await this.$store.dispatch('skill/addSkills', this.skillName)  
       this.skillName.name = ''
-      this.$router.push('build')
+      this.$router.push('/build')
     },
+    
     
     
   },
