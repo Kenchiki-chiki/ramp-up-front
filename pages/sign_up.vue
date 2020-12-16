@@ -55,15 +55,36 @@ export default {
   },
   methods: {
     registerUser() {
-      this.$axios.post('http://localhost:3000/api/v1/auth', this.user)
+      this.$axios.post('http://localhost:3000/api/v1/auth', this.user ,{
+        headers: {
+            'access-token': localStorage.getItem('access-token'),
+            uid: localStorage.getItem('uid'),
+            client: localStorage.getItem('client'),
+          },
+      }
+      
+      )
       .then((response) => {
+        this.$auth.loginWith('local',{
+            data: this.user
+        })
         
         this.$store.dispatch(`message/setContent`,{
         content: '新規登録に成功しました',
         timeout: 2000
       })
+       // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
+      localStorage.setItem('access-token', response.headers['access-token'])
+      localStorage.setItem('client', response.headers.client)
+      localStorage.setItem('uid', response.headers.uid)
+      localStorage.setItem('token-type', response.headers['token-type'])
       this.$router.push({ path: '/skill' })
-      })
+      return response
+      },
+      (error) => {
+        return error
+      }      
+      )
     },
   },
 }

@@ -5,6 +5,7 @@
 
       <div>一日お疲れさま。</div>
       <div>学習時間を入力しましょう。</div>
+      <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
     </div>
     
     <account/>
@@ -26,7 +27,8 @@ export default {
   },
   components: {
     Navbar,
-    Account
+    Account,
+    Study
   },
   computed: {
     user() {
