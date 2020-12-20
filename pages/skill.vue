@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     async onSubmit() {
-      this.skillName.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
+      this.skillName.push(...[{study_hour: this.skillName1},this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
       await this.$store.dispatch('skill/addSkills', this.skillName)  
       this.skillName.name = ''
       this.$router.push('/build')
