@@ -1,11 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // ポート番号の変更
-  server: {
-    port:8000,
-    host:'0.0.0.0'
-  },
+  
   
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -56,7 +52,7 @@ export default {
         login: '/',
         logout: '/',
         callback: false,
-        home: '',
+        home: '/build',
     },
     strategies: {
       local: {
