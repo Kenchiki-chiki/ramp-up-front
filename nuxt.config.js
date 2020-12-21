@@ -57,7 +57,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'http://localhost:3000/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          login: { url: 'http://localhost:8080/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
           logout: false,
           user: false,
         },

@@ -6,7 +6,7 @@ export const actions = {
   async addSkills({ commit }, skillName) {
     console.log('===1===')
     console.log(skillName)
-    const res = await this.$axios.$post('http://localhost:3000/api/v1/skills', skillName , {
+    const res = await this.$axios.$post('http://localhost:8080/api/v1/skills', skillName , {
       headers: {
           'access-token': localStorage.getItem('access-token'),
           uid: localStorage.getItem('uid'),
