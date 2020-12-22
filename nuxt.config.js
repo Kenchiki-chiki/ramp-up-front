@@ -52,7 +52,7 @@ export default {
         login: '/',
         logout: '/',
         callback: false,
-        home: '/build',
+        home: '',
     },
     strategies: {
       local: {
