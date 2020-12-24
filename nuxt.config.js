@@ -1,9 +1,17 @@
 import colors from 'vuetify/es5/util/colors'
 
+var env = process.env.NODE_ENV || 'development';
+if (env === 'development' || env === 'test') {
+  var API_URL='http://localhost:8080'
+}
+else{
+  var API_URL=process.env.API_URL
+}
+
 export default {
   // 本番環境と開発環境それぞれのエンドポイントに対応
   axios: {
-    baseURL: process.env.NODE_ENV === "production" ? "https://ramp-up-api.herokuapp.com" : "http://localhost:8080"
+    baseURL: API_URL
 
   },
   
