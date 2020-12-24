@@ -57,7 +57,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'http://localhost:8080/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          login: { url: '/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
           logout: false,
           user: false,
         },
@@ -86,5 +86,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  // 本番環境と開発環境それぞれのエンドポイントに対応
+  axios: {
+        baseURL: process.env.NODE_ENV === "production" ? "https://ramp-up-api.herokuapp.com" : "http://localhost:8080"
+   
+      }
 }
