@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
 var env = process.env.NODE_ENV || 'development';
+console.log('env')
+console.log(env)
 if (env === 'development' || env === 'test') {
   var API_URL='http://localhost:8080'
 }
