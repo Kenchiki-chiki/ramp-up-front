@@ -18,7 +18,7 @@
         
         <v-container>
           <v-row>
-            <v-col v-for="n in skillName" class="skill-col">
+            <v-col v-for="skillName in skillNames" class="skill-col">
 
               <v-card width="300px" class="card">
               <v-card-text class="flex-item" cols="12" sm="6" md="4">
@@ -29,7 +29,7 @@
                 >
                 <div class="skill_wrapper">
 
-                  <p>{{ n }}</p>
+                  <p>{{ skillName }}</p>
                   <v-text-field
                     class="study_hours_form"
                     
@@ -83,7 +83,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      skillName: 'skill/content'
+      skillNames: 'skill/content'
     })
   }
 }
