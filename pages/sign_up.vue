@@ -55,9 +55,9 @@ export default {
   },
   methods: {
     registerUser() {
-      console.log('===1===')
+      // console.log('===1===')
       // this.$axios.post('http://localhost:8080/api/v1/auth', this.user ,{
-      this.$axios.post('/api/v1/auth', this.user ,{
+      this.$axios.post('http://localhost:8080/api/v1/auth', this.user ,{
         headers: {
             'access-token': localStorage.getItem('access-token'),
             uid: localStorage.getItem('uid'),
@@ -67,7 +67,7 @@ export default {
       
       )
       .then((response) => {
-        console.log('===2===')
+        // console.log('===2===')
         this.$auth.loginWith('local',{
             data: this.user
         })
@@ -77,13 +77,13 @@ export default {
         timeout: 2000
       })
        // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
-       console.log('===5===')
+      //  console.log('===5===')
       localStorage.setItem('access-token', response.headers['access-token'])
       localStorage.setItem('client', response.headers.client)
       localStorage.setItem('uid', response.headers.uid)
       localStorage.setItem('token-type', response.headers['token-type'])
       this.$router.push({ path: '/skill' })
-      console.log('===6===')
+      // console.log('===6===')
       return response
       },
       (error) => {

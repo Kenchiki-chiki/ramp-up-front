@@ -18,7 +18,7 @@
         
         <v-container>
           <v-row>
-            <v-col v-for="skillName in skillNames" class="skill-col">
+            <v-col v-for="(skillName, index) in skillNames" class="skill-col">
 
               <v-card width="300px" class="card">
               <v-card-text class="flex-item" cols="12" sm="6" md="4">
@@ -29,16 +29,18 @@
                 >
                 <div class="skill_wrapper">
 
-                  <p>{{ skillName }}</p>
+                  <p>{{ skillName }} {{ index }}</p>
                   <v-text-field
                     class="study_hours_form"
-                    
+                    v-model="studyTimes[skillName]"
                     type="number"
                     label="学習時間"
                     min="0"
                     max="24"
                     step="0.5"
                   ></v-text-field>
+
+                  
                 </div>
                 </v-responsive>    
 
@@ -48,6 +50,15 @@
             </v-col>
           </v-row>
         </v-container>
+        <v-card-actions>
+          <v-btn
+            @click="onSubmit"
+            color="#666666"
+            class="white--text"
+          >
+            入力完了
+          </v-btn>
+        </v-card-actions>
         <!-- </div> -->
       
 
@@ -76,6 +87,11 @@ export default {
       redirect('/login');
     }
   },
+  data() {
+    return {
+      studyTimes: {}
+    }
+  },
   components: {
     Navbar,
     Account,
@@ -85,6 +101,20 @@ export default {
     ...mapGetters({
       skillNames: 'skill/content'
     })
+  },
+  created() {
+    // console.log('===1===')
+    this.fetchSkills()
+  },
+  methods: {
+    async fetchSkills() {
+      // console.log('===2===')
+      await this.$store.dispatch('skill/fetchSkills')
+    },
+    async onSubmit() {
+      console.log('===1===')
+      await this.$store.dispatch('build/addStudyTimes', this.studyTimes)
+    }
   }
 }
 </script>
