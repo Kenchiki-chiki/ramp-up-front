@@ -13,12 +13,12 @@
     <!-- <div>
 
     </div> -->
-    
+
         <!-- <div class="flex-container"> -->
-        
+
         <v-container>
           <v-row>
-            <v-col v-for="(skillName, index) in skillNames" class="skill-col">
+            <v-col v-for="(skill, index) in skills" class="skill-col">
 
               <v-card width="300px" class="card">
               <v-card-text class="flex-item" cols="12" sm="6" md="4">
@@ -29,10 +29,10 @@
                 >
                 <div class="skill_wrapper">
 
-                  <p>{{ skillName }} {{ index }}</p>
+                  <p>{{ skill.name }}</p>
                   <v-text-field
                     class="study_hours_form"
-                    v-model="studyTimes[skillName]"
+                    v-model="studyHours[index]"
                     type="number"
                     label="学習時間"
                     min="0"
@@ -40,9 +40,9 @@
                     step="0.5"
                   ></v-text-field>
 
-                  
+
                 </div>
-                </v-responsive>    
+                </v-responsive>
 
               </v-card-text>
 
@@ -60,17 +60,17 @@
           </v-btn>
         </v-card-actions>
         <!-- </div> -->
-      
 
-      
-      
+
+
+
 
         <!-- <li v-for="skill in skillName">{{ skill }}</li> -->
-      
-    
-    
+
+
+
     <account/>
-    
+
   </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
   },
   data() {
     return {
-      studyTimes: {}
+      studyHours: []
     }
   },
   components: {
@@ -99,7 +99,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      skillNames: 'skill/content'
+      skills: 'skill/skills'
     })
   },
   created() {
@@ -113,7 +113,14 @@ export default {
     },
     async onSubmit() {
       console.log('===1===')
-      await this.$store.dispatch('build/addStudyTimes', this.studyTimes)
+      const params = { study_times: [] }
+      this.skills.forEach((skill, index) => {
+        params['study_times'].push({
+          skill_id: skill.id,
+          study_hour: this.studyHours[index]
+        })
+      })
+      await this.$store.dispatch('build/addStudyTimes', params)
     }
   }
 }
@@ -127,7 +134,7 @@ export default {
     top: 50px;
     right: 0px;
     left: 0px;
-    margin: auto; 
+    margin: auto;
     width: 100%;
     height: 105px;
     letter-spacing: 0.05em;
@@ -155,17 +162,17 @@ export default {
   }
 
   /* .card {
-    
+
 	  padding: 0 0 10px 0;
-	  
-	
+
+
   }
   .flex-item {
     height: 100px;
     margin: 30px 0 0 0px;
 	  padding: 10px 15px;
 	  box-sizing: border-box;
-	
+
   } */
 
   /* .study_hours_form {

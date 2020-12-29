@@ -1,5 +1,5 @@
 export const state = () => ({
-  skillNames: []
+  skills: []
 })
 
 export const actions = {
@@ -19,7 +19,7 @@ export const actions = {
     // const saveSkill = res.data
     // console.log('===3===')
     // console.log(saveSkill)
-    commit('addSkills', res) 
+    commit('addSkills', res)
     // console.log('===4===')
     return res
   },
@@ -36,7 +36,7 @@ export const actions = {
     console.log(res)
     commit('setSkills', res)
   }
-  
+
 }
 
 export const mutations = {
@@ -55,12 +55,14 @@ export const mutations = {
   setSkills(state, payload) {
     // console.log('===5===')
     console.log(payload)
-    state.skillNames = payload
-    console.log(state.skillNames)
+    state.skills = payload
   }
 }
 
 export const getters = {
+  skills(state) {
+    return state.skills
+  },
   content(state) {
     // console.log('===6===')
     return state.skillNames
