@@ -18,7 +18,7 @@
         
         <v-container>
           <v-row>
-            <v-col v-for="(skillName, index) in skillNames" class="skill-col">
+            <v-col v-for="(skill, index) in skills" class="skill-col">
 
               <v-card width="300px" class="card">
               <v-card-text class="flex-item" cols="12" sm="6" md="4">
@@ -29,10 +29,10 @@
                 >
                 <div class="skill_wrapper">
 
-                  <p>{{ skillName }} {{ index }}</p>
+                  <p>{{ skill.name }}</p>
                   <v-text-field
                     class="study_hours_form"
-                    v-model="studyTimes[skillName]"
+                    v-model="studyHours[index]"
                     type="number"
                     label="学習時間"
                     min="0"
@@ -89,7 +89,7 @@ export default {
   },
   data() {
     return {
-      studyTimes: {}
+      studyHours: []
     }
   },
   components: {
@@ -99,11 +99,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      skillNames: 'skill/content'
+      skills: 'skill/skills'
     })
   },
   created() {
-    // console.log('===1===')
+    console.log('===1===')
     this.fetchSkills()
   },
   methods: {
@@ -112,8 +112,15 @@ export default {
       await this.$store.dispatch('skill/fetchSkills')
     },
     async onSubmit() {
-      console.log('===1===')
-      await this.$store.dispatch('build/addStudyTimes', this.studyTimes)
+      // console.log('===1===')
+      const params = { study_times: [] }
+      this.skills.forEach((skill, index) => {
+        params['study_times'].push({
+          skill_id: skill.id,
+          study_hour: this.studyHours[index]
+        })
+      })
+      await this.$store.dispatch('build/addStudyTimes', params)
     }
   }
 }

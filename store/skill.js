@@ -1,5 +1,5 @@
 export const state = () => ({
-  skillNames: []
+  skills: []
 })
 
 export const actions = {
@@ -55,12 +55,15 @@ export const mutations = {
   setSkills(state, payload) {
     // console.log('===5===')
     console.log(payload)
-    state.skillNames = payload
+    state.skills = payload
     console.log(state.skillNames)
   }
 }
 
 export const getters = {
+  skills(state) {
+    return state.skills
+  },
   content(state) {
     // console.log('===6===')
     return state.skillNames
