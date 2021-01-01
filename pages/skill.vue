@@ -95,7 +95,7 @@
 export default {
   data() {
     return{
-      skillNames: [],
+      skills: [],
       skillName1: "",
       skillName2: "",
       skillName3: "",
@@ -106,9 +106,9 @@ export default {
   },
   methods: {
     async onSubmit() {
-      this.skillNames.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
-      await this.$store.dispatch('skill/addSkills', this.skillNames)  
-      this.skillNames.name = ''
+      this.skills.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
+      await this.$store.dispatch('skill/addSkills', this.skills)  
+      this.skills.name = ''
       this.$router.push('/build')
     },
     

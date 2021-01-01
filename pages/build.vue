@@ -99,11 +99,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      skills: 'skill/skills'
+      skills: 'skill/skills',
+      skillNames: 'skill/content'
     })
   },
   created() {
-    console.log('===1===')
+    // console.log('===1===')
     this.fetchSkills()
   },
   methods: {
@@ -112,7 +113,6 @@ export default {
       await this.$store.dispatch('skill/fetchSkills')
     },
     async onSubmit() {
-      // console.log('===1===')
       const params = { study_times: [] }
       this.skills.forEach((skill, index) => {
         params['study_times'].push({
@@ -121,6 +121,7 @@ export default {
         })
       })
       await this.$store.dispatch('build/addStudyTimes', params)
+      this.$router.push('/study_time')
     }
   }
 }
