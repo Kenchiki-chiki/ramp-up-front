@@ -127,8 +127,15 @@ export default {
           study_hour: this.studyHours[index]
         })
       })
-      await this.$store.dispatch('build/addStudyTimes', params)
-      this.$router.push('/study_time')
+      const res = await this.$store.dispatch('build/addStudyTimes', params)
+      if (res.errors) {
+        this.errors = res.errors
+      } 
+      // else {
+      //   this.fetchTasks()
+      //   this.$toast.info('タスクを削除しました。')
+      // }
+      // this.$router.push('/study_time')
     }
   }
 }
