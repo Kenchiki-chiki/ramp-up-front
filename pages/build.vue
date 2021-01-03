@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- <study/> -->
+    <Errors :errors="errors" />
+    {{ errors }}
     <div class="comment">
+      {{ errors }}
 
       <div>一日お疲れさま。</div>
       <div>学習時間を入力しましょう。</div>
@@ -81,6 +84,7 @@ import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Study from '~/components/study_hours.vue'
+import Error from '~/components/errors.vue'
 export default {
   middleware({ store, redirect }) {
     if(!store.$auth.loggedIn) {
@@ -89,18 +93,20 @@ export default {
   },
   data() {
     return {
-      studyHours: []
+      studyHours: [],
+      errors: []
     }
   },
   components: {
     Navbar,
     Account,
-    Study
+    Study,
+    Error
   },
   computed: {
     ...mapGetters({
       skills: 'skill/skills',
-      skillNames: 'skill/content'
+      // skillNames: 'skill/content'
     })
   },
   created() {
@@ -113,6 +119,7 @@ export default {
       await this.$store.dispatch('skill/fetchSkills')
     },
     async onSubmit() {
+      console.log('===1===')
       const params = { study_times: [] }
       this.skills.forEach((skill, index) => {
         params['study_times'].push({

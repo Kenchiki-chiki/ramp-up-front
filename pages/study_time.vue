@@ -99,7 +99,7 @@ export default {
   .container {
     display: flex;
     justify-content: center;
-    margin: 100px auto;
+    margin: 70px auto;
   }
 
   .study-time-col {
