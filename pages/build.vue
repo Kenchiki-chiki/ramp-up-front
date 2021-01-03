@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- <study/> -->
+    <Errors :errors="errors" />
     <div class="comment">
 
       <div>一日お疲れさま。</div>
@@ -18,7 +19,7 @@
         
         <v-container>
           <v-row>
-            <v-col v-for="n in skillName" class="skill-col">
+            <v-col v-for="(skill, index) in skills" class="skill-col">
 
               <v-card width="300px" class="card">
               <v-card-text class="flex-item" cols="12" sm="6" md="4">
@@ -29,16 +30,18 @@
                 >
                 <div class="skill_wrapper">
 
-                  <p>{{ n }}</p>
+                  <p>{{ skill.name }}</p>
                   <v-text-field
                     class="study_hours_form"
-                    
+                    v-model="studyHours[index]"
                     type="number"
                     label="学習時間"
                     min="0"
                     max="24"
                     step="0.5"
                   ></v-text-field>
+
+                  
                 </div>
                 </v-responsive>    
 
@@ -48,6 +51,15 @@
             </v-col>
           </v-row>
         </v-container>
+        <v-card-actions>
+          <v-btn
+            @click="onSubmit"
+            color="#666666"
+            class="white--text"
+          >
+            入力完了
+          </v-btn>
+        </v-card-actions>
         <!-- </div> -->
       
 
@@ -70,21 +82,59 @@ import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Study from '~/components/study_hours.vue'
+import Error from '~/components/errors.vue'
 export default {
   middleware({ store, redirect }) {
     if(!store.$auth.loggedIn) {
       redirect('/login');
     }
   },
+  data() {
+    return {
+      studyHours: [],
+      errors: []
+    }
+  },
   components: {
     Navbar,
     Account,
-    Study
+    Study,
+    Error
   },
   computed: {
     ...mapGetters({
-      skillName: 'skill/content'
+      skills: 'skill/skills',
+      // skillNames: 'skill/content'
     })
+  },
+  created() {
+    // console.log('===1===')
+    this.fetchSkills()
+  },
+  methods: {
+    async fetchSkills() {
+      // console.log('===2===')
+      await this.$store.dispatch('skill/fetchSkills')
+    },
+    async onSubmit() {
+      console.log('===1===')
+      const params = { study_times: [] }
+      this.skills.forEach((skill, index) => {
+        params['study_times'].push({
+          skill_id: skill.id,
+          study_hour: this.studyHours[index]
+        })
+      })
+      const res = await this.$store.dispatch('build/addStudyTimes', params)
+      console.log(res)
+      if (res.errors) {
+        this.errors = res.errors
+      } 
+      else {
+        this.$router.push('/study_time')
+        
+      }
+    }
   }
 }
 </script>
@@ -94,7 +144,7 @@ export default {
     z-index: 10;
     font-size: 30px;
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 0px;
     left: 0px;
     margin: auto; 
@@ -120,7 +170,8 @@ export default {
   }
   .skill-col {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
     margin: 0 0 0 24px;
   }
 

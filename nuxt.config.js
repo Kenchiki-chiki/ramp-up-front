@@ -1,21 +1,29 @@
 import colors from 'vuetify/es5/util/colors'
 
-var env = process.env.NODE_ENV || 'development';
-console.log('env')
-console.log(env)
-if (env === 'development' || env === 'test') {
-  var API_URL='http://localhost:8080'
-}
-else{
-  var API_URL=process.env.API_URL
-}
+// var env = process.env.NODE_ENV || 'development';
+// console.log('env')
+// console.log(env)
+// if (env === 'development' || env === 'test') {
+//   var API_URL='http://localhost:8080'
+// }
+// else{
+//   var API_URL=process.env.API_URL
+// }
+// var env = process.env.NODE_ENV
+
+// if (env === 'production') {
+//   var API_URL=process.env.API_URL
+// }
+// else{
+//   var API_URL='http://localhost:8080'
+// }
 
 export default {
   // 本番環境と開発環境それぞれのエンドポイントに対応
-  axios: {
-    baseURL: API_URL
+  // axios: {
+  //   baseURL: process.env.NODE_ENV === "production" ? "https://backend.hibriiiiidge.com" : "http://localhost:8080"
 
-  },
+  // },
   
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -71,7 +79,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          login: { url: 'http://localhost:8080/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
           logout: false,
           user: false,
         },
