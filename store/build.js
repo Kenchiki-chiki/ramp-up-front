@@ -12,14 +12,7 @@ export const actions = {
         uid: localStorage.getItem('uid'),
         client: localStorage.getItem('client'),
       },
-    })
-    .then(res => {
-      console.log('===4===')
-      console.log(res)
-      commit('addStudyTimes', res)
-      return res
-    })
-    .catch(() => {
+    }).catch(() => {
       return { errors: ['エラーが発生しました'] }
     })
     if (res.errors && res.errors.length !== 0) {
@@ -29,8 +22,10 @@ export const actions = {
       return {
         errors: res.errors
       }
+    } else{
+      commit('addStudyTimes', res)
+      return {}
     }
-    return {}
     
     
    

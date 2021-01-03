@@ -2,9 +2,7 @@
   <div>
     <!-- <study/> -->
     <Errors :errors="errors" />
-    {{ errors }}
     <div class="comment">
-      {{ errors }}
 
       <div>一日お疲れさま。</div>
       <div>学習時間を入力しましょう。</div>
@@ -128,14 +126,14 @@ export default {
         })
       })
       const res = await this.$store.dispatch('build/addStudyTimes', params)
+      console.log(res)
       if (res.errors) {
         this.errors = res.errors
       } 
-      // else {
-      //   this.fetchTasks()
-      //   this.$toast.info('タスクを削除しました。')
-      // }
-      // this.$router.push('/study_time')
+      else {
+        this.$router.push('/study_time')
+        
+      }
     }
   }
 }
@@ -146,7 +144,7 @@ export default {
     z-index: 10;
     font-size: 30px;
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 0px;
     left: 0px;
     margin: auto; 
@@ -172,7 +170,8 @@ export default {
   }
   .skill-col {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
     margin: 0 0 0 24px;
   }
 

@@ -20,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.errors {
+  margin: 0 65px 0 45px;
+}
+</style>
