@@ -16,9 +16,9 @@
     <!-- <div>
 
     </div> -->
-    
+
         <!-- <div class="flex-container"> -->
-        
+
         <v-container>
           <v-row>
             <v-col v-for="(skill, index) in skills" class="skill-col">
@@ -43,9 +43,9 @@
                     step="0.5"
                   ></v-text-field>
 
-                  
+
                 </div>
-                </v-responsive>    
+                </v-responsive>
 
               </v-card-text>
 
@@ -63,17 +63,17 @@
           </v-btn>
         </v-card-actions>
         <!-- </div> -->
-      
 
-      
-      
+
+
+
 
         <!-- <li v-for="skill in skillName">{{ skill }}</li> -->
-      
-    
-    
+
+
+
     <account/>
-    
+
   </div>
 </template>
 
@@ -128,9 +128,10 @@ export default {
         })
       })
       const res = await this.$store.dispatch('build/addStudyTimes', params)
+      console.log(res)
       if (res.errors) {
         this.errors = res.errors
-      } 
+      }
       // else {
       //   this.fetchTasks()
       //   this.$toast.info('タスクを削除しました。')
@@ -149,7 +150,7 @@ export default {
     top: 50px;
     right: 0px;
     left: 0px;
-    margin: auto; 
+    margin: auto;
     width: 100%;
     height: 105px;
     letter-spacing: 0.05em;
@@ -177,17 +178,17 @@ export default {
   }
 
   /* .card {
-    
+
 	  padding: 0 0 10px 0;
-	  
-	
+
+
   }
   .flex-item {
     height: 100px;
     margin: 30px 0 0 0px;
 	  padding: 10px 15px;
 	  box-sizing: border-box;
-	
+
   } */
 
   /* .study_hours_form {
