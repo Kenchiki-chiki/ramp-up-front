@@ -15,7 +15,7 @@ export const actions = {
     return res
   },
   async fetchSkills({ commit }) {
-    console.log('===3===')
+    // console.log('===3===')
     const res = await this.$axios.$get('/api/v1/skills', {
       headers: {
         'access-token': localStorage.getItem('access-token'),
@@ -23,8 +23,8 @@ export const actions = {
         client: localStorage.getItem('client'),
       },
     })
-    console.log('===4===')
-    console.log(res)
+    // console.log('===4===')
+    // console.log(res)
     commit('setSkills', res)
   }
   
@@ -36,10 +36,10 @@ export const mutations = {
     state.skills =skills
   },
   setSkills(state, payload) {
-    console.log('===5===')
-    console.log(payload)
+    // console.log('===5===')
+    // console.log(payload)
     state.skills = payload
-    console.log(state.skills)
+    // console.log(state.skills)
   }
 }
 

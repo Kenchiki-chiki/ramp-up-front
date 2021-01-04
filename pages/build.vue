@@ -128,7 +128,7 @@ export default {
         })
       })
       const res = await this.$store.dispatch('build/addStudyTimes', params)
-      console.log(res)
+      // console.log(res)
       if (res.errors) {
         this.errors = res.errors
       } 
