@@ -57,7 +57,7 @@ export default {
     registerUser() {
       // console.log('===1===')
       // this.$axios.post('http://localhost:8080/api/v1/auth', this.user ,{
-      this.$axios.post('http://localhost:8080/api/v1/auth', this.user ,{
+      this.$axios.post('/api/v1/auth', this.user ,{
         headers: {
             'access-token': localStorage.getItem('access-token'),
             uid: localStorage.getItem('uid'),

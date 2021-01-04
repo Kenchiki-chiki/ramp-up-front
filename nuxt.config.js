@@ -18,12 +18,15 @@ import colors from 'vuetify/es5/util/colors'
 //   var API_URL='http://localhost:8080'
 // }
 
+// console.log("=====================")
+// console.log(process.env.NODE_ENV)
+
 export default {
   // 本番環境と開発環境それぞれのエンドポイントに対応
-  // axios: {
-  //   baseURL: process.env.NODE_ENV === "production" ? "https://backend.hibriiiiidge.com" : "http://localhost:8080"
+  axios: {
+    baseURL: process.env.NODE_ENV === "production" ? "https://ramp-up-api.herokuapp.com" : "http://localhost:8080"
 
-  // },
+  },
   
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -79,7 +82,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'http://localhost:8080/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          login: { url: '/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
           logout: false,
           user: false,
         },
