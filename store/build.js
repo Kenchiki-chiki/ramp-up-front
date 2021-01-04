@@ -6,7 +6,7 @@ export const actions = {
   async addStudyTimes({ commit }, studyTimes) {
     console.log('===2===')
     console.log(studyTimes)
-    const res = await this.$axios.$post('http://localhost:8080/api/v1/study_times' ,studyTimes, {
+    const res = await this.$axios.$post('/api/v1/study_times' ,studyTimes, {
       headers: {
         'access-token': localStorage.getItem('access-token'),
         uid: localStorage.getItem('uid'),
@@ -31,7 +31,7 @@ export const actions = {
    
   },
   async fetchStudyTimes({ commit }) {
-    const res = await this.$axios.$get('http://localhost:8080/api/v1/study_times', {
+    const res = await this.$axios.$get('/api/v1/study_times', {
       headers: {
         'access-token': localStorage.getItem('access-token'),
         uid: localStorage.getItem('uid'),

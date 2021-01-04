@@ -1,6 +1,8 @@
 <template>
   <div>
     <!-- <study/> -->
+    
+
     <Errors :errors="errors" />
     <div class="comment">
 

@@ -20,10 +20,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // 本番環境と開発環境それぞれのエンドポイントに対応
-  // axios: {
-  //   baseURL: process.env.NODE_ENV === "production" ? "https://backend.hibriiiiidge.com" : "http://localhost:8080"
+  axios: {
+    baseURL: process.env.NODE_ENV === "production" ? "https://ramp-up-api.herokuapp.com" : "http://localhost:8080"
 
-  // },
+  },
   
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
