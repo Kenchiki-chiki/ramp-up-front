@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const actions = {
   async addSkills({ commit }, skills) {
-    const res = await this.$axios.$post('http://localhost:8080/api/v1/skills', skills , {
+    const res = await this.$axios.$post('/api/v1/skills', skills , {
       headers: {
           'access-token': localStorage.getItem('access-token'),
           uid: localStorage.getItem('uid'),
@@ -16,7 +16,7 @@ export const actions = {
   },
   async fetchSkills({ commit }) {
     console.log('===3===')
-    const res = await this.$axios.$get('http://localhost:8080/api/v1/skills', {
+    const res = await this.$axios.$get('/api/v1/skills', {
       headers: {
         'access-token': localStorage.getItem('access-token'),
         uid: localStorage.getItem('uid'),

@@ -44,11 +44,12 @@ export const actions = {
 
 export const mutations = {
   addStudyTimes(state, saveStudyTimes) {
-    // console.log('===4===')
-    // console.log(saveStudyTimes)
+    console.log('===4===')
+    console.log(saveStudyTimes)
+    console.log(state.totalStudyTimes)
     const studyTimes = state.totalStudyTimes.concat(saveStudyTimes)
-    // console.log('===5===')
-    // console.log(studyTimes)
+    console.log('===5===')
+    console.log(studyTimes)
     const totalStudyTimes = studyTimes.reduce(function(sum, element) {
       return sum + element
     })
