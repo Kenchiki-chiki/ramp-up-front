@@ -6,7 +6,7 @@ export default {
   data(){
     return {
         chartdata: {
-            labels: ['2020/2', '2020/3', '2020/4', '2020/5', '2020/6', '2020/7', '2020/8', '2020/9', '2020/10', '2020/11', '2020/12', '2021/1'],
+            labels: [],
             datasets: [
                 {
                 label: ['月別学習時間'],
@@ -45,6 +45,21 @@ export default {
       this.chartdata.datasets[0].data = res
       // this.chartdata.datasets[0].data.concat(res)
       console.log(this.chartdata.datasets[0].data)
+
+      let date = new Date();
+      let week = [];
+      for (let i = 0; i < 12; i++) {
+        let before = new Date();
+        before.setMonth(date.getMonth() - i);
+        week.unshift(before.getFullYear() + '/' + (before.getMonth()+1) );
+      }
+      console.log(week);
+
+      this.chartdata.labels = week
+      
+
+
+
     }
   }
 }
