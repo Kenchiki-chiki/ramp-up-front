@@ -6,16 +6,18 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ['スキル１', 'スキル２', 'スキル３', 'スキル４'],
-        datasets: [{
+        labels: [],
+        datasets: [
+          {
           backgroundColor: [
             'rgba(255, 60, 60, 0.3)',
             'rgba(60, 60, 60, 0.3)',
             'rgba(60, 255, 60, 0.3)',
             'rgba(60, 60, 255, 0.3)',
           ],
-          data: [100, 120, 30, 70]
-        }],
+          data: []
+        }
+        ]
       },
       options: {
             responsive: true,
@@ -32,8 +34,20 @@ export default {
   methods: {
       async fetchPieCharts() {
         const res = await this.$store.dispatch('pie_chart/fetchPieCharts')
+
+        console.log('===Pie6===')
+        console.log(res[0])
+        console.log(res[1])
+  //       var today = new Date();
+  // console.log(today.getFullYear() + "/" +  today.getMonth() + 1 + "/"+ today.getDate()  + "/" + today.getDay());
+        this.chartData.labels = res[0]
+        this.chartData.datasets[0].data = res[1]
+        console.log(this.chartData.datasets[0].data)
+        console.log(this.chartData.labels)
+        
       }
     }
+
   
 }
 </script>

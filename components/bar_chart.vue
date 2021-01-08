@@ -42,8 +42,8 @@ export default {
       //   return sum + element
       // })
       console.log(res)
-      // this.chartdata.datasets[0].data = res
-      this.chartdata.datasets[0].data.concat(res)
+      this.chartdata.datasets[0].data = res
+      // this.chartdata.datasets[0].data.concat(res)
       console.log(this.chartdata.datasets[0].data)
     }
   }
