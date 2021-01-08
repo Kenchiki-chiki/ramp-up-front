@@ -6,7 +6,7 @@ export default {
   data(){
     return {
         chartdata: {
-            labels: ['January', 'February'],
+            labels: ['2020/2', '2020/3', '2020/4', '2020/5', '2020/6', '2020/7', '2020/8', '2020/9', '2020/10', '2020/11', '2020/12', '2021/1'],
             datasets: [
                 {
                 label: ['月別学習時間'],

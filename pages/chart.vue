@@ -9,6 +9,7 @@
     </div> -->
 
     <BarChart />
+    <PieChart />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import BarChart from '~/components/bar_chart.vue'
+import PieChart from '~/components/pie_chart.vue'
 export default {
   // data() {
     // return {
@@ -39,7 +41,8 @@ export default {
   components: {
     Navbar,
     Account,
-    BarChart
+    BarChart,
+    PieChart
   },
   // computed: {
   //   ...mapGetters({
