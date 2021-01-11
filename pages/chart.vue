@@ -2,9 +2,11 @@
   <div class="chart-wrapper">
     
     <account/>
-    <div>chart</div>
 
-    <BarChart />
+    <div class="bar-container">
+      <BarChart />
+
+    </div>
 
       <v-container id="pie-container-flex">
         <v-row class="pie-row">
@@ -69,6 +71,9 @@ export default {
 </script>
 
 <style>
+  .bar-container {
+    padding: 60px 0 0 0;
+  }
   .container {
     margin: 200px auto;
   }
@@ -105,7 +110,7 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 70px 0 0 0;
+    padding: 60px 0 0 0;
   }
 
   .pie-row {

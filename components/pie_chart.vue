@@ -58,27 +58,8 @@ export default {
       async fetchPieCharts() {
         const res = await this.$store.dispatch('pie_chart/fetchPieCharts')
 
-        console.log('===Pie6===')
-        console.log(res[0])
-        console.log(res[0.9])
-        console.log(res[2])
-  //       var today = new Date();
-  // console.log(today.getFullYear() + "/" +  today.getMonth() + 1 + "/"+ today.getDate()  + "/" + today.getDay());
         this.chartData.labels = res[0]
-        this.chartData.datasets[0].data = res[1]
-        console.log(this.chartData.datasets[0].data)
-        console.log(this.chartData.labels)
-
-        // console.log('===rank====')
-        // const rankArr = res[2]
-        // rankArr.sort(function(a, b){
-        //   if (a[1] > b[1]) return -1;
-        //   if (a[1] < b[1]) return 1;
-        //   return 0;
-        // });
-
-        // console.log(rankArr);
-        
+        this.chartData.datasets[0].data = res[1]       
       }
     }
 

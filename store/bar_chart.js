@@ -2,17 +2,14 @@ export const state = () => ({
   chartDates: []
 })
 export const actions = {
-  async fetchCharts({ commit }) {
-    console.log('===3===')
-    const res = await this.$axios.$get('/api/v1/charts', {
+  async fetchBarCharts({ commit }) {
+    const res = await this.$axios.$get('/api/v1/bar_charts', {
       headers: {
         'access-token': localStorage.getItem('access-token'),
         uid: localStorage.getItem('uid'),
         client: localStorage.getItem('client'),
       },
     }).then((res) => {
-      console.log('===4===')
-      console.log(res)
       // return { res: res }
       return res 
     })
@@ -20,16 +17,12 @@ export const actions = {
       return  res
     }
     
-    commit('setCharts', res)
+    commit('setBarCharts', res)
   }
 }
 export const mutations = {
-  setCharts(state, payload) {
-    console.log('===5===')
-    console.log(payload)
-    console.log(state.chartDates)
+  setBarCharts(state, payload) {
     state.chartDates = state.chartDates.concat(payload)
-    console.log(state.chartDates)
   }
 }
 
