@@ -1,6 +1,6 @@
 <template>
-    <v-app class="account_icon">
-    <!-- <div class="account_icon"> -->
+    <!-- <v-app class="account_icon"> -->
+    <div class="account_icon">
       <v-icon @click="drawer = true" color="#666666">
       mdi-account-circle
       </v-icon>
@@ -36,8 +36,8 @@
           
         </v-list>
       </v-menu>
-    <!-- </div> -->
-    </v-app>
+    </div>
+    <!-- </v-app> -->
 </template>
 
 
