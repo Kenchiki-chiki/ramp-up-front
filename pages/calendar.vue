@@ -15,11 +15,11 @@
               :key="n"
             >
               {{ youbi(n-1) }}
-                
+
             </div>
           </div>
 
-          <div 
+          <div
             class="calendar-weekly"
             v-for="(week, index) in calendars"
             :key="index"
@@ -30,21 +30,21 @@
                 v-for="(day, index) in week"
                 :key="index"
               >
-              <div class="calendar-day" @click="fetchThatDayStudyTimes('20210120')">
+              <div class="calendar-day" @click="fetchThatDayStudyTimes(date(day))">
                 <!-- <button class="calendar-day" @click="fetchThatDayStudyTimes"> -->
                   {{ day.day }}
                 <!-- </button> -->
-                
+
               </div>
             </div>
 
           </div>
         </div>
-      </div>      
+      </div>
 
-      
+
     </div>
-    
+
     <account/>
 
   </div>
@@ -75,7 +75,7 @@ export default {
     },
     currentMonth() {
       return this.currentDate.format('YYYY-MM')
-    } 
+    }
   },
   methods: {
     getStartDate() {
@@ -121,7 +121,12 @@ export default {
       const week = ["Sun", "Mon", "Tue", "Wed", "Tue", "Fri", "Sat"]
       return week[dayIndex]
     },
-
+    date(day) {
+      console.log(day)
+      const date = `${day.month}${day.day}`
+      console.log(date)
+      return date
+    },
     async fetchThatDayStudyTimes(date) {
       console.log('===1===')
       // await this.$store.dispatch('calendar/fetchThatDayStudyTimes')
@@ -130,7 +135,7 @@ export default {
 },
   // mounted() {
   //   console.log(this.getCalendar())
-  // }   
+  // }
 }
 </script>
 
