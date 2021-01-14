@@ -3,9 +3,11 @@ export const state = () => ({
 })
 
 export const actions = {
-  async fetchThatDayStudyTimes({ commit }) {
+  async fetchThatDayStudyTimes({ commit }, date) {
     console.log('===2===')
-    const res = await this.$axios.$get('/api/v1/calendars', {
+    console.log(date)
+    const res = await this.$axios.$get('/api/v1/calendars',  {
+      params:{date},
       headers: {
         'access-token': localStorage.getItem('access-token'),
         uid: localStorage.getItem('uid'),

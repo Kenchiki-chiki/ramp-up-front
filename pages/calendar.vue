@@ -30,7 +30,7 @@
                 v-for="(day, index) in week"
                 :key="index"
               >
-              <div class="calendar-day" @click="fetchThatDayStudyTimes('20210120')">
+              <div class="calendar-day" @click="fetchThatDayStudyTimes(date(day))">
                 <!-- <button class="calendar-day" @click="fetchThatDayStudyTimes"> -->
                   {{ day.day }}
                 <!-- </button> -->
@@ -121,10 +121,20 @@ export default {
       const week = ["Sun", "Mon", "Tue", "Wed", "Tue", "Fri", "Sat"]
       return week[dayIndex]
     },
+    date(day) {
+      console.log(day)
+      day.day = ("0"+day.day).slice(-2)
+      let date = `${day.month}${day.day}`
+      // date = ("0"+date).slice(-2)
+      console.log(date)
+      return date.replace(/-/g, '')
+    },
 
     async fetchThatDayStudyTimes(date) {
       console.log('===1===')
-      // await this.$store.dispatch('calendar/fetchThatDayStudyTimes')
+      console.log(date)
+      await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
+      console.log('===6===')
       this.$router.push(`/that_day_study_time/${date}`)
     }
 },

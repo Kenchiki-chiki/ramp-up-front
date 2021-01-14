@@ -2,7 +2,7 @@
   <div>
     <div class="comment">
 
-      <div>◯月◯日の学習時間は</div>
+      <div>{{ kanjiClikedDate }}の学習時間は</div>
 
       <v-container>
         <v-row>
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      
+      clikedDate: this.$route.params.date,
     }
   },
   components: {
@@ -63,17 +63,37 @@ export default {
   computed: {
     ...mapGetters({
       thatDayTotalStudyTimes: 'calendar/thatDayStudyTimes'
-    })
+    }),
+    kanjiClikedDate: function() {
+      console.log('===clickedDate2===')
+      const yaer = this.clikedDate.slice(0,4)
+      const y ='年'
+      const month = this.clikedDate.slice(4,6)
+      const m ='月'
+      const day = this.clikedDate.slice(6,8)
+      const d ='日'
+      const kanjiCharacter = yaer + y + month + m + day + d
+      
+      return kanjiCharacter.replace(/\b0+/, '')
+    }
+
+    
+    // function() {
+    //   return this.$route.params.date + this.clikedDate
+    // }
   },
   created() {
-    // this.fetchStudyTimes()
+    this.fetchStudyTimes()
+    console.log('_date')
     console.log(this.$route.params.date)
+
   },
-  // methods: {
-  //   async fetchStudyTimes() {
-  //     await this.$store.dispatch('calendar/fetchThatDayStudyTimes')
-  //   },
-  // }
+  methods: {
+    async fetchStudyTimes() {
+      await this.$store.dispatch('calendar/fetchThatDayStudyTimes', this.$route.params.date)
+    },   
+
+  },
 }
 </script>
 
