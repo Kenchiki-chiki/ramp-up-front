@@ -31,10 +31,17 @@
                 :key="index"
               >
               <div class="calendar-day" @click="fetchThatDayStudyTimes(date(day))">
-                <!-- <button class="calendar-day" @click="fetchThatDayStudyTimes"> -->
-                  {{ day.day }}
-                <!-- </button> -->
+                  {{ day.day }}                
+              </div>
+
+              <div v-for="dayEvent in day.dayEvents" :key="dayEvent.studied_on" >
+                <div 
+                  class="calendar-event"
+                  :style="`background-color:${dayEvent.color}`"
+                >
+                  {{ dayEvent.name }}
                 
+                </div>
               </div>
             </div>
 
@@ -60,6 +67,7 @@ export default {
       currentDate: moment(),
       // displayMonth: displayDate()
       current: 0,
+      events: []
     }
   },
   components: {
@@ -76,6 +84,9 @@ export default {
     currentMonth() {
       return this.currentDate.format('YYYY-MM')
     } 
+  },
+  created() {
+    this.fetchAllStudytimes()
   },
   methods: {
     getStartDate() {
@@ -101,9 +112,11 @@ export default {
       for (let week = 0; week < weekNumber; week++) {
         let weekRow = [];
         for (let day = 0;  day < 7; day++) {
+          let dayEvents = this.getDayEvents(calendarDate)
           weekRow.push({
             day: calendarDate.get("date"),
-            month: calendarDate.format("YYYY-MM"),//追加
+            month: calendarDate.format("YYYY-MM"),
+            dayEvents
           });
           calendarDate.add(1, "days");
         }
@@ -122,25 +135,29 @@ export default {
       return week[dayIndex]
     },
     date(day) {
-      console.log(day)
       day.day = ("0"+day.day).slice(-2)
       let date = `${day.month}${day.day}`
-      // date = ("0"+date).slice(-2)
-      console.log(date)
       return date.replace(/-/g, '')
     },
 
     async fetchThatDayStudyTimes(date) {
-      console.log('===1===')
-      console.log(date)
       await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
-      console.log('===6===')
       this.$router.push(`/that_day_study_time/${date}`)
+    },
+    getDayEvents(date){
+        return this.events.filter(event => {
+        let startDate = moment(event.studied_on).format('YYYY-MM-DD')
+        let endDate = moment(event.studied_on).format('YYYY-MM-DD')
+        let Date = date.format('YYYY-MM-DD')
+        if(startDate <= Date && endDate >= Date) return true;
+      });
+    },
+    async fetchAllStudytimes() {
+      const res = await this.$store.dispatch('calendar/fetchAllStudytimes')
+      this.events = res     
     }
-},
-  // mounted() {
-  //   console.log(this.getCalendar())
-  // }   
+  
+  },
 }
 </script>
 
@@ -187,5 +204,12 @@ export default {
 
 .outside {
   background-color: #181823;
+}
+
+.calendar-event{
+  color:white;
+  margin-bottom:1px;
+  height:25px;
+  line-height:25px;
 }
 </style>
