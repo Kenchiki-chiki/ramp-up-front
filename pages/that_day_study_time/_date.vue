@@ -2,10 +2,8 @@
   <div>
     <div class="comment">
 
-      <div>今日の学習時間は</div>
-      
-    
-        
+      <div>{{ kanjiClikedDate }}の学習時間は</div>
+
       <v-container>
         <v-row>
           <v-col class="study-time-col">
@@ -19,7 +17,7 @@
               >
               <div class="study-time-wrapper">
 
-                <p id="study-time">{{ totalStudyTimes }} 時間</p>
+                <p id="study-time">{{ thatDayTotalStudyTimes }} 時間</p>
             
               </div>
               </v-responsive>    
@@ -33,8 +31,6 @@
       <v-card-actions>
         
       </v-card-actions>
-
-      <div>明日も最高な1日にしましょう！</div>
 
       </div>
       
@@ -57,7 +53,7 @@ export default {
   },
   data() {
     return {
-      
+      clikedDate: this.$route.params.date,
     }
   },
   components: {
@@ -66,19 +62,38 @@ export default {
   },
   computed: {
     ...mapGetters({
-      totalStudyTimes: 'build/content'
-    })
+      thatDayTotalStudyTimes: 'calendar/thatDayStudyTimes'
+    }),
+    kanjiClikedDate: function() {
+      console.log('===clickedDate2===')
+      const yaer = this.clikedDate.slice(0,4)
+      const y ='年'
+      const month = this.clikedDate.slice(4,6)
+      const m ='月'
+      const day = this.clikedDate.slice(6,8)
+      const d ='日'
+      const kanjiCharacter = yaer + y + month + m + day + d
+      
+      return kanjiCharacter.replace(/\b0+/, '')
+    }
+
+    
+    // function() {
+    //   return this.$route.params.date + this.clikedDate
+    // }
   },
   created() {
-    // console.log('===1===')
     this.fetchStudyTimes()
+    console.log('_date')
+    console.log(this.$route.params.date)
+
   },
   methods: {
     async fetchStudyTimes() {
-      // console.log('===2===')
-      await this.$store.dispatch('build/fetchStudyTimes')
-    },
-  }
+      await this.$store.dispatch('calendar/fetchThatDayStudyTimes', this.$route.params.date)
+    },   
+
+  },
 }
 </script>
 

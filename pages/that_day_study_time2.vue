@@ -2,10 +2,8 @@
   <div>
     <div class="comment">
 
-      <div>今日の学習時間は</div>
-      
-    
-        
+      <div>◯月◯日の学習時間は</div>
+
       <v-container>
         <v-row>
           <v-col class="study-time-col">
@@ -19,7 +17,7 @@
               >
               <div class="study-time-wrapper">
 
-                <p id="study-time">{{ totalStudyTimes }} 時間</p>
+                <p id="study-time">{{ thatDayTotalStudyTimes }} 時間</p>
             
               </div>
               </v-responsive>    
@@ -33,8 +31,6 @@
       <v-card-actions>
         
       </v-card-actions>
-
-      <div>明日も最高な1日にしましょう！</div>
 
       </div>
       
@@ -66,19 +62,17 @@ export default {
   },
   computed: {
     ...mapGetters({
-      totalStudyTimes: 'build/content'
+      thatDayTotalStudyTimes: 'calendar/thatDayStudyTimes'
     })
   },
-  created() {
-    // console.log('===1===')
-    this.fetchStudyTimes()
-  },
-  methods: {
-    async fetchStudyTimes() {
-      // console.log('===2===')
-      await this.$store.dispatch('build/fetchStudyTimes')
-    },
-  }
+  // created() {
+  //   this.fetchStudyTimes()
+  // },
+  // methods: {
+  //   async fetchStudyTimes() {
+  //     await this.$store.dispatch('calendar/fetchThatDayStudyTimes')
+  //   },
+  // }
 }
 </script>
 
