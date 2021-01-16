@@ -22,7 +22,11 @@
               </v-list-item-title>
             </v-list-item>
             <v-list-item>
-              <v-list-item-title>スキル編集</v-list-item-title>
+              <v-list-item-title
+                @click="$router.push('skill_edit')"
+              >
+              スキル編集
+              </v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title
