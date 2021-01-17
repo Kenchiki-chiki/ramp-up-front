@@ -22,7 +22,11 @@
               </v-list-item-title>
             </v-list-item>
             <v-list-item>
-              <v-list-item-title>スキル編集</v-list-item-title>
+              <v-list-item-title
+                @click="$router.push('skill_edit')"
+              >
+              スキル編集
+              </v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title
@@ -46,8 +50,6 @@
 <script>
 export default {
   middleware({ store, redirect }) {
-    console.log('===== middleware ====')
-    console.log(store.$auth.loggedIn)
     if(!store.$auth.loggedIn) {
       redirect('/login');
     }
@@ -59,11 +61,10 @@ export default {
     }
   },
   created() {
-    console.log('created')
+
   },
   methods: {
     logout () {
-      console.log(this.$auth.user)
       this.$auth.logout();
       this.$store.dispatch(`message/setContent`,{
       content: 'ログアウトしました',
@@ -111,6 +112,14 @@ export default {
 
   .v-application--wrap {
   height: 24px !important;; 
+}
+.v-menu__content {
+    min-width: 0px ;
+    top: 18px !important;
+    right: 50px !important;
+    left: initial !important;
+    transform-origin: right top !important;
+    z-index: 302 ;
 }
 
 </style>

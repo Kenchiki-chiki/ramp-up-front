@@ -4,7 +4,6 @@ export const state = () => ({
 
 export const actions = {
   setContent({ commit }, { content, timeout }) {
-    // console.log('===3===')
     commit('setContent', content)
 
     if (typeof timeout === 'undefined') {
@@ -18,7 +17,6 @@ export const actions = {
 // actionsから受け取った引数contentをstateのcontentに代入
 export const mutations = {
   setContent(state, payload) {
-    // console.log('===4===')
     state.content = payload
   }
 }

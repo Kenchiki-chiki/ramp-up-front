@@ -15,7 +15,6 @@ export const actions = {
     return res
   },
   async fetchSkills({ commit }) {
-    // console.log('===3===')
     const res = await this.$axios.$get('/api/v1/skills', {
       headers: {
         'access-token': localStorage.getItem('access-token'),
@@ -23,10 +22,21 @@ export const actions = {
         client: localStorage.getItem('client'),
       },
     })
-    // console.log('===4===')
-    // console.log(res)
     commit('setSkills', res)
+  },
+  // const url = `/api/v1/tasks/${taskId}`
+  // const res = await this.$axios.$delete(url)
+  async deleteSkill({ commit }, skillID) {
+    const url =  `/api/v1/skills/${skillID}`
+    const res = await this.$axios.$delete(url, {
+      headers: {
+        'access-token': localStorage.getItem('access-token'),
+        uid: localStorage.getItem('uid'),
+        client: localStorage.getItem('client'),
+      },
+    })
   }
+  
   
 }
 
@@ -36,10 +46,9 @@ export const mutations = {
     state.skills =skills
   },
   setSkills(state, payload) {
-    // console.log('===5===')
-    // console.log(payload)
-    state.skills = payload
-    // console.log(state.skills)
+    state.skills = []
+    const skills = state.skills.concat(payload)
+    state.skills = skills
   }
 }
 
