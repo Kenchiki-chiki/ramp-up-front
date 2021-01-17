@@ -12,7 +12,6 @@
 
     </div>
 
-
         <v-container>
           <v-row class="skill-row">
             <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
@@ -27,7 +26,6 @@
                 <div class="skill_wrapper">
 
                   <p id="skill_wrapper-flex-item">{{ skill.name }}</p>
-                  <!-- <v-icon class="skill_wrapper-flex-item" @click="deleteSkill(skill.id)">fa fa-trash-alt</v-icon>                  -->
                   <v-icon class="skill_wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
                   
                 </div>
@@ -74,7 +72,6 @@
           >
             削除
           </v-btn>
-          <!-- {{ this.skill.id }} -->
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -114,7 +111,6 @@ export default {
   computed: {
     ...mapGetters({
       skills: 'skill/skills',
-      // skillNames: 'skill/content'
     })
   },
   created() {
@@ -166,7 +162,6 @@ export default {
     justify-content: center;
   }
   #skill_add_btn {
-    /* margin: 0 0 0 30px; */
     padding: 20px 10px;
   }
   .skill_add_icon {
@@ -176,42 +171,17 @@ export default {
     margin: 0px 0 0 4px;
   }
 
-  /* .container {
-    margin: 20px 0 0 0 ;
-  } */
-
   .container {
     display: flex;
     justify-content: center;
-    /* flex-direction: row; */
-    /* flex-wrap: wrap;  */
-    /* height: 100vh; */
-    /* position: absolute;
-    top: 300px;
-    left:100px; */
     margin: 200px auto;
   }
 
-  /* .skill-row {
-    justify-content: space-between;
-  } */
-
   .skill-edit-col {
     display: flex;
-    /* justify-content: flex-start; */
     justify-content: center;
     margin-top: 20px;
   }
-
-  /* .skill-col::after {
-    display: block;
-    content:"";
-    width: 300px;
-  } */
-
-  /* .skill_edit_card {
-    margin: 30px 50px 0 0;
-  } */
 
   .skill_edit_flex-item {
     padding: 8px 16px;
@@ -231,7 +201,6 @@ export default {
   #skill_wrapper-flex-item:last-child {
     margin: 0 0 0 10px;
 	  padding: 0px 5px;
-    /* justify-content: end; */
   }
 
   .new_skill_form {
@@ -239,38 +208,4 @@ export default {
     margin: 0 auto;
   }
 
-  /* #skill_wrapper-flex-item p {
-    margin: 10px auto 10px;
-	  padding: 0px 5px;
-  } */
-
-  /* .v-application p  {
-    margin-bottom: 0px;
-  } */
-
-  /* .card {
-    
-	  padding: 0 0 10px 0;
-	  
-	
-  }
-  .flex-item {
-    height: 100px;
-    margin: 30px 0 0 0px;
-	  padding: 10px 15px;
-	  box-sizing: border-box;
-	
-  } */
-
-  /* .study_hours_form {
-    width: 100px;
-  } */
-
-  /* .v-responsive__content {
-    display: inline;
-  } */
-
-  /* .skill_name {
-    height: 100px;
-  } */
 </style>
