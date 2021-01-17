@@ -116,5 +116,13 @@ export default {
   .v-application--wrap {
   height: 24px !important;; 
 }
+.v-menu__content {
+    min-width: 0px ;
+    top: 18px !important;
+    right: 50px !important;
+    left: initial !important;
+    transform-origin: right top !important;
+    z-index: 302 ;
+}
 
 </style>

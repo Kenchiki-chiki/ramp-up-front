@@ -56,7 +56,7 @@
             入力完了
           </v-btn>
         </v-card-actions>
-        
+
     <account/>
     
   </div>
@@ -144,6 +144,11 @@ export default {
     display: flex;
     justify-content: center;
     margin: 200px auto;
+  }
+
+  .skill-col {
+    display: flex;
+    justify-content: center;
   }
   
 </style>
