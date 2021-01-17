@@ -95,16 +95,13 @@ export default {
     })
   },
   created() {
-    // console.log('===1===')
     this.fetchSkills()
   },
   methods: {
     async fetchSkills() {
-      // console.log('===2===')
       await this.$store.dispatch('skill/fetchSkills')
     },
     async onSubmit() {
-      console.log('===1===')
       const params = { study_times: [] }
       this.skills.forEach((skill, index) => {
         params['study_times'].push({
@@ -113,7 +110,6 @@ export default {
         })
       })
       const res = await this.$store.dispatch('build/addStudyTimes', params)
-      // console.log(res)
       if (res.errors) {
         this.errors = res.errors
       } 

@@ -70,12 +70,10 @@ export default {
     })
   },
   created() {
-    // console.log('===1===')
     this.fetchStudyTimes()
   },
   methods: {
     async fetchStudyTimes() {
-      // console.log('===2===')
       await this.$store.dispatch('build/fetchStudyTimes')
     },
   }

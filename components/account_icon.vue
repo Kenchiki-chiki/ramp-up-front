@@ -50,8 +50,6 @@
 <script>
 export default {
   middleware({ store, redirect }) {
-    console.log('===== middleware ====')
-    console.log(store.$auth.loggedIn)
     if(!store.$auth.loggedIn) {
       redirect('/login');
     }
@@ -63,11 +61,10 @@ export default {
     }
   },
   created() {
-    console.log('created')
+
   },
   methods: {
     logout () {
-      console.log(this.$auth.user)
       this.$auth.logout();
       this.$store.dispatch(`message/setContent`,{
       content: 'ログアウトしました',

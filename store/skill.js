@@ -60,10 +60,10 @@ export const mutations = {
   setSkills(state, payload) {
     state.skills = []
     const skills = state.skills.concat(payload)
-    // console.log('===5===')
-    // console.log(payload)
+    console.log('===5===')
+    console.log(payload)
     state.skills = skills
-    // console.log(state.skills)
+    console.log(state.skills)
   }
 }
 

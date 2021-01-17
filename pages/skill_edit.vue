@@ -118,19 +118,19 @@ export default {
     })
   },
   created() {
-    // console.log('===1===')
     this.fetchSkills()
   },
   methods: {
     async fetchSkills() {
-      // console.log('===2===')
       await this.$store.dispatch('skill/fetchSkills')
     },
     async deleteSkill(skillID) {
-      console.log('===0===')
-      console.log(skillID)
       await this.$store.dispatch('skill/deleteSkill', skillID)
       this.dialog = false 
+      this.$store.dispatch(`message/setContent`, {
+        content: 'スキルを削除しました',
+        timeout: 2000
+      })
       this.fetchSkills()
     },
     deleteSkillBtn(skillID) {
