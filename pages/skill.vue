@@ -93,6 +93,11 @@
 
 <script>
 export default {
+  middleware({ store, redirect }) {
+    if(store.$auth.loggedIn) {
+      redirect('/build');
+    }
+  },
   data() {
     return{
       skills: [],

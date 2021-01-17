@@ -5,7 +5,7 @@
 
     <div class="comment">
 
-      <div class="skill_edit_title_comment">スキルを編集できます。</div>
+      <div class="skill_edit_title_comment">スキルの追加や削除ができます。</div>
       <div class="skill_add_btn_wrapper">
         <Add />       
       </div>
