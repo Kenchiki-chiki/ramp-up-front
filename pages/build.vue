@@ -12,19 +12,13 @@
       <!-- <p class="skill_name">{{ skillName[0] }}</p>
       <p class="skill_name">{{ skillName[1] }}</p> -->
     </div>
-
-    <!-- <div>
-
-    </div> -->
-    
-        <!-- <div class="flex-container"> -->
         
         <v-container>
           <v-row>
-            <v-col v-for="(skill, index) in skills" class="skill-col">
+            <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="4">
 
               <v-card width="300px" class="card">
-              <v-card-text class="flex-item" cols="12" sm="6" md="4">
+              <v-card-text class="flex-item">
 
                 <v-responsive
                   max-width="400"
@@ -62,16 +56,7 @@
             入力完了
           </v-btn>
         </v-card-actions>
-        <!-- </div> -->
-      
-
-      
-      
-
-        <!-- <li v-for="skill in skillName">{{ skill }}</li> -->
-      
-    
-    
+        
     <account/>
     
   </div>
@@ -155,51 +140,10 @@ export default {
     letter-spacing: 0.05em;
   }
 
-  /* .container {
-    margin: 20px 0 0 0 ;
-  } */
-
   .container {
     display: flex;
     justify-content: center;
-    /* flex-direction: row; */
-    /* flex-wrap: wrap;  */
-    /* height: 100vh; */
-    /* position: absolute;
-    top: 300px;
-    left:100px; */
     margin: 200px auto;
   }
-  .skill-col {
-    display: flex;
-    /* justify-content: flex-start; */
-    justify-content: center;
-    margin: 0 0 0 24px;
-  }
-
-  /* .card {
-    
-	  padding: 0 0 10px 0;
-	  
-	
-  }
-  .flex-item {
-    height: 100px;
-    margin: 30px 0 0 0px;
-	  padding: 10px 15px;
-	  box-sizing: border-box;
-	
-  } */
-
-  /* .study_hours_form {
-    width: 100px;
-  } */
-
-  /* .v-responsive__content {
-    display: inline;
-  } */
-
-  /* .skill_name {
-    height: 100px;
-  } */
+  
 </style>

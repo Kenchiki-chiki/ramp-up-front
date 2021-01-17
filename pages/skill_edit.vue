@@ -15,7 +15,7 @@
 
         <v-container>
           <v-row class="skill-row">
-            <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="3">
+            <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
 
               <v-card width="200px" class="skill_edit_card">
               <v-card-text class="skill_edit_flex-item" >
@@ -191,16 +191,27 @@ export default {
     left:100px; */
     margin: 200px auto;
   }
-  .skill-col {
+
+  /* .skill-row {
+    justify-content: space-between;
+  } */
+
+  .skill-edit-col {
     display: flex;
     /* justify-content: flex-start; */
     justify-content: center;
-    margin: 0 0 0 24px;
+    margin-top: 20px;
   }
 
-  .skill_edit_card {
+  /* .skill-col::after {
+    display: block;
+    content:"";
+    width: 300px;
+  } */
+
+  /* .skill_edit_card {
     margin: 30px 50px 0 0;
-  }
+  } */
 
   .skill_edit_flex-item {
     padding: 8px 16px;
