@@ -1,0 +1,280 @@
+<template>
+  <div>
+
+    <div class="comment">
+      
+      <account/>
+      <div>明日のタスクを設定しましょう(保存後)</div>
+
+    </div>
+
+    <v-container>
+      <v-row class="task-row">
+        <v-col v-for="(task, index) in tasks" class="task-col" cols="12" sm="4" md="3">
+          <v-responsive
+            max-width="400"
+            class="task_wrapper"
+          >
+          <div class="task_wrapper">
+            
+            <!-- <form class="box"><input v-model="task1" type="text" class="task-form"></form> -->
+            <form class="box">
+              <div class="box-item" id="task_wrapper-flex-item">
+                {{ task.name }}
+                <v-icon class="task_wrapper-flex-item" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
+              </div>
+            </form>
+            
+            
+          </div>
+          </v-responsive>    
+        </v-col>
+        
+        
+
+
+      </v-row>
+    </v-container>
+
+    <v-card-actions>
+      <v-btn
+        @click=""
+        color="#666666"
+        class="white--text"
+      >
+        保存
+      </v-btn>
+    </v-card-actions>
+    <v-card-actions>
+      <v-btn
+        @click="deleteTasks"
+        color="#666666"
+        class="white--text"
+      >
+        削除
+      </v-btn>
+    </v-card-actions>
+
+    <v-row justify="center">  
+
+    <v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="headline">
+          タスク編集
+        </v-card-title>
+
+        <v-card-text>タスクを編集できます。</v-card-text>
+        <v-text-field
+          v-model="editTaskName"
+          class="edit_task_form"
+          type=""
+          label=""
+          style=""
+        >
+        </v-text-field>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="white"
+            text
+            @click="dialog = false"
+          >
+            キャンセル
+          </v-btn>
+
+          <v-btn
+            color="white"
+            text
+            @click="editTask(taskID)"
+          >
+            更新
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
+
+  </div>
+
+  
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import Navbar from '~/components/navbar.vue'
+import Account from '~/components/account_icon.vue'
+import Study from '~/components/study_hours.vue'
+import Error from '~/components/errors.vue'
+export default {
+  middleware({ store, redirect }) {
+    if(!store.$auth.loggedIn) {
+      redirect('/login');
+    }
+  },
+  data() {
+    return {
+      errors: [],
+      task: [],
+      taskID: [],
+      editTaskName: "",
+      dialog: false
+    }
+  },
+  components: {
+    Navbar,
+    Account,
+    Study,
+    Error
+  },
+  computed: {
+    ...mapGetters({
+      tasks: 'task/tasks',
+      // skillNames: 'skill/content'
+    })
+  },
+  created() {
+    this.fetchTasks()
+  },
+  methods: {
+    async fetchTasks() {
+      await this.$store.dispatch('task/fetchTasks')
+    },
+    async deleteTasks() {
+      await this.$store.dispatch('task/deleteTasks')
+      this.fetchTasks()
+      this.$router.push('/task')
+    },
+    async editTask() {
+      this.task = []
+      this.task.push(...[this.taskID,this.editTaskName])
+      console.log('===2===')
+      console.log(this.task)
+      await this.$store.dispatch('task/editTask', this.task)
+      this.dialog = false
+      // this.editTaskName = "" 
+      this.fetchTasks()
+    },
+    async editTaskBtn(taskID) {
+      this.taskID = taskID
+      const res = await this.$store.dispatch('task/fetchEditTask', this.taskID)
+      console.log('==fetchEditTaskRes====')
+      console.log(res)
+      this.editTaskName = res.name
+      this.taskID = []      
+      this.taskID = res.id
+      this.dialog = true
+    },
+    // editTaskBtn() {
+    //   console.log('===1===')
+    //   this.dialog = true
+    //   // this.taskID = []      
+    //   // this.taskID = taskID
+    // }
+    // async onSubmit() {
+    //   const params = { study_times: [] }
+    //   this.skills.forEach((skill, index) => {
+    //     params['study_times'].push({
+    //       skill_id: skill.id,
+    //       study_hour: this.studyHours[index]
+    //     })
+    //   })
+    //   const res = await this.$store.dispatch('build/addStudyTimes', params)
+    //   if (res.errors) {
+    //     this.errors = res.errors
+    //   } 
+    //   else {
+    //     this.$router.push('/study_time')
+        
+    //   }
+    // }
+  }
+}
+</script>
+
+<style>
+/* .task-box-wrapper {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+} */
+/* .task-box-wrapper p {
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  padding: 4%;
+  width: 260px; 
+  height: 130px; 
+  margin: 10px;
+} */
+/* .box {
+  border: 6px solid #333;
+}  */
+/* .box1 {
+  border: 2px solid #333;
+}
+.box2 {
+  border: 6px solid #333;
+} */
+/* .box3 {
+  border: 2px dashed #333;
+}
+.box4 {
+  border: 2px dotted #333;
+} */
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 200px auto;
+}
+
+.task-col {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.task_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #333;
+  /* border: 6px solid #333; */
+  height: 130px;
+} 
+
+.box-item {
+  text-align: center;
+  
+}
+
+.task-col form {
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  padding: 4%;
+  width: 260px; 
+  height: 130px; 
+  margin: 10px;
+}
+
+.task-form {
+  color: white;
+  border: none;
+  text-align: center;
+  /* outline: none; */
+  width: 100%;
+  height: 100%;
+  /* resize: none; */
+}
+
+.edit_task_form {
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+</style>
