@@ -20,7 +20,7 @@ Ramp Upは、学習記録を可視化するアプリです。手軽に学習時�
 #### VueCLIのインストール
 
 ```
-$ npm install -g @vue/cli
+$ yarn install
 ```
 
 ## 起動
