@@ -56,7 +56,6 @@ export const actions = {
   },
   async editTask({ commit }, params) {
     const url = `/api/v1/tasks/${params[0]}`
-    console.log('===2===')
     const res = await this.$axios.$patch(url,params, {
       headers: {
         'access-token': localStorage.getItem('access-token'),
@@ -64,12 +63,9 @@ export const actions = {
         client: localStorage.getItem('client'),
       },
     }).catch(() => {
-      console.log('===3===')
       return { errors: ['エラーが発生しました'] }
     })
     if (res.errors && res.errors.length !== 0) {
-      console.log('===4===')
-      console.log(res.errors)
       return {
         errors: res.errors
       }

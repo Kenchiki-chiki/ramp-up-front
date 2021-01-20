@@ -146,11 +146,8 @@ export default {
     async editTask() {
       this.task = []
       this.task.push(...[this.taskID,this.editTaskName])
-      console.log('===1===')
       const res = await this.$store.dispatch('task/editTask', this.task)
       if (res.errors) {
-        console.log('===5===')
-        console.log(res.errors)
         this.errors = []
         this.errors = res.errors
       } else{
