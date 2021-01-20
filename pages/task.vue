@@ -1,30 +1,12 @@
 <template>
   <div>
-
+    <Errors :errors="errors" />
     <div class="comment">
       
       <account/>
-      <div>明日のタスクを設定しましょう</div>
+      <!-- <div>明日のタスクを設定しましょう</div> -->
 
     </div>
-
-    <!-- <div class="task-box-wrapper">
-      <p class="box">
-        Donec consequat pellentesque
-      </p>
-
-      <p class="box">
-        Suspendisse et lorem vulputate
-      </p>
-
-      <p class="box">
-        Nam sollicitudin 
-      </p>
-
-      <p class="box">
-        Quisque vestibulum 
-      </p>
-    </div> -->
 
     <v-container>
       <v-row class="task-row">
@@ -34,9 +16,7 @@
             class="task_wrapper"
           >
           <div class="task_wrapper">
-            <!-- <p class="box">
-              Donec consequat pellentesque
-            </p> -->
+            
             <form class="box"><input v-model="task1" type="text" class="task-form"></form>
             
           </div>
@@ -228,6 +208,7 @@ import Account from '~/components/account_icon.vue'
 export default {
   data() {
     return {
+      errors: [],
       tasks: [],
       task1: "",
       task2: "",
@@ -256,16 +237,19 @@ export default {
   },
   methods: {
     async saveTasks() {
-      this.tasks.push(...[this.task1,this.task2,this.task3,this.task4,this.task5,this.task6,this.task7,this.task8,this.task9,this.task10,this.task11,this.task12,this.task13,this.task14,this.task15,this.task16]),
-      console.log('===1===')
-      console.log(this.tasks)
-      await this.$store.dispatch('task/saveTasks', this.tasks)
-      this.$router.push('/saved_task')
+      this.tasks.push(...[this.task1,this.task2,this.task3,this.task4,this.task5,this.task6,this.task7,this.task8,this.task9,this.task10,this.task11,this.task12,this.task13,this.task14,this.task15,this.task16])      
+      const res = await this.$store.dispatch('task/saveTasks', this.tasks)
+      if (res.errors) {
+        this.errors = res.errors
+        this.tasks = []
+      } 
+      else {
+        this.$router.push('/saved_task')     
+      }
+      
     },
     async fetchTasks() {
       const res = await this.$store.dispatch('task/fetchTasks')
-      console.log('===fetchTaskRes===')
-      console.log(res)
       if (res.length !== 0) this.$router.push('/saved_task')
     },
     async deleteTasks() {
@@ -280,33 +264,6 @@ export default {
 </script>
 
 <style>
-/* .task-box-wrapper {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-} */
-/* .task-box-wrapper p {
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  padding: 4%;
-  width: 260px; 
-  height: 130px; 
-  margin: 10px;
-} */
-/* .box {
-  border: 6px solid #333;
-}  */
-/* .box1 {
-  border: 2px solid #333;
-}
-.box2 {
-  border: 6px solid #333;
-} */
-/* .box3 {
-  border: 2px dashed #333;
-}
-.box4 {
-  border: 2px dotted #333;
-} */
 .container {
   display: flex;
   justify-content: center;

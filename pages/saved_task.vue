@@ -4,7 +4,7 @@
     <div class="comment">
       
       <account/>
-      <div>明日のタスクを設定しましょう(保存後)</div>
+      <!-- <div>明日のタスクを設定しましょう(保存後)</div> -->
 
     </div>
 
@@ -16,22 +16,17 @@
             class="task_wrapper"
           >
           <div class="task_wrapper">
-            
-            <!-- <form class="box"><input v-model="task1" type="text" class="task-form"></form> -->
+
             <form class="box">
               <div class="box-item" id="task_wrapper-flex-item">
                 {{ task.name }}
                 <v-icon class="task_wrapper-flex-item" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
               </div>
-            </form>
-            
+            </form>          
             
           </div>
           </v-responsive>    
         </v-col>
-        
-        
-
 
       </v-row>
     </v-container>
@@ -151,8 +146,6 @@ export default {
     async editTask() {
       this.task = []
       this.task.push(...[this.taskID,this.editTaskName])
-      console.log('===2===')
-      console.log(this.task)
       await this.$store.dispatch('task/editTask', this.task)
       this.dialog = false
       // this.editTaskName = "" 
@@ -161,68 +154,16 @@ export default {
     async editTaskBtn(taskID) {
       this.taskID = taskID
       const res = await this.$store.dispatch('task/fetchEditTask', this.taskID)
-      console.log('==fetchEditTaskRes====')
-      console.log(res)
       this.editTaskName = res.name
       this.taskID = []      
       this.taskID = res.id
       this.dialog = true
     },
-    // editTaskBtn() {
-    //   console.log('===1===')
-    //   this.dialog = true
-    //   // this.taskID = []      
-    //   // this.taskID = taskID
-    // }
-    // async onSubmit() {
-    //   const params = { study_times: [] }
-    //   this.skills.forEach((skill, index) => {
-    //     params['study_times'].push({
-    //       skill_id: skill.id,
-    //       study_hour: this.studyHours[index]
-    //     })
-    //   })
-    //   const res = await this.$store.dispatch('build/addStudyTimes', params)
-    //   if (res.errors) {
-    //     this.errors = res.errors
-    //   } 
-    //   else {
-    //     this.$router.push('/study_time')
-        
-    //   }
-    // }
   }
 }
 </script>
 
 <style>
-/* .task-box-wrapper {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-} */
-/* .task-box-wrapper p {
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  padding: 4%;
-  width: 260px; 
-  height: 130px; 
-  margin: 10px;
-} */
-/* .box {
-  border: 6px solid #333;
-}  */
-/* .box1 {
-  border: 2px solid #333;
-}
-.box2 {
-  border: 6px solid #333;
-} */
-/* .box3 {
-  border: 2px dashed #333;
-}
-.box4 {
-  border: 2px dotted #333;
-} */
 .container {
   display: flex;
   justify-content: center;

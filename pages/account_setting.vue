@@ -50,7 +50,7 @@ export default {
   methods: {
     editEmail() {
       this.$axios
-        .put('http://localhost:3000/api/v1/auth', this.user, {
+        .put('/api/v1/auth', this.user, {
           headers: {
             'access-token': localStorage.getItem('access-token'),
             uid: localStorage.getItem('uid'),
@@ -62,7 +62,7 @@ export default {
           localStorage.setItem('client', response.headers.client)
           localStorage.setItem('uid', response.headers.uid)
           localStorage.setItem('token-type', response.headers['token-type'])
-          window.location.href = '/'
+          this.$router.push('/build')     
         })
     },
   },
