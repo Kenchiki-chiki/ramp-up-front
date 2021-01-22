@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-    <!-- <study/> -->
     
 
     <div class="comment">
@@ -85,7 +84,6 @@
 import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
-import Study from '~/components/study_hours.vue'
 import Error from '~/components/errors.vue'
 import Add from '~/components/add_skill_modal.vue'
 export default {
@@ -104,7 +102,6 @@ export default {
   components: {
     Navbar,
     Account,
-    Study,
     Error,
     Add
   },
