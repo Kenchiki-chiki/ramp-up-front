@@ -65,7 +65,10 @@
     methods: {
       async addNewSkill() {
         this.newSkillName.push(...[this.newSkillInputName])
+        console.log(this.newSkillName)
         await this.$store.dispatch('skill/addSkills', this.newSkillName)
+        this.newSkillName = []
+        this.newSkillInputName = []
         this.dialog = false
         this.$store.dispatch(`message/setContent`, {
           content: 'スキルを追加しました',
