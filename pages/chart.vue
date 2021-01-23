@@ -1,45 +1,51 @@
 <template>
-  <div class="chart-wrapper">
-    
-    <account/>
+<div class="whole-wrapper">
+  <div class="whole-content-wrapper">
+    <Navbar />
+  
+    <div class="main-content-wrapper">
+      
+      <account/>
 
-    <div class="bar-container">
-      <BarChart />
+      <div class="bar-container">
+        <BarChart />
+
+      </div>
+
+        <v-container id="pie-container-flex">
+          <v-row class="pie-row">
+            <div class="pie-rank-wrapper">
+
+              <v-col v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
+
+                <div class="flex-item" cols="12">
+                    <div                   
+                      id="pie-responsive-wrapper"
+                    >
+                    <div class="pie_wrapper">
+                      <v-icon class="crown-icon pie_wrapper-flex-item">fas fa-crown</v-icon>
+                      <!-- <v-icon>mdi-crown</v-icon> -->
+                      <p class="pie_wrapper-flex-item">No. {{ index + 1 }}</p>
+                      <p class="pie_wrapper-flex-item">{{ pieChartData[0] }}</p>
+                      <p class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }}</p>
+                      <p class="pie_wrapper-flex-item">{{ '(' + percentageRound[index] + '%' + ')' }}</p>
+                    
+                    </div>
+                    <hr>
+                  </div>    
+
+                </div>
+
+              </v-col>
+            </div>
+
+            <PieChart />
+          </v-row>
+        </v-container>
 
     </div>
-
-      <v-container id="pie-container-flex">
-        <v-row class="pie-row">
-          <div class="pie-rank-wrapper">
-
-            <v-col v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
-
-              <div class="flex-item" cols="12">
-                  <div                   
-                    id="pie-responsive-wrapper"
-                  >
-                  <div class="pie_wrapper">
-                    <v-icon class="crown-icon pie_wrapper-flex-item">fas fa-crown</v-icon>
-                    <!-- <v-icon>mdi-crown</v-icon> -->
-                    <p class="pie_wrapper-flex-item">No. {{ index + 1 }}</p>
-                    <p class="pie_wrapper-flex-item">{{ pieChartData[0] }}</p>
-                    <p class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }}</p>
-                    <p class="pie_wrapper-flex-item">{{ '(' + percentageRound[index] + '%' + ')' }}</p>
-                  
-                  </div>
-                  <hr>
-                </div>    
-
-              </div>
-
-            </v-col>
-          </div>
-
-          <PieChart />
-        </v-row>
-      </v-container>
-
   </div>
+</div>
 </template>
 
 <script>
@@ -71,12 +77,26 @@ export default {
 </script>
 
 <style>
+.whole-wrapper {
+  height: 100vh;
+}
+
+.whole-content-wrapper {
+  display: flex;
+  /* width: 100%; */
+  height: 100vh;
+}
+
+.main-content-wrapper {
+  width: 100%;
+}
+
   .bar-container {
     padding: 60px 0 0 0;
   }
-  .container {
+  /* .container {
     margin: 200px auto;
-  }
+  } */
   .flex-item {
     display: flex;
     justify-content: center;

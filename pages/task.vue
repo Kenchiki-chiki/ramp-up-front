@@ -1,202 +1,665 @@
 <template>
-  <div>
+  <!-- <div class="whole-wrapper">
     <Errors :errors="errors" />
-    <div class="comment">
-      
-      <account/>
-      <!-- <div>明日のタスクを設定しましょう</div> -->
 
-    </div>
+    <div class="whole-content-wrapper">
+      <Navbar />
 
-    <v-container>
-      <v-row class="task-row">
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
+      <div class="main-content-wrapper">
+        <div class="comment">
+          
+          
+          <div>明日のタスクを設定しましょう。</div>
+
+        </div>
+
+        <v-container>
+          <v-row class="task-row" style="height: 600px;">
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                
+                <form class="box"><div class="box-bar"></div><input v-model="task1" type="text" class="task-form"></form>
+                
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task2" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task3" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task4" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task5" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task6" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task7" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task8" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task9" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task10" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task11" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task12" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task13" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task14" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3" style="background-color: #FFCDD2">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task15" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3" style="background-color: #F8BBD0">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task16" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
             
-            <form class="box"><input v-model="task1" type="text" class="task-form"></form>
-            
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
+
+
+          </v-row>
+        </v-container>
+        <v-card-actions>
+          <v-btn
+            @click="saveTasks"
+            color="#666666"
+            class="white--text"
           >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task2" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task3" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task4" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task5" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task6" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task7" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task8" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task9" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task10" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task11" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task12" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task13" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task14" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task15" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
-        <v-col class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-            <form class="box"><input v-model="task16" type="text" class="task-form"></form>           
-          </div>
-          </v-responsive>    
-        </v-col>
+            保存
+          </v-btn>
+        </v-card-actions>
         
+      </div>
+
+      </div>
 
 
-      </v-row>
-    </v-container>
+    <account/>
+  </div> -->
 
-    <v-card-actions>
-      <v-btn
-        @click="saveTasks"
-        color="#666666"
-        class="white--text"
-      >
-        保存
-      </v-btn>
-    </v-card-actions>
-    <!-- <v-card-actions>
-      <v-btn
-        @click="deleteTasks"
-        color="#666666"
-        class="white--text"
-      >
-        削除
-      </v-btn>
-    </v-card-actions> -->
+
+
+
+
+
+
+
+
+  <!-- <div class="whole-wrapper">
+    <Errors :errors="errors" />
+
+    <div class="whole-content-wrapper">
+      <Navbar />
+
+      <div class="main-content-wrapper">
+        <div class="comment">
+          
+          
+          <div>明日のタスクを設定しましょう。</div>
+
+        </div>
+
+        <v-container>
+          <v-row class="task-row" style="height: 600px;">
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                
+                <form class="box"><div class="box-bar"></div><input v-model="task1" type="text" class="task-form"></form>
+                
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task2" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task3" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task4" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task5" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task6" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task7" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task8" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task9" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task10" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task11" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task12" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task13" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task14" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3" style="background-color: #FFCDD2">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task15" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            <v-col class="task-col" cols="12" sm="4" lg="3" style="background-color: #F8BBD0">
+              <v-responsive
+                max-width="400"
+                class="task_wrapper"
+              >
+              <div class="task_wrapper">
+                <form class="box"><input v-model="task16" type="text" class="task-form"></form>           
+              </div>
+              </v-responsive>    
+            </v-col>
+            
+
+
+          </v-row>
+        </v-container>
+        <v-card-actions>
+          <v-btn
+            @click="saveTasks"
+            color="#666666"
+            class="white--text"
+          >
+            保存
+          </v-btn>
+        </v-card-actions>
+        
+      </div>
+
+      </div>
+
+
+    <account/>
+  </div> -->
+  
+<div class="whole-wrapper">
+  <Errors :errors="errors" />
+  <div class="whole-content-wrapper">
+      <Navbar />
+      <div class="main-content-wrapper">
+        <div class="comment">          
+          
+          <div>明日のタスクを設定しましょう。</div>
+
+        </div>
+        <v-container id="task-container">
+          <v-row>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task1" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task2" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task3" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task4" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task5" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task6" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task7" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task8" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task9" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task10" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task11" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task12" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task113" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task14" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task15" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="3"
+            >
+              <v-card height="140px">
+                <v-card-title class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                  <input v-model="task16" type="text" class="task-form">
+                
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-card-actions>
+          <v-btn
+            @click="saveTasks"
+            color="#666666"
+            class="white--text"
+          >
+            保存
+          </v-btn>
+        </v-card-actions>
+      </div>
   </div>
+  <account/>
+</div>
 
   
 </template>
@@ -264,16 +727,41 @@ export default {
 </script>
 
 <style>
-.container {
+.whole-wrapper {
+  height: 100vh;
+}
+
+.whole-content-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content-wrapper {
+  width: 100%;
+}
+
+.comment {
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0;
+  width: 100%;
+  letter-spacing: 0.05em;
   display: flex;
   justify-content: center;
-  margin: 200px auto;
+}
+
+#task-container {
+  display: flex;
+  justify-content: center;
+  margin: 70px auto;
 }
 
 .task-col {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  padding: 0px;
+  width: inherit;
 }
 
 .task_wrapper {
@@ -282,17 +770,33 @@ export default {
 }
 
 .box {
-  border: 2px solid #333;
+  background-color: #1E1E1E;
+  /* border: 2px solid #333;
+  box-sizing: border-box; */
+  /* outline: 2px solid #333; */
+  /* outline-offset: -2px; */
   /* border: 6px solid #333; */
+  width: 250px;
   height: 130px;
-} 
+  /* height: 250px; */
+}
+
+.box-bar {
+  background-color: aqua;
+  height: 10px;
+  width: 100%;
+}
 
 .task-col form {
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  padding: 4%;
-  width: 260px; 
-  height: 130px; 
-  margin: 10px;
+  /* border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px; */
+  /* padding: 4%; */
+  /* width: 200px;  */
+  /* height: 200px;  */
+  /* margin: 10px; */
+}
+
+.v-card__subtitle, .v-card__text, .v-card__title {
+    padding: 12px;
 }
 
 .task-form {
@@ -301,7 +805,8 @@ export default {
   text-align: center;
   /* outline: none; */
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: 106px;
   /* resize: none; */
 }
   

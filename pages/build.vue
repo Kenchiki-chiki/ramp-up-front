@@ -6,70 +6,66 @@
 
      <div class="whole-content-wrapper">
        <Navbar />
-     
-    
-    
 
-    
 
-      <div class="main-content-wrapper">
-        <div class="comment">
+        <div class="main-content-wrapper">
+          <div id="build-comment">
 
-          <div>一日お疲れさま。</div>
-          <div>学習時間を入力しましょう。</div>
-          <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
-          <!-- <p class="skill_name">{{ skillName[0] }}</p>
-          <p class="skill_name">{{ skillName[1] }}</p> -->
-        </div>
+            <div>一日お疲れさまです。</div>
+            <div>学習時間を入力しましょう。</div>
+            <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
+            <!-- <p class="skill_name">{{ skillName[0] }}</p>
+            <p class="skill_name">{{ skillName[1] }}</p> -->
+          </div>
             
-            <v-container>
-              
-              <v-row>
-                <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="4">
+          <v-container>
+            
+            <v-row>
+              <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="4">
 
-                  <v-card width="300px" class="card">
-                  <v-card-text class="flex-item">
+                <v-card width="300px" class="card">
+                <v-card-text class="flex-item">
 
-                    <v-responsive
-                      max-width="400"
-                      class="skill_wrapper"
-                    >
-                    <div class="skill_wrapper">
+                  <v-responsive
+                    max-width="400"
+                    class="skill_wrapper"
+                  >
+                  <div class="skill_wrapper">
 
-                      <p>{{ skill.name }}</p>
-                      <v-text-field
-                        class="study_hours_form"
-                        v-model="studyHours[index]"
-                        type="number"
-                        label="学習時間"
-                        min="0"
-                        max="24"
-                        step="0.5"
-                      ></v-text-field>
+                    <p>{{ skill.name }}</p>
+                    <v-text-field
+                      class="study_hours_form"
+                      v-model="studyHours[index]"
+                      type="number"
+                      label="学習時間"
+                      min="0"
+                      max="24"
+                      step="0.5"
+                    ></v-text-field>
 
-                      
-                    </div>
-                    </v-responsive>    
+                    
+                  </div>
+                  </v-responsive>    
 
-                  </v-card-text>
+                </v-card-text>
 
-                </v-card>
-                </v-col>
-              </v-row>
-            </v-container>
-            <v-card-actions>
-              <v-btn
-                @click="onSubmit"
-                color="#666666"
-                class="white--text"
-              >
-                入力完了
-              </v-btn>
-            </v-card-actions>
-      </div>
+              </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+          <v-card-actions>
+            <v-btn
+              @click="onSubmit"
+              color="#666666"
+              class="white--text"
+            >
+              入力完了
+            </v-btn>
+          </v-card-actions>
+       </div>
     
         
-    </div>
+      </div>
 
     <account/>
     
@@ -142,7 +138,7 @@ export default {
 
 .whole-content-wrapper {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
 }
 
@@ -151,7 +147,8 @@ export default {
 }
 
 
-  .comment {
+  #build-comment {
+    text-align: center;
     z-index: 10;
     font-size: 30px;
     /* position: absolute;

@@ -1,45 +1,55 @@
 <template>
-  <div class="wrapper">
-    
+  <div>
+    <div class="whole-wrapper">
+      <div class="whole-content-wrapper">
+        <Navbar />
 
-    <div class="comment">
+      <div class="main-content-wrapper">
+        <div class="comment">
 
-      <div class="skill_edit_title_comment">スキルの追加や削除ができます。</div>
-      <div class="skill_add_btn_wrapper">
-        <Add />       
+          <div class="skill_edit_title_comment">スキルの追加や削除ができます。</div>
+          <div class="skill_add_btn_wrapper">
+            <Add />       
+          </div>
+
+        </div>
+
+          <v-container>
+            <v-row class="skill-row">
+              <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
+
+                <v-card width="200px" class="skill_edit_card">
+                <v-card-text class="skill_edit_flex-item" >
+
+                  <v-responsive
+                    max-width="400"
+                    class="skill_wrapper"
+                  >
+                  <div class="skill_wrapper">
+
+                    <p id="skill_wrapper-flex-item">{{ skill.name }}</p>
+                    <v-icon class="skill_wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
+                    
+                  </div>
+                  </v-responsive>    
+
+                </v-card-text>
+
+              </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+          <v-card-actions>
+          </v-card-actions>
+
+        </div>
+
       </div>
 
+
+      <account/>
+
     </div>
-
-        <v-container>
-          <v-row class="skill-row">
-            <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
-
-              <v-card width="200px" class="skill_edit_card">
-              <v-card-text class="skill_edit_flex-item" >
-
-                <v-responsive
-                  max-width="400"
-                  class="skill_wrapper"
-                >
-                <div class="skill_wrapper">
-
-                  <p id="skill_wrapper-flex-item">{{ skill.name }}</p>
-                  <v-icon class="skill_wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
-                  
-                </div>
-                </v-responsive>    
-
-              </v-card-text>
-
-            </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-        <v-card-actions>
-        </v-card-actions>
- 
-    <account/>
 
     <v-row justify="center">  
 
@@ -136,15 +146,24 @@ export default {
 </script>
 
 <style>
+.whole-wrapper {
+  height: 100vh;
+}
+
+.whole-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-content-wrapper {
+  width: 100%;
+}
+
 .comment {
   z-index: 10;
-  position: absolute;
-  top: 70px;
-  right: 0px;
-  left: 0px;
-  margin: auto; 
+  margin: 70px 0 0 0;
   width: 100%;
-  height: 105px;
   letter-spacing: 0.05em;
   display: flex;
   justify-content: center;
@@ -171,7 +190,7 @@ export default {
   .container {
     display: flex;
     justify-content: center;
-    margin: 200px auto;
+    margin: 100px auto;
   }
 
   .skill-edit-col {
