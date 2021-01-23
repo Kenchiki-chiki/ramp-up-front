@@ -88,9 +88,17 @@ export default {
     // }
   },
   created() {
-    this.fetchStudyTimes()
-    console.log('_date')
     console.log(this.$route.params.date)
+    if (isNaN(this.$route.params.date) === false) {
+      console.log('===数値です_date===')
+      this.fetchStudyTimes()
+      console.log('_date')
+      console.log(this.$route.params.date)
+    } else{
+        console.log('===数値ではありません_date===')
+        console.log(`../${this.$route.params.date}`)
+        this.$router.push(`../${this.$route.params.date}`)
+      }
 
   },
   methods: {

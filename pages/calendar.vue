@@ -143,8 +143,14 @@ export default {
     },
 
     async fetchThatDayStudyTimes(date) {
-      await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
-      this.$router.push(`/that_day_study_time/${date}`)
+      console.log('===数値判定===')
+      if (isNaN(date) === false) {
+        console.log('===数値です===')
+        await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
+        this.$router.push(`/that_day_study_time/${date}`)
+      } else{
+        console.log('===数値ではありません===')
+      }
     },
     getDayEvents(date){
         return this.events.filter(event => {
