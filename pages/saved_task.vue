@@ -351,8 +351,12 @@ export default {
 }
 
 .edit_task_form {
-    width: 250px;
-    margin: 0 auto;
-  }
+  width: 250px;
+  margin: 0 auto;
+}
+
+.v-dialog {
+  margin-left: 290px;
+}
   
 </style>

@@ -224,4 +224,8 @@ export default {
     margin: 0 auto;
   }
 
+  .v-dialog {
+    margin-left: 290px;
+  }
+
 </style>

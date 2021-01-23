@@ -80,3 +80,8 @@
   }
 </script>
 
+<style>
+.v-dialog {
+  margin-left: 290px;
+}
+</style>
