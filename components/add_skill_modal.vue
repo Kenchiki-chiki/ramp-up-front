@@ -1,13 +1,13 @@
 <template>
   <v-row justify="center">
     <v-btn
-    id="skill_add_btn"
+    id="skill-add-btn"
       color="grey darken-4"
       dark
       @click.stop="dialog = true"
     >
-      <v-icon class="skill_add_icon">fas fa-plus</v-icon>
-      <div class="skill_add_comment">追加</div>
+      <v-icon class="skill-add-icon">fas fa-plus</v-icon>
+      <div class="skill-add-comment">追加</div>
     </v-btn>
 
     <v-dialog
@@ -22,7 +22,7 @@
         <v-card-text>スキル名を入力してください。</v-card-text>
         <v-text-field
           v-model="newSkillInputName"
-          class="new_skill_form"
+          class="new-skill-form"
           type=""
           label="新しいスキル名"
           style=""

@@ -6,7 +6,7 @@
     
 
     <div class="main-content-wrapper">
-      <div class="comment">
+      <div id="study-time-comment">
 
           <div>今日の学習時間は</div>       
           <v-container>
@@ -100,7 +100,8 @@ export default {
   width: 100%;
 }
 
-  .comment {
+  #study-time-comment {
+    text-align: center;
     z-index: 10;
     font-size: 30px;
     margin: 70px 0 0 0 ; 

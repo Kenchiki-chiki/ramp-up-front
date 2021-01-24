@@ -7,8 +7,8 @@
       <div class="main-content-wrapper">
         <div class="comment">
 
-          <div class="skill_edit_title_comment">スキルの追加や削除ができます。</div>
-          <div class="skill_add_btn_wrapper">
+          <div class="skill-edit-title-comment">スキルの追加や削除ができます。</div>
+          <div class="skill-add-btn-wrapper">
             <Add />       
           </div>
 
@@ -19,16 +19,16 @@
               <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
 
                 <v-card width="200px" class="skill_edit_card">
-                <v-card-text class="skill_edit_flex-item" >
+                <v-card-text class="skill-edit-flex-item" >
 
                   <v-responsive
                     max-width="400"
-                    class="skill_wrapper"
+                    class="skill-edit-wrapper"
                   >
-                  <div class="skill_wrapper">
+                  <div class="skill-edit-wrapper">
 
-                    <p id="skill_wrapper-flex-item">{{ skill.name }}</p>
-                    <v-icon class="skill_wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
+                    <p id="skill-wrapper-flex-item">{{ skill.name }}</p>
+                    <v-icon class="skill-wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
                     
                   </div>
                   </v-responsive>    
@@ -168,22 +168,22 @@ export default {
   display: flex;
   justify-content: center;
 }
-  .skill_edit_title_comment {   
+  .skill-edit-title-comment {   
     font-size: 30px;
   }
-  .skill_add_btn_wrapper {
+  .skill-add-btn-wrapper {
     margin: 3px 0px 0 0 ;
     height: 30px;
     display: flex;
     justify-content: center;
   }
-  #skill_add_btn {
+  #skill-add-btn {
     padding: 20px 10px;
   }
-  .skill_add_icon {
+  .skill-add-icon {
     margin: 0 4px 0 0;
   }
-  .skill_add_comment {
+  .skill-add-comment {
     margin: 0px 0 0 4px;
   }
 
@@ -199,27 +199,27 @@ export default {
     margin-top: 20px;
   }
 
-  .skill_edit_flex-item {
+  .skill-edit-flex-item {
     padding: 8px 16px;
     height: 58px;
   }
 
-  .skill_wrapper {
+  .skill-edit-wrapper {
     display: flex;
     justify-content: center;
   }
 
-  #skill_wrapper-flex-item {
+  #skill-wrapper-flex-item {
     margin: 10px 0px 10px;
 	  padding: 0px 20px 0 5px;
   }
 
-  #skill_wrapper-flex-item:last-child {
+  #skill-wrapper-flex-item:last-child {
     margin: 0 0 0 10px;
 	  padding: 0px 5px;
   }
 
-  .new_skill_form {
+  .new-skill-form {
     width: 250px;
     margin: 0 auto;
   }
