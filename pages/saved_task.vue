@@ -108,8 +108,8 @@
 
         </div>
 
-        <v-container>
-          <v-row class="">
+        <v-container class="saved-task-container">
+          <v-row>
             <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3">
               
               <v-card height="140px">
@@ -133,24 +133,16 @@
 
           </v-row>
         </v-container>
-        <v-card-actions>
-      <v-btn
-        @click=""
-        color="#666666"
-        class="white--text"
-      >
-        保存
-      </v-btn>
-    </v-card-actions>
-    <v-card-actions>
-      <v-btn
-        @click="deleteTasks"
-        color="#666666"
-        class="white--text"
-      >
-        削除
-      </v-btn>
-    </v-card-actions>
+        <v-card-actions class="saved-task-v-card-actions">
+        <v-btn
+          @click="deleteTasks"
+          color="#666666"
+          class="white--text delete-task-btn"
+        >
+          削除
+          <v-icon id="delete-task-icon">fa fa-trash-alt</v-icon>   
+        </v-btn>
+      </v-card-actions>
 
     <v-row justify="center">  
 
@@ -296,10 +288,10 @@ export default {
   justify-content: center;
 }
 
-.container {
+.saved-task-container {
   display: flex;
   justify-content: center;
-  margin: 70px auto;
+  margin: 70px auto 0px;
 }
 
 /* .task-col {
@@ -319,7 +311,7 @@ export default {
   flex-direction: column;
   /* border: 2px solid #333; */
   /* border: 6px solid #333; */
-  height: 106px;
+  height: 116px;
 } 
 
 /* .box-item {
@@ -355,8 +347,19 @@ export default {
   margin: 0 auto;
 }
 
+.saved-task-v-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 6px 0 0;
+}
+
 .v-dialog {
   margin-left: 290px;
+}
+
+#delete-task-icon {
+  font-size: 1.2em;
+  margin-left: 4px;
 }
   
 </style>

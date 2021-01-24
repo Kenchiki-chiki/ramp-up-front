@@ -647,13 +647,14 @@
             </v-col>
           </v-row>
         </v-container>
-        <v-card-actions>
+        <v-card-actions class="task-v-card-actions">
           <v-btn
             @click="saveTasks"
             color="#666666"
-            class="white--text"
+            class="white--text save-task-btn"
           >
             保存
+            <v-icon id="save-task-icon">fas fa-save</v-icon>  
           </v-btn>
         </v-card-actions>
       </div>
@@ -753,7 +754,7 @@ export default {
 #task-container {
   display: flex;
   justify-content: center;
-  margin: 70px auto;
+  margin: 70px auto 0px;
 }
 
 .task-col {
@@ -806,8 +807,22 @@ export default {
   /* outline: none; */
   width: 100%;
   /* height: 100%; */
-  height: 106px;
+  height: 116px;
   /* resize: none; */
+}
+
+.task-v-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-task-btn {
+  margin: 0 6px 0 0;
+}
+
+#save-task-icon {
+  font-size: 1.2em;
+  margin-left: 4px;
 }
   
 </style>

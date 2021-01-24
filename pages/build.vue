@@ -18,7 +18,7 @@
             <p class="skill_name">{{ skillName[1] }}</p> -->
           </div>
             
-          <v-container>
+          <v-container class="build-cantainer">
             
             <v-row>
               <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="4">
@@ -53,11 +53,11 @@
               </v-col>
             </v-row>
           </v-container>
-          <v-card-actions>
+          <v-card-actions class="build-v-card-actions">
             <v-btn
               @click="onSubmit"
               color="#666666"
-              class="white--text"
+              class="white--text build-btn"
             >
               入力完了
             </v-btn>
@@ -127,7 +127,7 @@ export default {
         
       }
     }
-  }
+  },
 }
 </script>
 
@@ -162,15 +162,24 @@ export default {
     letter-spacing: 0.05em;
   }
 
-  .container {
+  .build-cantainer {
     display: flex;
     justify-content: center;
-    margin: 100px auto;
+    margin: 100px auto 40px;
   }
 
   .skill-col {
     display: flex;
     justify-content: center;
+  }
+
+  .build-v-card-actions{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .build-btn {
+    margin: 0 20px 0 0 ;    
   }
   
 </style>
