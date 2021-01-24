@@ -64,6 +64,7 @@
     },
     methods: {
       async addNewSkill() {
+        
         this.newSkillName.push(...[this.newSkillInputName])
         await this.$store.dispatch('skill/addSkills', this.newSkillName)
         this.dialog = false

@@ -599,7 +599,7 @@
                   <span class="headline"></span>
                   <v-spacer></v-spacer>
                 </v-card-title>
-                  <input v-model="task113" type="text" class="task-form">
+                  <input v-model="task13" type="text" class="task-form">
                 
               </v-card>
             </v-col>
