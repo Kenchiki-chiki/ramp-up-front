@@ -22,6 +22,7 @@
                   v-model="user.password"
                   prepend-icon="mdi-lock"
                   append-icon="mdi-eye-off"
+                  type="password"
                   label="パスワード"
                 />
                 <v-card-actions>

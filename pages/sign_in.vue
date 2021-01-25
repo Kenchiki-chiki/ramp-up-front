@@ -15,8 +15,10 @@
           />
           <v-text-field
             v-model="password"
-            prepend-icon="mdi-lock"
-            append-icon="mdi-eye-off"
+            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            prepend-icon="mdi-lock"            
+            v-bind:type="showPassword ? 'text' : 'password'"
+            @click:append="showPassword = !showPassword"
             label="password"
           />
           <v-card-actions>
@@ -45,6 +47,7 @@ export default {
     return {
       password: '',
       email: '',
+      showPassword: false
     }
   },
   methods: {
