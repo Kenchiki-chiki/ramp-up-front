@@ -221,7 +221,7 @@ export default {
   }
 
   #delete-skill-icon {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 
   .new-skill-form {
