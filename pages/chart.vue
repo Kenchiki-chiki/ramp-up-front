@@ -1,12 +1,11 @@
 <template>
 <div class="whole-wrapper">
   <div class="whole-content-wrapper">
-    <Navbar />
-  
-    <div class="main-content-wrapper">
-      
-      <account/>
+    <Navbar />  
 
+    <div class="main-content-wrapper">     
+      <account/>
+      
       <div class="bar-container">
         <BarChart />
       </div>
@@ -24,7 +23,6 @@
                         <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
                         <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
                         <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
-                        <!-- <v-col class="pie_wrapper-flex-item"></v-col>                    -->
                       </v-row>
                       <hr>
                     </div>    
@@ -87,11 +85,8 @@ export default {
   .bar-container {
     padding: 60px 0 0 0;
   }
-  
-  /* .flex-item {
-    display: flex;
-    justify-content: center;
-  } */
+
+
   #pie-responsive-wrapper {
     width: 400px;
   }
@@ -103,25 +98,11 @@ export default {
     margin: 30px auto 0px;
 	  padding: 5px 5px;
     line-height: 36px;
-    /* display: flex;
-    flex-direction: column; */
   }
 
   .pie_wrapper-flex-item:first-child {
-    /* margin: 10px 0;
-    padding: 5px 0; */
-    /* line-height: 60px; */
     margin: 25px 0 0 0;
     text-align: center;
-  }
-
-  .pie_wrapper-flex-item:nth-child(4) {
-    /* margin: 10px 0 10px 30px; */
-  }
-
-  .pie_wrapper-flex-item:last-child {
-    /* margin: 10px 0;
-    padding: 5px 0; */
   }
 
   .crown-icon {
