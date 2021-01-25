@@ -83,7 +83,6 @@ export default {
 
 .whole-content-wrapper {
   display: flex;
-  /* width: 100%; */
   height: 100vh;
 }
 
@@ -94,9 +93,7 @@ export default {
   .bar-container {
     padding: 60px 0 0 0;
   }
-  /* .container {
-    margin: 200px auto;
-  } */
+  
   .flex-item {
     display: flex;
     justify-content: center;
@@ -143,7 +140,3 @@ export default {
   }
 
 </style>
-
-
-
-

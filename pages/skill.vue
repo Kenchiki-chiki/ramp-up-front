@@ -5,7 +5,6 @@
         <h1 class="display-1">
           スキルを設定しましょう。
         </h1>
-        <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
       </v-card-title>
       <v-card-text>
         <v-form ref="form" lazy-validation>
@@ -115,12 +114,9 @@ export default {
       await this.$store.dispatch('skill/addSkills', this.skills)  
       this.skills.name = ''
       this.$router.push('/build')
-    },
+    },   
     
-    
-    
-  },
-  
+  },  
 
 }
 </script>

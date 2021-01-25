@@ -60,7 +60,6 @@ export default {
           },
         })
        .then(
-           //ここでメッセージストアのアクション呼ぶ
           (response) => {
             this.$store.dispatch(`message/setContent`,{
             content: 'ログインに成功しました',
@@ -76,8 +75,7 @@ export default {
           },
           (error) => {
             return error
-          }
-          
+          }          
           
         )
     },

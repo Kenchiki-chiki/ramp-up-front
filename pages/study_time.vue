@@ -2,8 +2,7 @@
   <div class="whole-wrapper">
 
     <div class="whole-content-wrapper">
-      <Navbar />
-    
+      <Navbar />  
 
     <div class="main-content-wrapper">
       <div id="study-time-comment">
@@ -34,16 +33,13 @@
             </v-row>
           </v-container>
           <v-card-actions>
-            
           </v-card-actions>
 
-          <div>明日も最高な1日にしましょう！</div>
+          <div>明日も最高の1日にしましょう！</div>
 
         </div>
       </div>
-    </div>
-      
-    
+    </div>    
     
     <account/>
     

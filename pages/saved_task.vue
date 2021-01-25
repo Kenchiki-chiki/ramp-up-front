@@ -1,120 +1,20 @@
 <template>
-  <!-- <div>
-    <Errors :errors="errors" />
-    <div class="comment">
-      
-      <account/> -->
-      <!-- <div>明日のタスクを設定しましょう(保存後)</div> -->
-
-    <!-- </div>
-
-    <v-container>
-      <v-row class="task-row">
-        <v-col v-for="(task, index) in tasks" class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-
-            <form class="box">
-              <div class="box-item" id="task_wrapper-flex-item">
-                {{ task.name }}
-                <v-icon class="task_wrapper-flex-item" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
-              </div>
-            </form>          
-            
-          </div>
-          </v-responsive>    
-        </v-col>
-
-      </v-row>
-    </v-container> -->
-
-    <!-- <v-card-actions>
-      <v-btn
-        @click=""
-        color="#666666"
-        class="white--text"
-      >
-        保存
-      </v-btn>
-    </v-card-actions>
-    <v-card-actions>
-      <v-btn
-        @click="deleteTasks"
-        color="#666666"
-        class="white--text"
-      >
-        削除
-      </v-btn>
-    </v-card-actions>
-
-    <v-row justify="center">  
-
-      <v-dialog
-        v-model="dialog"
-        max-width="290"
-      >
-        <v-card>
-          <v-card-title class="headline">
-            タスク編集
-          </v-card-title>
-
-          <v-card-text>タスクを編集できます。</v-card-text>
-          <v-text-field
-            v-model="editTaskName"
-            class="edit_task_form"
-            type=""
-            label=""
-            style=""
-          >
-          </v-text-field>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn
-              color="white"
-              text
-              @click="dialog = false"
-            >
-              キャンセル
-            </v-btn>
-
-            <v-btn
-              color="white"
-              text
-              @click="editTask(taskID)"
-            >
-              更新
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-row> -->
-
-  <!-- </div> -->
-
-
-
 <div class="whole-wrapper">
     <Errors :errors="errors" />
     <div class="whole-content-wrapper">
       <Navbar />
       <div class="main-content-wrapper">
-        <div class="comment">
-            
-          <div>明日のタスクを設定しましょう(保存後)</div>
-
+        <div class="comment">            
+          <div>明日のタスクを設定しましょう。</div>
         </div>
 
-        <v-container class="saved-task-container">
+        <v-container id="saved-task-container">
           <v-row>
             <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3">
+            <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
               
               <v-card height="140px" id="saved-task-v-card">
-                <v-card-title class="blue white--text">
-                  <!-- <v-icon id="edit-task-icon2" @click="editTaskBtn(task.id)">fas fa-edit</v-icon> -->
+                <v-card-title id="saved-task-v-card-title-bar" class="blue white--text">
                   <span class="headline"></span>
                   <v-spacer></v-spacer>
                 </v-card-title>
@@ -122,14 +22,9 @@
                   <div class="box-item saved-task-form" id="task_wrapper-flex-item">
                     {{ task.name }}
                     <v-icon id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
-                    <!-- <v-icon class="" @click="editTaskBtn(task.id)" v-text="'mdi-circle-edit-outline'"></v-icon> -->
                   </div>
                 </form>          
-
-              </v-card>
-
-                
-              
+              </v-card>             
               
             </v-col>
 
@@ -199,7 +94,6 @@
 import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
-import Study from '~/components/study_hours.vue'
 import Error from '~/components/errors.vue'
 export default {
   middleware({ store, redirect }) {
@@ -219,13 +113,11 @@ export default {
   components: {
     Navbar,
     Account,
-    Study,
     Error
   },
   computed: {
     ...mapGetters({
-      tasks: 'task/tasks',
-      // skillNames: 'skill/content'
+      tasks: 'task/tasks'
     })
   },
   created() {
@@ -290,43 +182,21 @@ export default {
   justify-content: center;
 }
 
-.saved-task-container {
+#saved-task-container {
   display: flex;
   justify-content: center;
   margin: 70px auto 0px;
 }
 
-/* .task-col {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-} */
-
-/* .task_wrapper {
-  display: flex;
-  justify-content: center;
-} */
-
 .saved-box {
   /* display: flex;
   justify-content: center;
   flex-direction: column; */
-  /* border: 2px solid #333; */
-  /* border: 6px solid #333; */
   height: 116px;
 } 
 
-/* .box-item {
-  text-align: center;
-  
-} */
-
-/* .task-col form {
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  padding: 4%;
-  width: 260px; 
-  height: 130px; 
-  margin: 10px;
+/* #saved-task-v-col-1 #saved-task-v-card-title-bar {
+  background-color: ;
 } */
 
 .v-card__subtitle, .v-card__text, .v-card__title {
@@ -341,14 +211,11 @@ export default {
   color: white;
   border: none;
   text-align: center;
-  /* outline: none; */
   /* width: 100%; */
   height: 100%;
-  
   /* resize: none; */
   display: flex;
   justify-content: center;
-  /* justify-content: flex-end; */
   flex-direction: column;
 }
 
@@ -362,8 +229,6 @@ export default {
   position: absolute;
   top: 2px;
   right: 0px;
-  /* align-self: flex-end; */
-  /* margin-top: auto; */
 }
 
 .saved-task-v-card-actions {

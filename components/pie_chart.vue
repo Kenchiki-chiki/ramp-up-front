@@ -62,7 +62,6 @@ export default {
         this.chartData.datasets[0].data = res[1]       
       }
     }
-
   
 }
 </script>

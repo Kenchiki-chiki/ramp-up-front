@@ -126,7 +126,6 @@ export default {
 </script>
 
 <style>
-
   .app-title {
     font-size: 70px;
     font-weight: 300;

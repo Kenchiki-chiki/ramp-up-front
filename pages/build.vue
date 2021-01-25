@@ -10,12 +10,8 @@
 
         <div class="main-content-wrapper">
           <div id="build-comment">
-
             <div>一日お疲れさまです。</div>
-            <div>学習時間を入力しましょう。</div>
-            <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
-            <!-- <p class="skill_name">{{ skillName[0] }}</p>
-            <p class="skill_name">{{ skillName[1] }}</p> -->
+            <div>学習時間を入力しましょう。</div>       
           </div>
             
           <v-container class="build-cantainer">
@@ -62,13 +58,11 @@
               入力完了
             </v-btn>
           </v-card-actions>
-       </div>
-    
+       </div>    
         
       </div>
 
-    <account/>
-    
+    <account/>   
     
   </div>
 </template>
@@ -99,8 +93,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      skills: 'skill/skills',
-      // skillNames: 'skill/content'
+      skills: 'skill/skills'
     })
   },
   created() {
@@ -151,11 +144,6 @@ export default {
     text-align: center;
     z-index: 10;
     font-size: 30px;
-    /* position: absolute;
-    top: 70px;
-    right: 0px;
-    left: 0px; */
-    /* margin: auto;  */
     margin: 70px 0 0 0 ;
     width: 100%;
     height: 105px;

@@ -1,5 +1,4 @@
 <template>
-    <!-- <v-app class="account_icon"> -->
     <div class="account_icon">
       <v-icon @click="drawer = true" color="#666666">
       mdi-account-circle
@@ -41,10 +40,7 @@
         </v-list>
       </v-menu>
     </div>
-    <!-- </v-app> -->
 </template>
-
-
 
 
 <script>
@@ -92,27 +88,18 @@ export default {
 </script>
 
 
-
-
 <style>
-  .account_icon {
+.account_icon {
   z-index: 300;
   position: fixed;
   top: 20px;
   right: 20px;
 }
-  /* .v-list {
-    position: absolute;
-    top: 60px;
-    right: 60px;
-    width: 100%;
-    height: 144px;
-    
-  } */
 
-  .v-application--wrap {
+.v-application--wrap {
   height: 24px !important;; 
 }
+
 .v-menu__content {
     min-width: 0px ;
     top: 18px !important;
