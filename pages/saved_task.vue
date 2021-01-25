@@ -112,15 +112,17 @@
           <v-row>
             <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3">
               
-              <v-card height="140px">
+              <v-card height="140px" id="saved-task-v-card">
                 <v-card-title class="blue white--text">
+                  <!-- <v-icon id="edit-task-icon2" @click="editTaskBtn(task.id)">fas fa-edit</v-icon> -->
                   <span class="headline"></span>
                   <v-spacer></v-spacer>
                 </v-card-title>
                 <form class="saved-box">
                   <div class="box-item saved-task-form" id="task_wrapper-flex-item">
                     {{ task.name }}
-                    <v-icon class="" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
+                    <v-icon id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
+                    <!-- <v-icon class="" @click="editTaskBtn(task.id)" v-text="'mdi-circle-edit-outline'"></v-icon> -->
                   </div>
                 </form>          
 
@@ -306,9 +308,9 @@ export default {
 } */
 
 .saved-box {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   /* border: 2px solid #333; */
   /* border: 6px solid #333; */
   height: 116px;
@@ -331,20 +333,37 @@ export default {
     padding: 12px;
 }
 
+#saved-task-v-card {
+  position: relative;
+}
+
 .saved-task-form {
   color: white;
   border: none;
   text-align: center;
   /* outline: none; */
-  /* width: 100%;
-  height: 100%; */
+  /* width: 100%; */
+  height: 100%;
   
   /* resize: none; */
+  display: flex;
+  justify-content: center;
+  /* justify-content: flex-end; */
+  flex-direction: column;
 }
 
 .edit_task_form {
   width: 250px;
   margin: 0 auto;
+}
+
+#edit-task-icon {
+  font-size: 1.2em;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  /* align-self: flex-end; */
+  /* margin-top: auto; */
 }
 
 .saved-task-v-card-actions {
