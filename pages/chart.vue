@@ -9,38 +9,32 @@
 
       <div class="bar-container">
         <BarChart />
-
       </div>
 
         <v-container id="pie-container-flex">
-          <v-row class="pie-row">
+          <div class="pie-row">
             <div class="pie-rank-wrapper">
 
-              <v-col v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
+              <div v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
 
-                <div class="flex-item" cols="12">
-                    <div                   
-                      id="pie-responsive-wrapper"
-                    >
-                    <div class="pie_wrapper">
-                      <v-icon class="crown-icon pie_wrapper-flex-item">fas fa-crown</v-icon>
-                      <!-- <v-icon>mdi-crown</v-icon> -->
-                      <p class="pie_wrapper-flex-item">No. {{ index + 1 }}</p>
-                      <p class="pie_wrapper-flex-item">{{ pieChartData[0] }}</p>
-                      <p class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }}</p>
-                      <p class="pie_wrapper-flex-item">{{ '(' + percentageRound[index] + '%' + ')' }}</p>
-                    
-                    </div>
-                    <hr>
-                  </div>    
+                  <div class="flex-item">
+                    <div id="pie-responsive-wrapper">
+                      <v-row class="pie_wrapper">
+                        <v-col cols="2" class="pie_wrapper-flex-item"><v-icon class="crown-icon">fas fa-crown</v-icon></v-col>
+                        <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
+                        <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
+                        <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
+                        <!-- <v-col class="pie_wrapper-flex-item"></v-col>                    -->
+                      </v-row>
+                      <hr>
+                    </div>    
+                  </div>
 
-                </div>
-
-              </v-col>
+              </div>
             </div>
 
             <PieChart />
-          </v-row>
+          </div>
         </v-container>
 
     </div>
@@ -94,10 +88,10 @@ export default {
     padding: 60px 0 0 0;
   }
   
-  .flex-item {
+  /* .flex-item {
     display: flex;
     justify-content: center;
-  }
+  } */
   #pie-responsive-wrapper {
     width: 400px;
   }
@@ -106,21 +100,32 @@ export default {
     justify-content: center;    
   }
   .pie_wrapper-flex-item {
-    margin: 10px auto;
+    margin: 30px auto 0px;
 	  padding: 5px 5px;
+    line-height: 36px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+
+  .pie_wrapper-flex-item:first-child {
+    /* margin: 10px 0;
+    padding: 5px 0; */
+    /* line-height: 60px; */
+    margin: 25px 0 0 0;
+    text-align: center;
   }
 
   .pie_wrapper-flex-item:nth-child(4) {
-    margin: 10px 0 10px 30px;
+    /* margin: 10px 0 10px 30px; */
   }
 
   .pie_wrapper-flex-item:last-child {
-    margin: 10px 0;
-    padding: 5px 0;
+    /* margin: 10px 0;
+    padding: 5px 0; */
   }
 
   .crown-icon {
-    margin: 0 0 10px 0;
+    margin: 0 0 0px 0;
   }
 
   #pie-container-flex {
