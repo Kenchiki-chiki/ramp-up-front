@@ -6,7 +6,7 @@
       dark
       @click.stop="dialog = true"
     >
-      <v-icon class="skill-add-icon">fas fa-plus</v-icon>
+      <v-icon id="add-skill-icon">fas fa-plus</v-icon>
       <div class="skill-add-comment">追加</div>
     </v-btn>
 
@@ -64,7 +64,7 @@
     },
     methods: {
       async addNewSkill() {
-        
+
         this.newSkillName.push(...[this.newSkillInputName])
         await this.$store.dispatch('skill/addSkills', this.newSkillName)
         this.dialog = false

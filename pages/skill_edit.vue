@@ -28,7 +28,7 @@
                   <div class="skill-edit-wrapper">
 
                     <p id="skill-wrapper-flex-item">{{ skill.name }}</p>
-                    <v-icon class="skill-wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
+                    <v-icon id="delete-skill-icon" class="skill-wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
                     
                   </div>
                   </v-responsive>    
@@ -180,8 +180,9 @@ export default {
   #skill-add-btn {
     padding: 20px 10px;
   }
-  .skill-add-icon {
+  #add-skill-icon {
     margin: 0 4px 0 0;
+    font-size: 1.5em;
   }
   .skill-add-comment {
     margin: 0px 0 0 4px;
@@ -217,6 +218,10 @@ export default {
   #skill-wrapper-flex-item:last-child {
     margin: 0 0 0 10px;
 	  padding: 0px 5px;
+  }
+
+  #delete-skill-icon {
+    font-size: 1.4em;
   }
 
   .new-skill-form {
