@@ -74,6 +74,8 @@ export const mutations = {
 
 export const getters = {
   pieChart(state) {
+    console.log('===pieChartGetters===')
+    console.log(state.pieChartDatas)
     return state.pieChartDatas
   },
   percentage(state) {

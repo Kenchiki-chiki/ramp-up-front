@@ -14,7 +14,7 @@
           <div class="pie-row">
             <div class="pie-rank-wrapper">
 
-              <div v-for="(pieChartData, index) in pieChartDatas" :key="index" class="pie-chart-col" v-if="index >= 0 && index < 3">
+              <div v-for="(pieChartData, index) in topThree" :key="index" class="pie-chart-col" >
 
                   <div class="flex-item">
                     <div id="pie-responsive-wrapper">
@@ -47,6 +47,11 @@ import Account from '~/components/account_icon.vue'
 import BarChart from '~/components/bar_chart.vue'
 import PieChart from '~/components/pie_chart.vue'
 export default {
+  data() {
+    return {
+      pieChartRainkingDatas: this.pieChartDatas
+    }
+  },
   components: {
     Navbar,
     Account,
@@ -59,8 +64,8 @@ export default {
       percentageDatas: 'pie_chart/percentage',
       percentageRound: 'pie_chart/percentageRound'
     }),
-    limitCount() {
-      return this.pieChartDatas.slice(0,1)
+    topThree: function() {
+      return this.pieChartDatas.slice(0,3)
     },
     created() {
       this.fetchPieCharts()
