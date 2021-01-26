@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="whole-wrapper">
+      <Errors :errors="errors" />
       <div class="whole-content-wrapper">
         <Navbar />
 

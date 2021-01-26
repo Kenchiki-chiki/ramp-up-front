@@ -1,5 +1,6 @@
 <template>
   <v-row justify="center">
+    <Errors :errors="errors" />
     <v-btn
     id="skill-add-btn"
       color="grey darken-4"
@@ -56,6 +57,7 @@
   export default {
     data () {
       return {
+        errors: [],
         dialog: false,
         newSkillName: [],
         newSkillInputName: ""
@@ -66,12 +68,18 @@
       async addNewSkill() {
 
         this.newSkillName.push(...[this.newSkillInputName])
-        await this.$store.dispatch('skill/addSkills', this.newSkillName)
-        this.dialog = false
-        this.$store.dispatch(`message/setContent`, {
+        const res = await this.$store.dispatch('skill/addSkills', this.newSkillName)
+        if (res.errors) {
+          console.log('===エラー===')
+          this.errors = res.errors
+        } 
+        else {
+          this.$store.dispatch(`message/setContent`, {
           content: 'スキルを追加しました',
           timeout: 2000
-        })
+          })
+        }  
+        this.dialog = false
         this.fetchSkills()
       },
       async fetchSkills() {
