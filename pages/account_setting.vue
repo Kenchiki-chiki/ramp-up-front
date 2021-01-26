@@ -19,6 +19,7 @@
                   label="新しいメールアドレス"
                 />
                 <v-text-field
+                  id="bg"
                   v-model="user.password"
                   v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   prepend-icon="mdi-lock"
@@ -106,4 +107,11 @@ export default {
 .account-setting-form {
   margin: 70px 0 0 0 ; 
 }
+
+input:-webkit-autofill {
+    /* box-shadow: 0 0 0px 1000px #666666 inset; */
+    /* color: -internal-light-dark(black, aqua) !important; */
+    border-radius:2px;
+}
+
 </style>

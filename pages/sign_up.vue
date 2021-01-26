@@ -94,3 +94,8 @@ export default {
   },
 }
 </script>
+<style>
+input:-webkit-autofill {
+    border-radius:2px;
+}
+</style>
