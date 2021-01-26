@@ -12,17 +12,13 @@ export const actions = {
         client: localStorage.getItem('client'),
       },
     })
-      // return { res: res }
-      console.log('===fetchPieCharts2===')
       commit('setPieCharts', res)
-      console.log(res)
       return res 
   }
 }
 
 export const mutations = {
   setPieCharts(state, payload) {
-    console.log('===setPieCharts===')
     state.pieChartDatas = []
     state.pieChartDatas = state.pieChartDatas.concat(payload[2])
 
@@ -44,9 +40,6 @@ export const mutations = {
     var result = array.map(studyTimeArrayFunction)
     state.percentageDatas = []
     state.percentageRoundDatas = []
-    console.log('===concatCheck===')
-    console.log(result)
-    console.log(state.percentageDatas)
     state.percentageDatas = state.percentageDatas.concat(result)
       var arr = state.percentageDatas
 
@@ -74,16 +67,12 @@ export const mutations = {
 
 export const getters = {
   pieChart(state) {
-    console.log('===pieChartGetters===')
-    console.log(state.pieChartDatas)
     return state.pieChartDatas
   },
   percentage(state) {
     return state.percentageDatas
   },
   percentageRound(state) {
-    console.log('===percentageRoundGetters===')
-    console.log(state.percentageRoundDatas)
     return state.percentageRoundDatas
   }
 

@@ -44,14 +44,9 @@ export const mutations = {
 
 export const getters = {
   thatDayStudyTimes(state) {
-    console.log('===thatDayStudyTimes getters===')
-    console.log(state)
-    console.log(state.thatDayTotalStudyTimes)
     if (isNaN(state.thatDayTotalStudyTimes) === false) {
-      console.log('===数値なのでgettersで参照します===')
       return state.thatDayTotalStudyTimes
     } else{
-      console.log('===数値ではないのでgettersで参照しません===')
     }
   },
   allStudyTimes(state) {

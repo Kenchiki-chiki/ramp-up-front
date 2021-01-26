@@ -70,7 +70,6 @@
         this.newSkillName.push(...[this.newSkillInputName])
         const res = await this.$store.dispatch('skill/addSkills', this.newSkillName)
         if (res.errors) {
-          console.log('===エラー===')
           this.errors = res.errors
         } 
         else {        

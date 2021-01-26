@@ -47,11 +47,6 @@ import Account from '~/components/account_icon.vue'
 import BarChart from '~/components/bar_chart.vue'
 import PieChart from '~/components/pie_chart.vue'
 export default {
-  data() {
-    return {
-      pieChartRainkingDatas: this.pieChartDatas
-    }
-  },
   components: {
     Navbar,
     Account,
@@ -73,7 +68,6 @@ export default {
   },
   methods:{
       async fetchPieCharts() {
-        console.log('===fetchPieCharts===')
         await this.$store.dispatch('pie_chart/fetchPieCharts')
       }
     },
