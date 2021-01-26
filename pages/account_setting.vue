@@ -19,7 +19,6 @@
                   label="新しいメールアドレス"
                 />
                 <v-text-field
-                  id="bg"
                   v-model="user.password"
                   v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   prepend-icon="mdi-lock"

@@ -202,7 +202,7 @@ export default {
 
   .skill-edit-flex-item {
     padding: 8px 16px;
-    height: 58px;
+    /* height: 58px; */
   }
 
   .skill-edit-wrapper {
