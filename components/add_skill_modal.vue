@@ -73,13 +73,15 @@
           console.log('===エラー===')
           this.errors = res.errors
         } 
-        else {
+        else {        
           this.$store.dispatch(`message/setContent`, {
           content: 'スキルを追加しました',
           timeout: 2000
           })
         }  
         this.dialog = false
+        this.newSkillName = []
+        this.newSkillInputName = []
         this.fetchSkills()
       },
       async fetchSkills() {

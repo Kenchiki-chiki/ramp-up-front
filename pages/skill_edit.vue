@@ -17,7 +17,7 @@
 
           <v-container>
             <v-row class="skill-row">
-              <v-col v-for="(skill, index) in skills" class="skill-edit-col" cols="12" sm="4" md="3">
+              <v-col v-for="skill in skills" :key="skill.id" class="skill-edit-col" cols="12" sm="4" md="3">
 
                 <v-card width="200px" class="skill_edit_card">
                 <v-card-text class="skill-edit-flex-item" >
