@@ -17,7 +17,7 @@
           <v-container class="build-cantainer">
             
             <v-row>
-              <v-col v-for="(skill, index) in skills" class="skill-col" cols="12" sm="4" md="4">
+              <v-col v-for="(skill, index) in skills" :key="skill.id" class="skill-col" cols="12" sm="4" md="4">
 
                 <v-card width="300px" class="card">
                 <v-card-text class="flex-item">

@@ -10,7 +10,7 @@
 
         <v-container id="saved-task-container">
           <v-row>
-            <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3">
+            <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
             <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
               
               <v-card height="140px" id="saved-task-v-card">

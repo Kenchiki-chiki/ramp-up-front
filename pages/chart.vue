@@ -14,7 +14,7 @@
           <div class="pie-row">
             <div class="pie-rank-wrapper">
 
-              <div v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
+              <div v-for="(pieChartData, index) in pieChartDatas" :key="index" class="pie-chart-col" v-show="index >= 0 && index < 3">
 
                   <div class="flex-item">
                     <div id="pie-responsive-wrapper">
