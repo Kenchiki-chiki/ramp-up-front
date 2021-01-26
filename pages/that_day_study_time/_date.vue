@@ -3,7 +3,7 @@
     <div class="whole-content-wrapper">
       <Navbar />
     
-    <div class="main-content-wrapper">
+    <div class="main-content-wrapper" v-show="kanjiClikedDateIsNaN()">
       <div id="that-day-syudy-time-comment">
 
         <div>{{ kanjiClikedDate }}の学習時間は</div>
@@ -104,7 +104,14 @@ export default {
   methods: {
     async fetchStudyTimes() {
       await this.$store.dispatch('calendar/fetchThatDayStudyTimes', this.$route.params.date)
-    },   
+    },
+    kanjiClikedDateIsNaN() {
+      if (isNaN(this.kanjiClikedDate.slice(0,4)) === false) {
+        return true
+      } else {
+        return false
+      }
+    }  
 
   },
 }
