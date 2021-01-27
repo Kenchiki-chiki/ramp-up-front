@@ -16,7 +16,7 @@
             
           <v-container class="build-cantainer">
             
-            <v-row class="build-row">
+            <v-row>
               <v-col v-for="(skill, index) in skills" :key="skill.id" class="skill-col" cols="12" sm="4" md="4">
 
                 <v-card width="300px" class="card">
@@ -141,49 +141,40 @@ export default {
   width: 100%;
 }
 
+#build-comment {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0 ;
+  width: 100%;
+  height: 105px;
+  letter-spacing: 0.05em;
+}
 
-  #build-comment {
-    text-align: center;
-    z-index: 10;
-    font-size: 30px;
-    margin: 70px 0 0 0 ;
-    width: 100%;
-    height: 105px;
-    letter-spacing: 0.05em;
-  }
+.build-cantainer {
+  /* display: flex;
+  justify-content: center; */
+  margin: 100px auto 40px;
+}
 
-  .build-cantainer {
-    /* display: flex;
-    justify-content: center; */
-    margin: 100px auto 40px;
-  }
+.skill-col {
+  display: flex;
+  justify-content: center;
+}
 
-  /* .build-row {
-    position: relative;
-  } */
+.build-v-card-actions{
+  display: flex;
+  justify-content: flex-end;
+}
 
-  /* .build-row #build-btn {
-    justify-content: flex-end;
-  } */
+.build-btn-col {
+  position: relative;
+}
 
-  .skill-col {
-    display: flex;
-    justify-content: center;
-  }
-
-  .build-v-card-actions{
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .build-btn-col {
-    position: relative;
-  }
-
-  .build-btn {
-    position: absolute;
-    top: 60px;
-    right: 48px;
-  }
+.build-btn {
+  position: absolute;
+  top: 60px;
+  right: 48px;
+}
   
 </style>

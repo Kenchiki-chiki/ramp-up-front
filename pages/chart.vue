@@ -88,47 +88,46 @@ export default {
   width: 100%;
 }
 
-  .bar-container {
-    padding: 60px 0 0 0;
-  }
+.bar-container {
+  padding: 60px 0 0 0;
+}
 
+#pie-responsive-wrapper {
+  width: 400px;
+}
+.pie_wrapper {
+  display: flex;
+  justify-content: center;    
+}
+.pie_wrapper-flex-item {
+  margin: 30px auto 0px;
+  padding: 5px 5px;
+  line-height: 36px;
+}
 
-  #pie-responsive-wrapper {
-    width: 400px;
-  }
-  .pie_wrapper {
-    display: flex;
-    justify-content: center;    
-  }
-  .pie_wrapper-flex-item {
-    margin: 30px auto 0px;
-	  padding: 5px 5px;
-    line-height: 36px;
-  }
+.pie_wrapper-flex-item:first-child {
+  margin: 25px 0 0 0;
+  text-align: center;
+}
 
-  .pie_wrapper-flex-item:first-child {
-    margin: 25px 0 0 0;
-    text-align: center;
-  }
+.crown-icon {
+  margin: 0 0 0px 0;
+}
 
-  .crown-icon {
-    margin: 0 0 0px 0;
-  }
+#pie-container-flex {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 60px 0 0 0;
+}
 
-  #pie-container-flex {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 60px 0 0 0;
-  }
+.pie-row {
+  display: flex;
+  justify-content: center;
+}
 
-  .pie-row {
-    display: flex;
-    justify-content: center;
-  }
-
-  .pie-rank-wrapper {
-    margin: 0 100px 0 0;
-  }
+.pie-rank-wrapper {
+  margin: 0 100px 0 0;
+}
 
 </style>

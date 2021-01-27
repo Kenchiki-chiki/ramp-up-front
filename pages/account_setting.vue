@@ -108,9 +108,9 @@ export default {
 }
 
 input:-webkit-autofill {
-    /* box-shadow: 0 0 0px 1000px #666666 inset; */
-    /* color: -internal-light-dark(black, aqua) !important; */
-    border-radius:2px;
+  /* box-shadow: 0 0 0px 1000px #666666 inset; */
+  /* color: -internal-light-dark(black, aqua) !important; */
+  border-radius:2px;
 }
 
 </style>

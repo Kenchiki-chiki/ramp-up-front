@@ -30,7 +30,6 @@ export default {
   position: absolute;
   top: 0px;
   right: 0;
-  left: 0;
-  
+  left: 0; 
   }
 </style>

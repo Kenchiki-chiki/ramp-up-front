@@ -126,29 +126,29 @@ export default {
 </script>
 
 <style>
-  .app-title {
-    font-size: 70px;
-    font-weight: 300;
-    position: absolute;
-    top: 280px;
-    right: 0;
-    left: 0;
-    margin: auto; 
-    width: 100%;
-    height: 105px;
-    letter-spacing: 0.05em;
-  }
-  .top-btn {
-    width: 180px;
-  }
-  .top-buttons{
+.app-title {
+  font-size: 70px;
+  font-weight: 300;
   position: absolute;
-  top: 0;
+  top: 280px;
   right: 0;
-  bottom: 0;
   left: 0;
   margin: auto; 
   width: 100%;
-  height: 200px;
+  height: 105px;
+  letter-spacing: 0.05em;
+}
+.top-btn {
+  width: 180px;
+}
+.top-buttons{
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto; 
+width: 100%;
+height: 200px;
 }
 </style>

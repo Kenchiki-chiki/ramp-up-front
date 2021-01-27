@@ -169,69 +169,69 @@ export default {
   display: flex;
   justify-content: center;
 }
-  .skill-edit-title-comment {   
-    font-size: 30px;
-  }
-  .skill-add-btn-wrapper {
-    margin: 3px 0px 0 0 ;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-  }
-  #skill-add-btn {
-    padding: 20px 10px;
-  }
-  #add-skill-icon {
-    margin: 0 4px 0 0;
-    font-size: 1.5em;
-  }
-  .skill-add-comment {
-    margin: 0px 0 0 4px;
-  }
+.skill-edit-title-comment {   
+  font-size: 30px;
+}
+.skill-add-btn-wrapper {
+  margin: 3px 0px 0 0 ;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+}
+#skill-add-btn {
+  padding: 20px 10px;
+}
+#add-skill-icon {
+  margin: 0 4px 0 0;
+  font-size: 1.5em;
+}
+.skill-add-comment {
+  margin: 0px 0 0 4px;
+}
 
-  .container {
-    display: flex;
-    justify-content: center;
-    margin: 100px auto;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+}
 
-  .skill-edit-col {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+.skill-edit-col {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-  .skill-edit-flex-item {
-    padding: 8px 16px;
-    /* height: 58px; */
-  }
+.skill-edit-flex-item {
+  padding: 8px 16px;
+  /* height: 58px; */
+}
 
-  .skill-edit-wrapper {
-    display: flex;
-    justify-content: center;
-  }
+.skill-edit-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
-  #skill-wrapper-flex-item {
-    margin: 10px 0px 10px;
-	  padding: 0px 20px 0 5px;
-  }
+#skill-wrapper-flex-item {
+  margin: 10px 0px 10px;
+  padding: 0px 20px 0 5px;
+}
 
-  #skill-wrapper-flex-item:last-child {
-    margin: 0 0 0 10px;
-	  padding: 0px 5px;
-  }
+#skill-wrapper-flex-item:last-child {
+  margin: 0 0 0 10px;
+  padding: 0px 5px;
+}
 
-  #delete-skill-icon {
-    font-size: 1.5em;
-  }
+#delete-skill-icon {
+  font-size: 1.5em;
+}
 
-  .new-skill-form {
-    width: 250px;
-    margin: 0 auto;
-  }
+.new-skill-form {
+  width: 250px;
+  margin: 0 auto;
+}
 
-  .v-dialog {
-    margin-left: 290px;
-  }
+.v-dialog {
+  margin-left: 290px;
+}
 
 </style>

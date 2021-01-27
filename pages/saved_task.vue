@@ -9,7 +9,7 @@
         </div>
 
         <v-container id="saved-task-container">
-          <v-row class="saved-task-row">
+          <v-row>
             <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
             <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
               

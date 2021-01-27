@@ -96,29 +96,29 @@ export default {
   width: 100%;
 }
 
-  #study-time-comment {
-    text-align: center;
-    z-index: 10;
-    font-size: 30px;
-    margin: 70px 0 0 0 ; 
-    width: 100%;
-    letter-spacing: 0.05em;
-  }
+#study-time-comment {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0 ; 
+  width: 100%;
+  letter-spacing: 0.05em;
+}
 
-  .container {
-    display: flex;
-    justify-content: center;
-    margin: 70px auto;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 70px auto;
+}
 
-  .study-time-col {
-    display: flex;
-    justify-content: center;
-  }
-  
-  #study-time {
-    margin: 0;
-    font-size: 24px;
-  }
+.study-time-col {
+  display: flex;
+  justify-content: center;
+}
+
+#study-time {
+  margin: 0;
+  font-size: 24px;
+}
   
 </style>

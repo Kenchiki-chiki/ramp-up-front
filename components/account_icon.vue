@@ -101,12 +101,12 @@ export default {
 }
 
 .v-menu__content {
-    min-width: 0px ;
-    top: 18px !important;
-    right: 50px !important;
-    left: initial !important;
-    transform-origin: right top !important;
-    z-index: 302 ;
+  min-width: 0px ;
+  top: 18px !important;
+  right: 50px !important;
+  left: initial !important;
+  transform-origin: right top !important;
+  z-index: 302 ;
 }
 
 </style>
