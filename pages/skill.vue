@@ -1,11 +1,11 @@
 <template>
   <v-container>
+    <Errors :errors="errors" />
     <v-card width="400px" class="mx-auto mt-5 skill-form">
       <v-card-title>
         <h1 class="display-1">
           スキルを設定しましょう。
         </h1>
-        <!-- <h2>ログイン状態:{{ $auth.loggedIn }}</h2> -->
       </v-card-title>
       <v-card-text>
         <v-form ref="form" lazy-validation>
@@ -100,6 +100,7 @@ export default {
   },
   data() {
     return{
+      errors: [],
       skills: [],
       skillName1: "",
       skillName2: "",
@@ -111,16 +112,18 @@ export default {
   },
   methods: {
     async onSubmit() {
-      this.skills.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6]),
-      await this.$store.dispatch('skill/addSkills', this.skills)  
-      this.skills.name = ''
-      this.$router.push('/build')
-    },
+      this.skills.push(...[this.skillName1,this.skillName2,this.skillName3,this.skillName4,this.skillName5,this.skillName6])
+      const res = await this.$store.dispatch('skill/addSkills', this.skills)
+      if (res.errors) {
+        this.errors = res.errors
+        this.skills = []
+      } 
+      else {
+        this.$router.push('/build')     
+      }  
+    },   
     
-    
-    
-  },
-  
+  },  
 
 }
 </script>

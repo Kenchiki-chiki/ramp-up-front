@@ -1,42 +1,56 @@
 <template>
-  <v-app>
-    <v-container>
-      <v-card width="400px" class="mx-auto mt-5">
-        <v-card-title>
-          <h1 class="display-1">
-            メールアドレス変更
-          </h1>
-        </v-card-title>
-        <v-card-text>
-          <v-form ref="form" lazy-validation>
-            <v-text-field
-              v-model="user.email"
-              prepend-icon="mdi-email"
-              label="新しいメールアドレス"
-            />
-            <v-text-field
-              v-model="user.password"
-              prepend-icon="mdi-lock"
-              append-icon="mdi-eye-off"
-              label="パスワード"
-            />
-            <v-card-actions>
-              <v-btn
-                color="#666666"
-                class="white--text"
-                @click="editEmail"
-              >
-                保存する
-              </v-btn>
-            </v-card-actions>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-container>
+  <v-app class="whole-wrapper">
+    <div class="whole-content-wrapper">
+      <Navbar />
+
+      <div class="main-content-wrapper">
+        <v-container class="account-setting-form">
+          <v-card width="400px" class="mx-auto mt-5">
+            <v-card-title>
+              <h1 class="display-1">
+                メールアドレス変更
+              </h1>
+            </v-card-title>
+            <v-card-text>
+              <v-form ref="form" lazy-validation>
+                <v-text-field
+                  v-model="user.email"
+                  prepend-icon="mdi-email"
+                  label="新しいメールアドレス"
+                />
+                <v-text-field
+                  v-model="user.password"
+                  v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                  prepend-icon="mdi-lock"
+                  v-bind:type="showPassword ? 'text' : 'password'"
+                  @click:append="showPassword = !showPassword"
+                  label="パスワード"
+                />
+                <v-card-actions>
+                  <v-btn
+                    color="#666666"
+                    class="white--text"
+                    @click="editEmail"
+                  >
+                    保存する
+                  </v-btn>
+                </v-card-actions>
+              </v-form>
+            </v-card-text>
+          </v-card>
+        </v-container>
+        
+      </div>
+
+    </div>
+
+    <account/>
   </v-app>
 </template>
 
 <script>
+import Navbar from '~/components/navbar.vue'
+import Account from '~/components/account_icon.vue'
 export default {
   name: 'App',
   data() {
@@ -45,7 +59,12 @@ export default {
         password: '',
         email: '',
       },
+      showPassword:false
     }
+  },
+  components: {
+    Navbar,
+    Account,
   },
   methods: {
     editEmail() {
@@ -68,3 +87,30 @@ export default {
   },
 }
 </script>
+
+<style>
+.whole-wrapper {
+  height: 100vh;
+}
+
+.whole-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-content-wrapper {
+  width: 100%;
+}
+
+.account-setting-form {
+  margin: 70px 0 0 0 ; 
+}
+
+input:-webkit-autofill {
+  /* box-shadow: 0 0 0px 1000px #666666 inset; */
+  /* color: -internal-light-dark(black, aqua) !important; */
+  border-radius:2px;
+}
+
+</style>

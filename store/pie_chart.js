@@ -12,7 +12,6 @@ export const actions = {
         client: localStorage.getItem('client'),
       },
     })
-      // return { res: res }
       commit('setPieCharts', res)
       return res 
   }
@@ -39,6 +38,8 @@ export const mutations = {
     }
 
     var result = array.map(studyTimeArrayFunction)
+    state.percentageDatas = []
+    state.percentageRoundDatas = []
     state.percentageDatas = state.percentageDatas.concat(result)
       var arr = state.percentageDatas
 

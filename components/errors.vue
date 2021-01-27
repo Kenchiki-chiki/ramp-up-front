@@ -1,5 +1,5 @@
 <template>
-  <div v-if="errors.length" class="mt-3 mb-2 ml-5">
+  <div v-if="errors.length" class="">
     <v-alert type="errors">
       {{ errors.join('。') }}
     </v-alert>
@@ -23,6 +23,11 @@ export default {
 
 <style>
 .errors {
+  z-index: 998;
+  position: absolute;
+  top: 11px;
+  left: 270px;
+  right: 20px;
   margin: 0 65px 0 45px;
 }
 </style>

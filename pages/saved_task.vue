@@ -1,108 +1,100 @@
 <template>
-  <div>
+<div class="whole-wrapper">
     <Errors :errors="errors" />
-    <div class="comment">
-      
-      <account/>
-      <!-- <div>明日のタスクを設定しましょう(保存後)</div> -->
+    <div class="whole-content-wrapper">
+      <Navbar />
+      <div class="main-content-wrapper">
+        <div class="comment">            
+          <div>明日のタスクを設定しましょう。</div>
+        </div>
 
-    </div>
+        <v-container id="saved-task-container">
+          <v-row>
+            <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
+            <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
+              
+              <v-card height="140px" id="saved-task-v-card">
+                <v-card-title id="saved-task-v-card-title-bar" class="blue white--text">
+                  <span class="headline"></span>
+                  <v-spacer></v-spacer>
+                </v-card-title>
+                <form class="saved-box">
+                  <div class="box-item saved-task-form" id="task_wrapper-flex-item">
+                    {{ task.name }}
+                    <v-icon id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
+                  </div>
+                </form>          
+              </v-card>                          
+            </v-col>
 
-    <v-container>
-      <v-row class="task-row">
-        <v-col v-for="(task, index) in tasks" class="task-col" cols="12" sm="4" md="3">
-          <v-responsive
-            max-width="400"
-            class="task_wrapper"
-          >
-          <div class="task_wrapper">
-
-            <form class="box">
-              <div class="box-item" id="task_wrapper-flex-item">
-                {{ task.name }}
-                <v-icon class="task_wrapper-flex-item" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
-              </div>
-            </form>          
-            
-          </div>
-          </v-responsive>    
-        </v-col>
-
-      </v-row>
-    </v-container>
-
-    <v-card-actions>
-      <v-btn
-        @click=""
-        color="#666666"
-        class="white--text"
-      >
-        保存
-      </v-btn>
-    </v-card-actions>
-    <v-card-actions>
-      <v-btn
-        @click="deleteTasks"
-        color="#666666"
-        class="white--text"
-      >
-        削除
-      </v-btn>
-    </v-card-actions>
+            <v-col>
+            <v-card-actions class="saved-task-v-card-actions">
+              <v-btn
+                @click="deleteTasks"
+                color="#666666"
+                class="white--text delete-task-btn"
+              >
+                削除
+                <v-icon id="delete-task-icon">fa fa-trash-alt</v-icon>   
+              </v-btn>
+            </v-card-actions>
+            </v-col>    
+          </v-row>
+        </v-container>
 
     <v-row justify="center">  
 
-    <v-dialog
-      v-model="dialog"
-      max-width="290"
-    >
-      <v-card>
-        <v-card-title class="headline">
-          タスク編集
-        </v-card-title>
+      <v-dialog
+        v-model="dialog"
+        max-width="290"
+      >
+        <v-card>
+          <v-card-title class="headline">
+            タスク編集
+          </v-card-title>
 
-        <v-card-text>タスクを編集できます。</v-card-text>
-        <v-text-field
-          v-model="editTaskName"
-          class="edit_task_form"
-          type=""
-          label=""
-          style=""
-        >
-        </v-text-field>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            color="white"
-            text
-            @click="dialog = false"
+          <v-card-text>タスクを編集できます。</v-card-text>
+          <v-text-field
+            v-model="editTaskName"
+            class="edit_task_form"
+            type=""
+            label=""
+            style=""
           >
-            キャンセル
-          </v-btn>
+          </v-text-field>
+          <v-card-actions>
+            <v-spacer></v-spacer>
 
-          <v-btn
-            color="white"
-            text
-            @click="editTask(taskID)"
-          >
-            更新
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-row>
+            <v-btn
+              color="white"
+              text
+              @click="dialog = false"
+            >
+              キャンセル
+            </v-btn>
 
+            <v-btn
+              color="white"
+              text
+              @click="editTask(taskID)"
+            >
+              更新
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-row>
+        
+      </div>
+    </div>
+    <account/>
   </div>
-
-  
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
-import Study from '~/components/study_hours.vue'
 import Error from '~/components/errors.vue'
 export default {
   middleware({ store, redirect }) {
@@ -122,13 +114,11 @@ export default {
   components: {
     Navbar,
     Account,
-    Study,
     Error
   },
   computed: {
     ...mapGetters({
-      tasks: 'task/tasks',
-      // skillNames: 'skill/content'
+      tasks: 'task/tasks'
     })
   },
   created() {
@@ -170,58 +160,90 @@ export default {
 </script>
 
 <style>
-.container {
-  display: flex;
-  justify-content: center;
-  margin: 200px auto;
+.whole-wrapper {
+  height: 100vh;
 }
 
-.task-col {
+.whole-content-wrapper {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  height: 100vh;
 }
 
-.task_wrapper {
+.main-content-wrapper {
+  width: 100%;
+}
+
+.comment {
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0;
+  width: 100%;
+  letter-spacing: 0.05em;
   display: flex;
   justify-content: center;
 }
 
-.box {
+#saved-task-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  border: 2px solid #333;
-  /* border: 6px solid #333; */
-  height: 130px;
+  margin: 70px auto 0px;
+}
+
+.saved-box {
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  height: 116px;
 } 
 
-.box-item {
-  text-align: center;
-  
+/* #saved-task-v-col-1 #saved-task-v-card-title-bar {
+  background-color: ;
+} */
+
+.v-card__subtitle, .v-card__text, .v-card__title {
+    padding: 12px;
 }
 
-.task-col form {
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  padding: 4%;
-  width: 260px; 
-  height: 130px; 
-  margin: 10px;
+#saved-task-v-card {
+  position: relative;
 }
 
-.task-form {
+.saved-task-form {
   color: white;
   border: none;
   text-align: center;
-  /* outline: none; */
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   /* resize: none; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .edit_task_form {
-    width: 250px;
-    margin: 0 auto;
-  }
+  width: 250px;
+  margin: 0 auto;
+}
+
+#edit-task-icon {
+  font-size: 1.2em;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+
+.saved-task-v-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.v-dialog {
+  margin-left: 290px;
+}
+
+#delete-task-icon {
+  font-size: 1.2em;
+  margin-left: 4px;
+}
   
 </style>

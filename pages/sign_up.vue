@@ -15,14 +15,18 @@
           />
           <v-text-field
             v-model="user.password"
+            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             prepend-icon="mdi-lock"
-            append-icon="mdi-eye-off"
+            v-bind:type="showPassword ? 'text' : 'password'"
+            @click:append="showPassword = !showPassword"
             label="password"
           />
           <v-text-field
             v-model="user.password_confirmation"
+            v-bind:append-icon="showConfirmation ? 'mdi-eye' : 'mdi-eye-off'"
             prepend-icon="mdi-lock"
-            append-icon="mdi-eye-off"
+            v-bind:type="showConfirmation ? 'text' : 'password'"
+            @click:append="showConfirmation = !showConfirmation"
             label="comfirmation"
           />
           <v-card-actions>
@@ -51,11 +55,12 @@ export default {
         email: '',
         password_confirmation: '',
       },
+      showPassword:false,
+      showConfirmation:false
     }
   },
   methods: {
     registerUser() {
-      // this.$axios.post('http://localhost:8080/api/v1/auth', this.user ,{
       this.$axios.post('/api/v1/auth', this.user ,{
         headers: {
             'access-token': localStorage.getItem('access-token'),
@@ -74,7 +79,6 @@ export default {
         content: '新規登録に成功しました',
         timeout: 2000
       })
-       // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
       localStorage.setItem('access-token', response.headers['access-token'])
       localStorage.setItem('client', response.headers.client)
       localStorage.setItem('uid', response.headers.uid)
@@ -90,3 +94,8 @@ export default {
   },
 }
 </script>
+<style>
+input:-webkit-autofill {
+  border-radius:2px;
+}
+</style>

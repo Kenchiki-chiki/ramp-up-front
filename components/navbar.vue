@@ -1,7 +1,8 @@
 <template>
-  <v-app>
+  <div>
     
-    <v-navigation-drawer
+    <v-navigation-drawer 
+      hide-overlay
       id="navbar"
       v-model="drawer"
       fixed
@@ -52,7 +53,8 @@
 
     </v-navigation-drawer>
 
-  </v-app>
+  </div>
+
 </template>
 
 <script>
@@ -66,13 +68,39 @@ export default {
 </script>
 
 <style>
-/* width 256 */
+
+.navbar {
+  /* position: fixed;
+  top: 0px;
+  left: 0px; */
+  width: 256px;
+  /* height: 100%; */
+  background-color: #181812;
+}
+.navbar li {
+  padding: 25px 0 25px 35px;
+  list-style: none;
+}
+.navbar li:hover {
+  background-color: #181812;
+}
+.navbar li a{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.v-application a {
+  color: white;
+}
+
 h1 {
   font-size: 44px;
   padding: 10px 0 45px 0;
 }
 
 #navbar {
+  position: sticky;
   visibility: visible !important;
   transform: translateX(0%) !important;
   text-align: center;
@@ -81,8 +109,6 @@ h1 {
   padding: 25px 0 25px 0;
   font-size: 18px !important;
 }
-
-
 
 
 </style>

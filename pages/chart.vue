@@ -1,45 +1,43 @@
 <template>
-  <div class="chart-wrapper">
-    
-    <account/>
+<div class="whole-wrapper">
+  <div class="whole-content-wrapper">
+    <Navbar />  
 
-    <div class="bar-container">
-      <BarChart />
+    <div class="main-content-wrapper">     
+      <account/>
+      
+      <div class="bar-container">
+        <BarChart />
+      </div>
 
-    </div>
+        <v-container id="pie-container-flex">
+          <div class="pie-row">
+            <div class="pie-rank-wrapper">
 
-      <v-container id="pie-container-flex">
-        <v-row class="pie-row">
-          <div class="pie-rank-wrapper">
+              <div v-for="(pieChartData, index) in topThree" :key="index" class="pie-chart-col" >
 
-            <v-col v-for="(pieChartData, index) in pieChartDatas" class="pie-chart-col" v-if="index >= 0 && index < 3">
-
-              <div class="flex-item" cols="12">
-                  <div                   
-                    id="pie-responsive-wrapper"
-                  >
-                  <div class="pie_wrapper">
-                    <v-icon class="crown-icon pie_wrapper-flex-item">fas fa-crown</v-icon>
-                    <!-- <v-icon>mdi-crown</v-icon> -->
-                    <p class="pie_wrapper-flex-item">No. {{ index + 1 }}</p>
-                    <p class="pie_wrapper-flex-item">{{ pieChartData[0] }}</p>
-                    <p class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }}</p>
-                    <p class="pie_wrapper-flex-item">{{ '(' + percentageRound[index] + '%' + ')' }}</p>
-                  
+                  <div class="flex-item">
+                    <div id="pie-responsive-wrapper">
+                      <v-row class="pie_wrapper">
+                        <v-col cols="2" class="pie_wrapper-flex-item"><v-icon class="crown-icon">fas fa-crown</v-icon></v-col>
+                        <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
+                        <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
+                        <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
+                      </v-row>
+                      <hr>
+                    </div>    
                   </div>
-                  <hr>
-                </div>    
 
               </div>
+            </div>
 
-            </v-col>
+            <PieChart />
           </div>
+        </v-container>
 
-          <PieChart />
-        </v-row>
-      </v-container>
-
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -61,69 +59,75 @@ export default {
       percentageDatas: 'pie_chart/percentage',
       percentageRound: 'pie_chart/percentageRound'
     }),
-    limitCount() {
-      return this.pieChartDatas.slice(0,1)
+    topThree: function() {
+      return this.pieChartDatas.slice(0,3)
+    },
+    created() {
+      this.fetchPieCharts()
     }
   },
   methods:{
+      async fetchPieCharts() {
+        await this.$store.dispatch('pie_chart/fetchPieCharts')
+      }
     },
 }
 </script>
 
 <style>
-  .bar-container {
-    padding: 60px 0 0 0;
-  }
-  .container {
-    margin: 200px auto;
-  }
-  .flex-item {
-    display: flex;
-    justify-content: center;
-  }
-  #pie-responsive-wrapper {
-    width: 400px;
-  }
-  .pie_wrapper {
-    display: flex;
-    justify-content: center;    
-  }
-  .pie_wrapper-flex-item {
-    margin: 10px auto;
-	  padding: 5px 5px;
-  }
+.whole-wrapper {
+  height: 100vh;
+}
 
-  .pie_wrapper-flex-item:nth-child(4) {
-    margin: 10px 0 10px 30px;
-  }
+.whole-content-wrapper {
+  display: flex;
+  height: 100vh;
+}
 
-  .pie_wrapper-flex-item:last-child {
-    margin: 10px 0;
-    padding: 5px 0;
-  }
+.main-content-wrapper {
+  width: 100%;
+}
 
-  .crown-icon {
-    margin: 0 0 10px 0;
-  }
+.bar-container {
+  padding: 60px 0 0 0;
+}
 
-  #pie-container-flex {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 60px 0 0 0;
-  }
+#pie-responsive-wrapper {
+  width: 400px;
+}
+.pie_wrapper {
+  display: flex;
+  justify-content: center;    
+}
+.pie_wrapper-flex-item {
+  margin: 30px auto 0px;
+  padding: 5px 5px;
+  line-height: 36px;
+}
 
-  .pie-row {
-    display: flex;
-    justify-content: center;
-  }
+.pie_wrapper-flex-item:first-child {
+  margin: 25px 0 0 0;
+  text-align: center;
+}
 
-  .pie-rank-wrapper {
-    margin: 0 100px 0 0;
-  }
+.crown-icon {
+  margin: 0 0 0px 0;
+}
+
+#pie-container-flex {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 60px 0 0 0;
+}
+
+.pie-row {
+  display: flex;
+  justify-content: center;
+}
+
+.pie-rank-wrapper {
+  margin: 0 100px 0 0;
+}
 
 </style>
-
-
-
-

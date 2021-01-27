@@ -1,41 +1,46 @@
 <template>
-  <div>
-    <div class="comment">
+  <div class="whole-wrapper">
+    <div class="whole-content-wrapper">
+      <Navbar />
+    
+    <div class="main-content-wrapper" v-show="kanjiClikedDateIsNaN()">
+      <div id="that-day-syudy-time-comment">
 
-      <div>{{ kanjiClikedDate }}の学習時間は</div>
+        <div>{{ kanjiClikedDate }}の学習時間は</div>
 
-      <v-container>
-        <v-row>
-          <v-col class="study-time-col">
+        <v-container>
+          <v-row>
+            <v-col class="study-time-col">
 
-            <v-card width="300px" class="card">
-            <v-card-text class="study-time-card" cols="12" sm="6" md="4">
+              <v-card width="300px" class="card">
+              <v-card-text class="study-time-card" cols="12" sm="6" md="4">
 
-              <v-responsive
-                max-width="400"
-                class="study-time-wrapper"
-              >
-              <div class="study-time-wrapper">
+                <v-responsive
+                  max-width="400"
+                  class="study-time-wrapper"
+                >
+                <div class="study-time-wrapper">
 
-                <p id="study-time">{{ thatDayTotalStudyTimes }} 時間</p>
-            
-              </div>
-              </v-responsive>    
+                  <p id="study-time">{{ thatDayTotalStudyTimes }} 時間</p>
+              
+                </div>
+                </v-responsive>    
 
-            </v-card-text>
+              </v-card-text>
 
-          </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-      <v-card-actions>
-        
-      </v-card-actions>
-
+            </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-card-actions>
+          
+        </v-card-actions>
       </div>
+
+    </div>
       
     
-    
+    </div>
     <account/>
     
   </div>
@@ -65,7 +70,6 @@ export default {
       thatDayTotalStudyTimes: 'calendar/thatDayStudyTimes'
     }),
     kanjiClikedDate: function() {
-      console.log('===clickedDate2===')
       const yaer = this.clikedDate.slice(0,4)
       const y ='年'
       const month = this.clikedDate.slice(4,6)
@@ -76,59 +80,69 @@ export default {
       
       return kanjiCharacter.replace(/\b0+/, '')
     }
-
-    
-    // function() {
-    //   return this.$route.params.date + this.clikedDate
-    // }
   },
   created() {
-    this.fetchStudyTimes()
-    console.log('_date')
-    console.log(this.$route.params.date)
+    if (isNaN(this.$route.params.date) === false) {
+      this.fetchStudyTimes()
+    } else{
+        this.$router.push(`../${this.$route.params.date}`)
+      }
 
   },
   methods: {
     async fetchStudyTimes() {
       await this.$store.dispatch('calendar/fetchThatDayStudyTimes', this.$route.params.date)
-    },   
+    },
+    kanjiClikedDateIsNaN() {
+      if (isNaN(this.kanjiClikedDate.slice(0,4)) === false) {
+        return true
+      } else {
+        return false
+      }
+    }  
 
   },
 }
 </script>
 
 <style>
-  .comment {
-    z-index: 10;
-    font-size: 30px;
-    position: absolute;
-    top: 50px;
-    right: 0px;
-    left: 0px;
-    margin: auto; 
-    width: 100%;
-    height: 105px;
-    letter-spacing: 0.05em;
-  }
+.whole-wrapper {
+  height: 100vh;
+}
 
-  .container {
-    display: flex;
-    justify-content: center;
-    margin: 70px auto;
-  }
+.whole-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
 
-  .study-time-col {
-    display: flex;
-    justify-content: center;
-  }
+.main-content-wrapper {
+  width: 100%;
+}
 
-  /* .study-time-card {
-    height: 60px;
-  } */
+#that-day-syudy-time-comment {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 240px 0 0 0; 
+  width: 100%;
+  letter-spacing: 0.05em;
+}
 
-  #study-time {
-    margin: 0;
-    font-size: 24px;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 70px auto;
+}
+
+.study-time-col {
+  display: flex;
+  justify-content: center;
+}
+
+#study-time {
+  margin: 0;
+  font-size: 24px;
+}
   
 </style>

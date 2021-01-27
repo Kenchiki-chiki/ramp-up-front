@@ -10,9 +10,17 @@ export const actions = {
           uid: localStorage.getItem('uid'),
           client: localStorage.getItem('client'),
         },
+    }).catch(() => {
+      return { errors: ['エラーが発生しました'] }
     })
-    commit('addSkills', res) 
-    return res
+    if (res.errors && res.errors.length !== 0) {
+      return {
+        errors: res.errors
+      }
+    } else{
+      commit('addSkills', res) 
+      return {}
+    }
   },
   async fetchSkills({ commit }) {
     const res = await this.$axios.$get('/api/v1/skills', {

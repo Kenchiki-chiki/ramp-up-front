@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <div class="">
-      <div class="content">
-        <h2>カレンダー {{ displayMonth }}</h2>
-        <div class="button-area">
-          <button @click="prevMonth" class="button">前の月</button>
-          <button @click="nextMonth" class="button">次の月</button>
+  <div class="whole-wrapper">
+    <div class="whole-content-wrapper">
+      <Navbar />
+
+      <div id="content" class="main-content-wrapper">
+        <div class="calendar-title">
+          <h2>カレンダー {{ displayMonth }}</h2>
+          <div class="button-area">
+            <button @click="prevMonth" class="button">前の月</button>
+            <button @click="nextMonth" class="button">次の月</button>
+          </div>
         </div>
         <div class="calendar">
           <div class="calendar-weekly">
@@ -141,8 +145,11 @@ export default {
     },
 
     async fetchThatDayStudyTimes(date) {
-      await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
-      this.$router.push(`/that_day_study_time/${date}`)
+      if (isNaN(date) === false) {
+        await this.$store.dispatch('calendar/fetchThatDayStudyTimes', date)
+        this.$router.push(`/that_day_study_time/${date}`)
+      } else{
+      }
     },
     getDayEvents(date){
         return this.events.filter(event => {
@@ -162,7 +169,21 @@ export default {
 </script>
 
 <style>
-  .content{
+.whole-wrapper {
+  height: 100vh;
+}
+
+.whole-content-wrapper {
+  display: flex;
+  /* width: 100%; */
+  height: 100vh;
+}
+
+.calendar-title {
+  margin: 28px 0 0 0;
+}
+
+#content{
   margin:2em auto;
   width:900px;
 }

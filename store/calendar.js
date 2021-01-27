@@ -44,7 +44,10 @@ export const mutations = {
 
 export const getters = {
   thatDayStudyTimes(state) {
-    return state.thatDayTotalStudyTimes
+    if (isNaN(state.thatDayTotalStudyTimes) === false) {
+      return state.thatDayTotalStudyTimes
+    } else{
+    }
   },
   allStudyTimes(state) {
     return state.allStudyTimes
