@@ -4,10 +4,12 @@
       <Navbar />
 
       <div id="content" class="main-content-wrapper">
-        <h2>カレンダー {{ displayMonth }}</h2>
-        <div class="button-area">
-          <button @click="prevMonth" class="button">前の月</button>
-          <button @click="nextMonth" class="button">次の月</button>
+        <div class="calendar-title">
+          <h2>カレンダー {{ displayMonth }}</h2>
+          <div class="button-area">
+            <button @click="prevMonth" class="button">前の月</button>
+            <button @click="nextMonth" class="button">次の月</button>
+          </div>
         </div>
         <div class="calendar">
           <div class="calendar-weekly">
@@ -175,6 +177,10 @@ export default {
   display: flex;
   /* width: 100%; */
   height: 100vh;
+}
+
+.calendar-title {
+  margin: 28px 0 0 0;
 }
 
 #content{
