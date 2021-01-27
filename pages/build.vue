@@ -16,7 +16,7 @@
             
           <v-container class="build-cantainer">
             
-            <v-row>
+            <v-row class="build-row">
               <v-col v-for="(skill, index) in skills" :key="skill.id" class="skill-col" cols="12" sm="4" md="4">
 
                 <v-card width="300px" class="card">
@@ -47,17 +47,19 @@
 
               </v-card>
               </v-col>
+              <v-col class="build-btn-col" cols="12">
+                <v-card-actions class="build-v-card-actions">
+                  <v-btn
+                    @click="onSubmit"
+                    color="#666666"
+                    class="white--text build-btn"
+                  >
+                    入力完了
+                  </v-btn>
+                </v-card-actions>
+              </v-col>
             </v-row>
           </v-container>
-          <v-card-actions class="build-v-card-actions">
-            <v-btn
-              @click="onSubmit"
-              color="#666666"
-              class="white--text build-btn"
-            >
-              入力完了
-            </v-btn>
-          </v-card-actions>
        </div>    
         
       </div>
@@ -151,10 +153,18 @@ export default {
   }
 
   .build-cantainer {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     margin: 100px auto 40px;
   }
+
+  /* .build-row {
+    position: relative;
+  } */
+
+  /* .build-row #build-btn {
+    justify-content: flex-end;
+  } */
 
   .skill-col {
     display: flex;
@@ -166,8 +176,14 @@ export default {
     justify-content: flex-end;
   }
 
+  .build-btn-col {
+    position: relative;
+  }
+
   .build-btn {
-    margin: 0 20px 0 0 ;    
+    position: absolute;
+    top: 60px;
+    right: 48px;
   }
   
 </style>

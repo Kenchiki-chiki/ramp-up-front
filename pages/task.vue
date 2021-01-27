@@ -233,18 +233,20 @@
                   
                 </v-card>
               </v-col>
+              <v-col>
+                <v-card-actions class="task-v-card-actions">
+                  <v-btn
+                    @click="saveTasks"
+                    color="#666666"
+                    class="white--text save-task-btn"
+                  >
+                    保存
+                    <v-icon id="save-task-icon">fas fa-save</v-icon>  
+                  </v-btn>
+                </v-card-actions>
+              </v-col>
             </v-row>
           </v-container>
-          <v-card-actions class="task-v-card-actions">
-            <v-btn
-              @click="saveTasks"
-              color="#666666"
-              class="white--text save-task-btn"
-            >
-              保存
-              <v-icon id="save-task-icon">fas fa-save</v-icon>  
-            </v-btn>
-          </v-card-actions>
         </div>
     </div>
     <account/>
@@ -398,10 +400,6 @@ export default {
 .task-v-card-actions {
   display: flex;
   justify-content: flex-end;
-}
-
-.save-task-btn {
-  margin: 0 6px 0 0;
 }
 
 #save-task-icon {

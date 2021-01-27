@@ -9,7 +9,7 @@
         </div>
 
         <v-container id="saved-task-container">
-          <v-row>
+          <v-row class="saved-task-row">
             <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
             <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
               
@@ -24,22 +24,23 @@
                     <v-icon id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
                   </div>
                 </form>          
-              </v-card>             
-              
+              </v-card>                          
             </v-col>
 
+            <v-col>
+            <v-card-actions class="saved-task-v-card-actions">
+              <v-btn
+                @click="deleteTasks"
+                color="#666666"
+                class="white--text delete-task-btn"
+              >
+                削除
+                <v-icon id="delete-task-icon">fa fa-trash-alt</v-icon>   
+              </v-btn>
+            </v-card-actions>
+            </v-col>    
           </v-row>
         </v-container>
-        <v-card-actions class="saved-task-v-card-actions">
-        <v-btn
-          @click="deleteTasks"
-          color="#666666"
-          class="white--text delete-task-btn"
-        >
-          削除
-          <v-icon id="delete-task-icon">fa fa-trash-alt</v-icon>   
-        </v-btn>
-      </v-card-actions>
 
     <v-row justify="center">  
 
@@ -234,7 +235,6 @@ export default {
 .saved-task-v-card-actions {
   display: flex;
   justify-content: flex-end;
-  margin: 0 6px 0 0;
 }
 
 .v-dialog {
