@@ -8,7 +8,7 @@
       <div id="study-time-comment">
 
           <div>今日の学習時間は</div>       
-          <v-container>
+          <v-container class="study-time-container">
             <v-row>
               <v-col class="study-time-col">
 
@@ -105,7 +105,7 @@ export default {
   letter-spacing: 0.05em;
 }
 
-.container {
+.study-time-container {
   display: flex;
   justify-content: center;
   margin: 70px auto;

@@ -146,7 +146,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .whole-wrapper {
   height: 100vh;
 }

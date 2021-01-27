@@ -8,7 +8,7 @@
 
         <div>{{ kanjiClikedDate }}の学習時間は</div>
 
-        <v-container>
+        <v-container class="that-day-study-time-container">
           <v-row>
             <v-col class="study-time-col">
 
@@ -129,7 +129,7 @@ export default {
   letter-spacing: 0.05em;
 }
 
-.container {
+.that-day-study-time-container {
   display: flex;
   justify-content: center;
   margin: 70px auto;
