@@ -70,7 +70,6 @@ export default {
       thatDayTotalStudyTimes: 'calendar/thatDayStudyTimes'
     }),
     kanjiClikedDate: function() {
-      console.log('===clickedDate2===')
       const yaer = this.clikedDate.slice(0,4)
       const y ='年'
       const month = this.clikedDate.slice(4,6)
@@ -81,22 +80,11 @@ export default {
       
       return kanjiCharacter.replace(/\b0+/, '')
     }
-
-    
-    // function() {
-    //   return this.$route.params.date + this.clikedDate
-    // }
   },
   created() {
-    console.log(this.$route.params.date)
     if (isNaN(this.$route.params.date) === false) {
-      console.log('===数値です_date===')
       this.fetchStudyTimes()
-      console.log('_date')
-      console.log(this.$route.params.date)
     } else{
-        console.log('===数値ではありません_date===')
-        console.log(`../${this.$route.params.date}`)
         this.$router.push(`../${this.$route.params.date}`)
       }
 
