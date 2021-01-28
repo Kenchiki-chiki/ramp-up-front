@@ -1,22 +1,6 @@
 <template>
   <span>
-    <!-- <v-navigation-drawer v-model="sidebar" app>
-      <v-list>
-        <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
-          <v-list-tile-action>
-            <v-icon small>fas fa-{{item.icon}}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
-
     <v-toolbar>
-      <!-- <span class="hidden-sm-and-up">
-        <v-toolbar-side-icon @click="sidebar = !sidebar">
-          <v-icon>fas fa-bars</v-icon>
-        </v-toolbar-side-icon>
-      </span> -->
       <v-toolbar-title class="white--text toolbar" @click="$router.push('/')" style="font-weigth: bold; cursor: pointer;">
         Ramp Up
       </v-toolbar-title>
@@ -44,28 +28,7 @@
             guest
           </v-btn>
           
-        <!-- <v-btn flat v-for="item in menuItems" :key="item.title" :to="item.path">{{ item.title }}</v-btn> -->
       </v-toolbar-items>
-
-      <!-- <div v-if="!isAuthenticated">
-        <v-toolbar-items>
-          <v-btn dark small icon color="black" to="/signup">
-            <v-icon small>fas fa-user-plus</v-icon>
-          </v-btn>
-
-          <v-btn dark small icon color="green" to="/signin">
-            <v-icon small>fas fa-sign-in-alt</v-icon>
-          </v-btn>
-        </v-toolbar-items>
-      </div> -->
-      <!-- <div v-else>
-        <v-btn outline small icon color="green" to="/dashboard">
-          <v-icon small>fas fa-user</v-icon>
-        </v-btn>
-        <v-btn dark small icon color="green" @click="logout" data-cy="logout">
-          <v-icon small>fas fa-sign-out-alt</v-icon>
-        </v-btn>
-      </div> -->
     </v-toolbar>
   </span>
 </template>

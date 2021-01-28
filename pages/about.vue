@@ -52,7 +52,6 @@
           <div
             class="section-body"
           >
-          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam, impedit. Blanditiis ab explicabo quidem saepe animi veniam, impedit ex sunt id quia vel totam? -->
           </div>
           
         </v-flex>
@@ -73,7 +72,6 @@
           <div
             class="section-body"
           >
-          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam, impedit. Blanditiis ab explicabo quidem saepe animi veniam, impedit ex sunt id quia vel totam? -->
           </div>
           
         </v-flex>
@@ -94,7 +92,6 @@
           <div
             class="section-body"
           >
-          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam, impedit. Blanditiis ab explicabo quidem saepe animi veniam, impedit ex sunt id quia vel totam? -->
           </div>
           
         </v-flex>

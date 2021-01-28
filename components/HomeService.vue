@@ -2,9 +2,6 @@
   <v-container class="service bg-light section text-xs-center">
     <div class="section-head">
       <h2 class="section-title">Feature</h2>
-      <!-- <div
-        class="section-meta"
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum exercitationem dignissimos animi similique, eveniet voluptates.</div> -->
     </div>
 
     <v-layout wrap justify-center>
@@ -99,7 +96,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .service-item {
   background: #fff;

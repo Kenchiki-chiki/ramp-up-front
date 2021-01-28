@@ -31,7 +31,7 @@
         <div
           class="section-body"
         >
-        <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam, impedit. Blanditiis ab explicabo quidem saepe animi veniam, impedit ex sunt id quia vel totam? -->
+        
         </div>
         <v-btn 
          color="green" 
@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .about {
   position: relative;
