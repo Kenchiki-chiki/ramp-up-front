@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index-whole-wrapper">
     <AppNavigation/>
     <HomeIntro/>
     <HomeAbout/>
@@ -7,56 +7,6 @@
     
   </div>
 
-  <!-- <div>
-    <v-container>
-      <v-row align="center" justify="center">
-      <v-col cols="12" class="">
-        <div class="text-center">
-          <h1 class="app-title">Ramp Up</h1>
-        </div>
-      </v-col>
-      </v-row>
-
-    <v-row align="center" justify="center">
-      <v-col cols="12" class="top-buttons">
-        <div class="text-center">
-          <div class="my-2">
-            <v-btn
-            @click="$router.push('sign_up')"
-            class="ma-2 top-btn"
-            outlined
-            color="white"
-          >
-            sing up
-          </v-btn>
-          </div>
-          <div class="my-2">
-            <v-btn
-            @click="$router.push('sign_in')"
-            class="ma-2 top-btn"
-            outlined
-            color="white"
-          >
-            sign in
-          </v-btn>
-          </div>
-          <div class="my-2">
-            <v-btn
-            @click="randomSet"
-            class="ma-2 top-btn"
-            outlined
-            color="white"
-          >
-            guest
-          </v-btn>
-          </div>
-          
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
-    
-  </div> -->
     
 </template>
 
@@ -85,6 +35,9 @@ export default {
 </script>
 
 <style>
+.index-whole-wrapper {
+  background-color: #000000;
+}
 .app-title {
   font-size: 70px;
   font-weight: 300;

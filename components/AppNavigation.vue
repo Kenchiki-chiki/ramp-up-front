@@ -17,12 +17,17 @@
           <v-icon>fas fa-bars</v-icon>
         </v-toolbar-side-icon>
       </span> -->
-      <v-toolbar-title class="white--text" style="font-weigth: bold;">
+      <v-toolbar-title class="white--text toolbar" @click="$router.push('/')" style="font-weigth: bold; cursor: pointer;">
         Ramp Up
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         
+            <v-btn
+            @click="$router.push('about')"                                    
+          >
+            about
+          </v-btn>
             <v-btn
             @click="$router.push('sign_up')"                                    
           >
