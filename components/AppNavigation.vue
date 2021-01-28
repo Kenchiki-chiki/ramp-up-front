@@ -11,7 +11,7 @@
       </v-list>
     </v-navigation-drawer> -->
 
-    <v-toolbar app>
+    <v-toolbar>
       <!-- <span class="hidden-sm-and-up">
         <v-toolbar-side-icon @click="sidebar = !sidebar">
           <v-icon>fas fa-bars</v-icon>
@@ -24,20 +24,17 @@
       <v-toolbar-items class="hidden-xs-only">
         
             <v-btn
-            @click="$router.push('sign_up')"            
-            flat            
+            @click="$router.push('sign_up')"                                    
           >
             sing up
           </v-btn>
           <v-btn
-            @click="$router.push('sign_in')"
-            flat
+            @click="$router.push('sign_in')"            
           >
             sign in
           </v-btn>
           <v-btn
-            @click="randomSet"
-            flat
+            @click="randomSet"           
           >
             guest
           </v-btn>

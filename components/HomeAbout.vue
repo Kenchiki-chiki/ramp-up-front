@@ -33,7 +33,13 @@
         >
         <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam, impedit. Blanditiis ab explicabo quidem saepe animi veniam, impedit ex sunt id quia vel totam? -->
         </div>
-        <!-- <v-btn round color="green" dark class="mt-4 mx-0" to="/about">read more</v-btn> -->
+        <v-btn 
+         color="green" 
+         dark class="mt-4 mx-0" 
+         @click="$router.push('about')"
+         >
+         read more
+         </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
