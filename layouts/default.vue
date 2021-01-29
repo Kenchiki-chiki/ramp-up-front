@@ -91,6 +91,10 @@ input:-webkit-autofill {
   justify-content: center;
   margin: 30px auto 0px;
 }
+
+.devise-token-auth-form {
+  margin: 70px 0 0 0 ; 
+}
 </style>
 
 

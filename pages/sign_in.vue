@@ -1,39 +1,43 @@
 <template>
-  <v-container>
-    <v-card width="400px" class="mx-auto mt-5">
-      <v-card-title>
-        <h1 class="display-1">
-          ログイン
-        </h1>
-      </v-card-title>
-      <v-card-text>
-        <v-form ref="form" lazy-validation>
-          <v-text-field
-            v-model="email"
-            prepend-icon="mdi-email"
-            label="email"
-          />
-          <v-text-field
-            v-model="password"
-            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            prepend-icon="mdi-lock"            
-            v-bind:type="showPassword ? 'text' : 'password'"
-            @click:append="showPassword = !showPassword"
-            label="password"
-          />
-          <v-card-actions>
-            <v-btn
-              color="#666666"
-              class="white--text"
-              @click="loginWithAuthModule"
-            >
-              ログイン
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <div class="whole-wrapper">
+    <Errors :errors="errors" />
+
+    <v-container class="devise-token-auth-form">
+      <v-card width="400px" class="mx-auto mt-5">
+        <v-card-title>
+          <h1 class="display-1">
+            ログイン
+          </h1>
+        </v-card-title>
+        <v-card-text>
+          <v-form ref="form" lazy-validation>
+            <v-text-field
+              v-model="email"
+              prepend-icon="mdi-email"
+              label="email"
+            />
+            <v-text-field
+              v-model="password"
+              v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              prepend-icon="mdi-lock"            
+              v-bind:type="showPassword ? 'text' : 'password'"
+              @click:append="showPassword = !showPassword"
+              label="password"
+            />
+            <v-card-actions>
+              <v-btn
+                color="#666666"
+                class="white--text"
+                @click="loginWithAuthModule"
+              >
+                ログイン
+              </v-btn>
+            </v-card-actions>
+          </v-form>
+        </v-card-text>
+      </v-card>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -47,7 +51,8 @@ export default {
     return {
       password: '',
       email: '',
-      showPassword: false
+      showPassword: false,
+      errors: []
     }
   },
   methods: {
@@ -77,6 +82,7 @@ export default {
             return response         
           },
           (error) => {
+            this.errors = ['入力内容が正しくありません。']
             return error
           }          
           

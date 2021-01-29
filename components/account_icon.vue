@@ -106,7 +106,7 @@ export default {
   right: 50px !important;
   left: initial !important;
   transform-origin: right top !important;
-  z-index: 302 ;
+  z-index: 997 !important;
 }
 
 </style>

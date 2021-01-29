@@ -1,47 +1,51 @@
 <template>
-  <v-container>
-    <v-card width="400px" class="mx-auto mt-5">
-      <v-card-title>
-        <h1 class="display-1">
-          新規登録
-        </h1>
-      </v-card-title>
-      <v-card-text>
-        <v-form ref="form" lazy-validation>
-          <v-text-field
-            v-model="user.email"
-            prepend-icon="mdi-email"
-            label="email"
-          />
-          <v-text-field
-            v-model="user.password"
-            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            prepend-icon="mdi-lock"
-            v-bind:type="showPassword ? 'text' : 'password'"
-            @click:append="showPassword = !showPassword"
-            label="password"
-          />
-          <v-text-field
-            v-model="user.password_confirmation"
-            v-bind:append-icon="showConfirmation ? 'mdi-eye' : 'mdi-eye-off'"
-            prepend-icon="mdi-lock"
-            v-bind:type="showConfirmation ? 'text' : 'password'"
-            @click:append="showConfirmation = !showConfirmation"
-            label="comfirmation"
-          />
-          <v-card-actions>
-            <v-btn
-              color="#666666"
-              class="white--text"
-              @click="registerUser"
-            >
-              新規登録
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <div class="whole-wrapper">
+    <Errors :errors="errors" />
+
+    <v-container class="devise-token-auth-form">
+      <v-card width="400px" class="mx-auto mt-5">
+        <v-card-title>
+          <h1 class="display-1">
+            新規登録
+          </h1>
+        </v-card-title>
+        <v-card-text>
+          <v-form ref="form" lazy-validation>
+            <v-text-field
+              v-model="user.email"
+              prepend-icon="mdi-email"
+              label="email"
+            />
+            <v-text-field
+              v-model="user.password"
+              v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              prepend-icon="mdi-lock"
+              v-bind:type="showPassword ? 'text' : 'password'"
+              @click:append="showPassword = !showPassword"
+              label="password"
+            />
+            <v-text-field
+              v-model="user.password_confirmation"
+              v-bind:append-icon="showConfirmation ? 'mdi-eye' : 'mdi-eye-off'"
+              prepend-icon="mdi-lock"
+              v-bind:type="showConfirmation ? 'text' : 'password'"
+              @click:append="showConfirmation = !showConfirmation"
+              label="comfirmation"
+            />
+            <v-card-actions>
+              <v-btn
+                color="#666666"
+                class="white--text"
+                @click="registerUser"
+              >
+                新規登録
+              </v-btn>
+            </v-card-actions>
+          </v-form>
+        </v-card-text>
+      </v-card>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -56,12 +60,14 @@ export default {
         password_confirmation: '',
       },
       showPassword:false,
-      showConfirmation:false
+      showConfirmation:false,
+      errors: []
     }
   },
   methods: {
     registerUser() {
-      this.$axios.post('/api/v1/auth', this.user ,{
+      console.log('===1===')
+      const res = this.$axios.post('/api/v1/auth', this.user ,{
         headers: {
             'access-token': localStorage.getItem('access-token'),
             uid: localStorage.getItem('uid'),
@@ -87,6 +93,9 @@ export default {
       return response
       },
       (error) => {
+        console.log('===エラーメッセージ===')
+        this.errors = ['入力内容が正しくありません。']
+        console.log(this.errors)
         return error
       }      
       )

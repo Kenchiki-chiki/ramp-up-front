@@ -1,11 +1,12 @@
 <template>
   <div class="whole-wrapper">
+    <Errors :errors="errors" />
     <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
 
       <div class="main-content-wrapper">
-        <v-container class="account-setting-form">
+        <v-container class="devise-token-auth-form">
           <v-card width="400px" class="mx-auto mt-5">
             <v-card-title>
               <h1 class="display-1">
@@ -61,7 +62,8 @@ export default {
         password: '',
         email: '',
       },
-      showPassword:false
+      showPassword:false,
+      errors: []
     }
   },
   components: {
@@ -85,14 +87,15 @@ export default {
           localStorage.setItem('uid', response.headers.uid)
           localStorage.setItem('token-type', response.headers['token-type'])
           this.$router.push('/build')     
-        })
+        },
+        (error) => {
+        console.log('===エラーメッセージ===')
+        this.errors = ['入力内容が正しくありません。']
+        console.log(this.errors)
+        return error
+        }      
+        )
     },
   },
 }
 </script>
-
-<style>
-.account-setting-form {
-  margin: 70px 0 0 0 ; 
-}
-</style>

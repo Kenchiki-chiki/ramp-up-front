@@ -23,7 +23,7 @@ export default {
 
 <style>
 .errors {
-  z-index: 998;
+  z-index: 996;
   position: absolute;
   top: 4px;
   left: 270px;
