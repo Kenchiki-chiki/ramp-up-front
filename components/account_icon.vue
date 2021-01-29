@@ -15,14 +15,14 @@
             <v-list-item>
               <v-list-item-title
                 class="text--darken-3 mb-1"
-                @click="$router.push('account_setting')"
+                @click="$router.push('/account_setting')"
               >
               アカウント編集
               </v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title
-                @click="$router.push('skill_edit')"
+                @click="$router.push('/skill_edit')"
               >
               スキル編集
               </v-list-item-title>

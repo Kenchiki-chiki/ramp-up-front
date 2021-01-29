@@ -17,7 +17,7 @@
         <v-list-item>
           <v-list-item-title
             class="navbar-title"
-            @click="$router.push('build')"
+            @click="$router.push('/build')"
           >
           BUILD
           </v-list-item-title>
@@ -25,7 +25,7 @@
         <v-list-item>
           <v-list-item-title
             class="navbar-title"
-            @click="$router.push('task')"
+            @click="$router.push('/task')"
           >
           TASK
           </v-list-item-title>
@@ -33,7 +33,7 @@
         <v-list-item>
           <v-list-item-title
             class="navbar-title"
-            @click="$router.push('calendar')"
+            @click="$router.push('/calendar')"
           >
           CALENDAR
           </v-list-item-title>
@@ -41,7 +41,7 @@
         <v-list-item>
           <v-list-item-title
            class="navbar-title"
-            @click="$router.push('chart')"
+            @click="$router.push('/chart')"
           >
           CHART
           </v-list-item-title>

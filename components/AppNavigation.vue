@@ -8,17 +8,17 @@
       <v-toolbar-items class="hidden-xs-only">
         
             <v-btn
-            @click="$router.push('about')"                                    
+            @click="$router.push('/about')"                                    
           >
             about
           </v-btn>
             <v-btn
-            @click="$router.push('sign_up')"                                    
+            @click="$router.push('/sign_up')"                                    
           >
             sing up
           </v-btn>
           <v-btn
-            @click="$router.push('sign_in')"            
+            @click="$router.push('/sign_in')"            
           >
             sign in
           </v-btn>
