@@ -43,10 +43,7 @@
           <v-card-actions>
           </v-card-actions>
 
-        </div>
-
-      
-
+        </div>      
 
       <account/>
 
@@ -55,7 +52,6 @@
     <v-row justify="center">  
 
     <v-dialog
-      id="dialog"
       v-model="dialog"
       max-width="290"
     >

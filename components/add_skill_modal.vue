@@ -12,7 +12,6 @@
     </v-btn>
 
     <v-dialog
-      id="dialog"
       v-model="dialog"
       max-width="290"
     >
