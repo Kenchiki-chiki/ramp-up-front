@@ -19,6 +19,11 @@ export default {
   layout: 'default',
   name: 'App',
   auth: false,
+  middleware({ store, redirect }) {
+    if(store.$auth.loggedIn) {
+      redirect('/build');
+    }
+  },
   data() {
     return {
       

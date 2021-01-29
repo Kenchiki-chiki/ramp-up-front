@@ -106,6 +106,11 @@ import AppNavigation from "~/components/AppNavigation";
 
 export default {
   name: "About",
+  middleware({ store, redirect }) {
+    if(store.$auth.loggedIn) {
+      redirect('/build');
+    }
+  },
   components: {
     AppNavigation
   }
