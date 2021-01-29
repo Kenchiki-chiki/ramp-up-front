@@ -262,6 +262,11 @@ import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
+  middleware({ store, redirect }) {
+    if(!store.$auth.loggedIn) {
+      redirect('/sign_in');
+    }
+  },
   data() {
     return {
       errors: [],

@@ -36,7 +36,7 @@
         <v-btn 
          color="green" 
          dark class="mt-4 mx-0" 
-         @click="$router.push('about')"
+         @click="$router.push('/about')"
          >
          read more
          </v-btn>

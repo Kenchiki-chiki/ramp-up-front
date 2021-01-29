@@ -15,14 +15,14 @@
             <v-list-item>
               <v-list-item-title
                 class="text--darken-3 mb-1"
-                @click="$router.push('account_setting')"
+                @click="$router.push('/account_setting')"
               >
               アカウント編集
               </v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title
-                @click="$router.push('skill_edit')"
+                @click="$router.push('/skill_edit')"
               >
               スキル編集
               </v-list-item-title>
@@ -45,11 +45,6 @@
 
 <script>
 export default {
-  middleware({ store, redirect }) {
-    if(!store.$auth.loggedIn) {
-      redirect('/login');
-    }
-  },
   name: 'App',
   data() {
     return {
@@ -106,7 +101,7 @@ export default {
   right: 50px !important;
   left: initial !important;
   transform-origin: right top !important;
-  z-index: 302 ;
+  z-index: 997 !important;
 }
 
 </style>

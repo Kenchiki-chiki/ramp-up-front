@@ -49,6 +49,11 @@ import Account from '~/components/account_icon.vue'
 import BarChart from '~/components/bar_chart.vue'
 import PieChart from '~/components/pie_chart.vue'
 export default {
+  middleware({ store, redirect }) {
+    if(!store.$auth.loggedIn) {
+      redirect('/sign_in');
+    }
+  },
   components: {
     Topbar,
     Navbar,

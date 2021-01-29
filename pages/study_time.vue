@@ -54,7 +54,7 @@ import Account from '~/components/account_icon.vue'
 export default {
   middleware({ store, redirect }) {
     if(!store.$auth.loggedIn) {
-      redirect('/login');
+      redirect('/sign_in');
     }
   },
   data() {
