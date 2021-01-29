@@ -315,13 +315,8 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
 .whole-content-wrapper {
   display: flex;
-  height: 100vh;
 }
 
 .main-content-wrapper {

@@ -1,5 +1,5 @@
 <template>
-  <v-app class="whole-wrapper">
+  <div class="whole-wrapper">
     <div class="whole-content-wrapper">
       <Navbar />
 
@@ -45,7 +45,7 @@
     </div>
 
     <account/>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -89,14 +89,9 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
 .whole-content-wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
 }
 
 .main-content-wrapper {

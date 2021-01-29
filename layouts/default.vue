@@ -44,6 +44,15 @@ export default {
 </script>
 
 <style>
+.whole-wrapper {
+  background-color: #121212;
+  height: 100%;
+}
+
+.whole-content-wrapper {
+  height: 100%;
+}
+
   .comment {
   text-align: center;
 }

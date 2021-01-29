@@ -106,14 +106,9 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
 .whole-content-wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
 }
 
 .main-content-wrapper {

@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="whole-wrapper">
       <Errors :errors="errors" />
       <div class="whole-content-wrapper">
@@ -45,7 +44,7 @@
 
         </div>
 
-      </div>
+      
 
 
       <account/>
@@ -147,14 +146,9 @@ export default {
 </script>
 
 <style scoped>
-.whole-wrapper {
-  height: 100vh;
-}
-
 .whole-content-wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
 }
 
 .main-content-wrapper {
