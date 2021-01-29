@@ -9,7 +9,7 @@
           <div>明日のタスクを設定しましょう。</div>
         </div>
 
-        <v-container id="saved-task-container">
+        <v-container id="task-container">
           <v-row>
             <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
             <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
@@ -164,12 +164,6 @@ export default {
 </script>
 
 <style>
-#saved-task-container {
-  display: flex;
-  justify-content: center;
-  margin: 70px auto 0px;
-}
-
 .saved-box {
   /* display: flex;
   justify-content: center;

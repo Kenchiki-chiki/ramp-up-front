@@ -62,7 +62,7 @@ export default {
   text-align: center;
   z-index: 10;
   font-size: 30px;
-  margin: 70px 0 0 0;
+  margin: 100px 0 0 0;
   width: 100%;
   letter-spacing: 0.05em;
   display: flex;
@@ -73,7 +73,7 @@ export default {
   text-align: center;
   z-index: 10;
   font-size: 30px;
-  margin: 70px 0 0 0 ; 
+  margin: 100px 0 0 0 ; 
   width: 100%;
   letter-spacing: 0.05em;
 }
@@ -84,6 +84,12 @@ export default {
 
 input:-webkit-autofill {
   border-radius:2px;
+}
+
+#task-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0px;
 }
 </style>
 

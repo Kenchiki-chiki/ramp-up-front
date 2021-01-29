@@ -318,12 +318,6 @@ export default {
 </script>
 
 <style>
-#task-container {
-  display: flex;
-  justify-content: center;
-  margin: 70px auto 0px;
-}
-
 .task-col {
   display: flex;
   justify-content: center;

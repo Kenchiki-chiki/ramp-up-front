@@ -15,7 +15,7 @@
 
         </div>
 
-          <v-container>
+          <v-container id="skill_edit_conteiner">
             <v-row class="skill-row">
               <v-col v-for="skill in skills" :key="skill.id" class="skill-edit-col" cols="12" sm="4" md="3">
 
@@ -167,10 +167,10 @@ export default {
   margin: 0px 0 0 4px;
 }
 
-.container {
+#skill_edit_conteiner {
   display: flex;
   justify-content: center;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 
 .skill-edit-col {

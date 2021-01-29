@@ -125,19 +125,10 @@ export default {
 </script>
 
 <style>
-.non-flex-comment {
-  text-align: center;
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0 ; 
-  width: 100%;
-  letter-spacing: 0.05em;
-}
-
 .build-cantainer {
   /* display: flex;
   justify-content: center; */
-  margin: 100px auto 40px;
+  margin: 60px auto 40px;
 }
 
 .skill-col {

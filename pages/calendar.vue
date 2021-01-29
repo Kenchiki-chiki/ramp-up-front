@@ -173,7 +173,7 @@ export default {
 
 <style>
 .calendar-title {
-  margin: 28px 0 0 0;
+  margin: 48px 0 0 0;
 }
 
 #content{
