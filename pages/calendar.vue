@@ -169,11 +169,6 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-  /* width: 100%; */
-}
-
 .calendar-title {
   margin: 28px 0 0 0;
 }

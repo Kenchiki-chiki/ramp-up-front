@@ -146,26 +146,6 @@ export default {
 </script>
 
 <style scoped>
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-.comment {
-  z-index: 10;
-  margin: 70px 0 0 0;
-  width: 100%;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-}
-.skill-edit-title-comment {   
-  font-size: 30px;
-}
 .skill-add-btn-wrapper {
   margin: 3px 0px 0 0 ;
   height: 30px;
@@ -222,10 +202,6 @@ export default {
 .new-skill-form {
   width: 250px;
   margin: 0 auto;
-}
-
-.v-dialog {
-  margin-left: 290px;
 }
 
 </style>

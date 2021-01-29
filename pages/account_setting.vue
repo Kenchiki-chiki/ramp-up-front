@@ -89,23 +89,7 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
 .account-setting-form {
   margin: 70px 0 0 0 ; 
 }
-
-input:-webkit-autofill {
-  /* box-shadow: 0 0 0px 1000px #666666 inset; */
-  /* color: -internal-light-dark(black, aqua) !important; */
-  border-radius:2px;
-}
-
 </style>

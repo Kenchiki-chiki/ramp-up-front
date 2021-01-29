@@ -5,7 +5,7 @@
       <Navbar />  
 
     <div class="main-content-wrapper">
-      <div id="study-time-comment">
+      <div class="non-flex-comment">
 
           <div>今日の学習時間は</div>       
           <v-container class="study-time-container">
@@ -82,16 +82,7 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-#study-time-comment {
+.non-flex-comment {
   text-align: center;
   z-index: 10;
   font-size: 30px;

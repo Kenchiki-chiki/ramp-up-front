@@ -1,15 +1,12 @@
 <template>
   <div class="whole-wrapper">
     <Errors :errors="errors" />
-    
-
 
      <div class="whole-content-wrapper">
        <Navbar />
 
-
         <div class="main-content-wrapper">
-          <div id="build-comment">
+          <div class="non-flex-comment">
             <div>一日お疲れさまです。</div>
             <div>学習時間を入力しましょう。</div>       
           </div>
@@ -69,8 +66,6 @@
   </div>
 </template>
 
-
-
 <script>
 import { mapGetters } from 'vuex'
 import Navbar from '~/components/navbar.vue'
@@ -127,22 +122,12 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-  /* width: 100%; */
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-#build-comment {
+.non-flex-comment {
   text-align: center;
   z-index: 10;
   font-size: 30px;
-  margin: 70px 0 0 0 ;
+  margin: 70px 0 0 0 ; 
   width: 100%;
-  height: 105px;
   letter-spacing: 0.05em;
 }
 

@@ -106,15 +106,6 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
 #that-day-syudy-time-comment {
   text-align: center;
   z-index: 10;

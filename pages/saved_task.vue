@@ -160,24 +160,6 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-.comment {
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0;
-  width: 100%;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-}
-
 #saved-task-container {
   display: flex;
   justify-content: center;
@@ -230,10 +212,6 @@ export default {
 .saved-task-v-card-actions {
   display: flex;
   justify-content: flex-end;
-}
-
-.v-dialog {
-  margin-left: 290px;
 }
 
 #delete-task-icon {

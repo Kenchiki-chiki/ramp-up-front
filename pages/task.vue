@@ -315,24 +315,6 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-.comment {
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0;
-  width: 100%;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-}
-
 #task-container {
   display: flex;
   justify-content: center;

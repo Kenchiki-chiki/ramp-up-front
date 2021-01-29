@@ -51,10 +51,48 @@ export default {
 
 .whole-content-wrapper {
   height: 100%;
+  display: flex;
 }
 
-  .comment {
+.main-content-wrapper {
+  width: 100%;
+}
+
+.comment {
   text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0;
+  width: 100%;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+}
+
+.non-flex-comment {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0 ; 
+  width: 100%;
+  letter-spacing: 0.05em;
+}
+
+/* text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 70px 0 0 0 ; 
+  width: 100%;
+  letter-spacing: 0.05em; */
+
+.v-dialog {
+  margin-left: 290px;
+}
+
+input:-webkit-autofill {
+  /* box-shadow: 0 0 0px 1000px #666666 inset; */
+  /* color: -internal-light-dark(black, aqua) !important; */
+  border-radius:2px;
 }
 </style>
 

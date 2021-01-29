@@ -75,14 +75,6 @@ export default {
 </script>
 
 <style>
-.whole-content-wrapper {
-  display: flex;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
 .bar-container {
   padding: 60px 0 0 0;
 }
