@@ -1,5 +1,6 @@
 <template>
   <div class="whole-wrapper">
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
 
@@ -63,6 +64,7 @@
 
 <script>
 import moment from "moment"
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -75,6 +77,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account
   },
@@ -169,18 +172,8 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  /* width: 100%; */
-  height: 100vh;
-}
-
 .calendar-title {
-  margin: 28px 0 0 0;
+  margin: 48px 0 0 0;
 }
 
 #content{

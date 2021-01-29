@@ -1,5 +1,6 @@
 <template>
   <div class="whole-wrapper">
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
     
@@ -48,6 +49,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -62,6 +64,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
   },
@@ -106,20 +109,6 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
 #that-day-syudy-time-comment {
   text-align: center;
   z-index: 10;

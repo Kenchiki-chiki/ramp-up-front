@@ -1,7 +1,7 @@
 <template>
-  <div>
     <div class="whole-wrapper">
       <Errors :errors="errors" />
+      <Topbar />
       <div class="whole-content-wrapper">
         <Navbar />
 
@@ -15,7 +15,7 @@
 
         </div>
 
-          <v-container>
+          <v-container id="skill_edit_conteiner">
             <v-row class="skill-row">
               <v-col v-for="skill in skills" :key="skill.id" class="skill-edit-col" cols="12" sm="4" md="3">
 
@@ -43,10 +43,7 @@
           <v-card-actions>
           </v-card-actions>
 
-        </div>
-
-      </div>
-
+        </div>      
 
       <account/>
 
@@ -93,6 +90,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Error from '~/components/errors.vue'
@@ -111,6 +109,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
     Error,
@@ -147,31 +146,6 @@ export default {
 </script>
 
 <style scoped>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-.comment {
-  z-index: 10;
-  margin: 70px 0 0 0;
-  width: 100%;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-}
-.skill-edit-title-comment {   
-  font-size: 30px;
-}
 .skill-add-btn-wrapper {
   margin: 3px 0px 0 0 ;
   height: 30px;
@@ -189,10 +163,10 @@ export default {
   margin: 0px 0 0 4px;
 }
 
-.container {
+#skill_edit_conteiner {
   display: flex;
   justify-content: center;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 
 .skill-edit-col {
@@ -228,10 +202,6 @@ export default {
 .new-skill-form {
   width: 250px;
   margin: 0 auto;
-}
-
-.v-dialog {
-  margin-left: 290px;
 }
 
 </style>

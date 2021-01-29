@@ -1,15 +1,13 @@
 <template>
   <div class="whole-wrapper">
     <Errors :errors="errors" />
-    
-
+    <Topbar />
 
      <div class="whole-content-wrapper">
        <Navbar />
 
-
         <div class="main-content-wrapper">
-          <div id="build-comment">
+          <div class="non-flex-comment">
             <div>一日お疲れさまです。</div>
             <div>学習時間を入力しましょう。</div>       
           </div>
@@ -69,10 +67,9 @@
   </div>
 </template>
 
-
-
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Error from '~/components/errors.vue'
@@ -89,6 +86,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
     Error
@@ -127,34 +125,10 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  /* width: 100%; */
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-#build-comment {
-  text-align: center;
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0 ;
-  width: 100%;
-  height: 105px;
-  letter-spacing: 0.05em;
-}
-
 .build-cantainer {
   /* display: flex;
   justify-content: center; */
-  margin: 100px auto 40px;
+  margin: 60px auto 40px;
 }
 
 .skill-col {
@@ -173,7 +147,7 @@ export default {
 
 .build-btn {
   position: absolute;
-  top: 60px;
+  top: 48px;
   right: 48px;
 }
   

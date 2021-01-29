@@ -1,5 +1,6 @@
 <template>
-  <v-app class="whole-wrapper">
+  <div class="whole-wrapper">
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
 
@@ -45,10 +46,11 @@
     </div>
 
     <account/>
-  </v-app>
+  </div>
 </template>
 
 <script>
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -63,6 +65,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
   },
@@ -89,28 +92,7 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
 .account-setting-form {
   margin: 70px 0 0 0 ; 
 }
-
-input:-webkit-autofill {
-  /* box-shadow: 0 0 0px 1000px #666666 inset; */
-  /* color: -internal-light-dark(black, aqua) !important; */
-  border-radius:2px;
-}
-
 </style>

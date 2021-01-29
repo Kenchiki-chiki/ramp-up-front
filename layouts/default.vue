@@ -44,8 +44,52 @@ export default {
 </script>
 
 <style>
-  .comment {
+.whole-wrapper {
+  background-color: #121212;
+  height: 100%;
+}
+
+.whole-content-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.main-content-wrapper {
+  width: 100%;
+}
+
+.comment {
   text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 100px 0 0 0;
+  width: 100%;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+}
+
+.non-flex-comment {
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;
+  margin: 100px 0 0 0 ; 
+  width: 100%;
+  letter-spacing: 0.05em;
+}
+
+.v-dialog {
+  margin-left: 290px !important;
+}
+
+input:-webkit-autofill {
+  border-radius:2px;
+}
+
+#task-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0px;
 }
 </style>
 

@@ -1,11 +1,11 @@
 <template>
   <div class="whole-wrapper">
-
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />  
 
     <div class="main-content-wrapper">
-      <div id="study-time-comment">
+      <div class="non-flex-comment">
 
           <div>今日の学習時間は</div>       
           <v-container class="study-time-container">
@@ -48,6 +48,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -62,6 +63,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
   },
@@ -82,29 +84,6 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-#study-time-comment {
-  text-align: center;
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0 ; 
-  width: 100%;
-  letter-spacing: 0.05em;
-}
-
 .study-time-container {
   display: flex;
   justify-content: center;

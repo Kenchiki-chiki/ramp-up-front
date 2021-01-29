@@ -1,6 +1,7 @@
 <template>
 <div class="whole-wrapper">
     <Errors :errors="errors" />
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
       <div class="main-content-wrapper">
@@ -8,7 +9,7 @@
           <div>明日のタスクを設定しましょう。</div>
         </div>
 
-        <v-container id="saved-task-container">
+        <v-container id="task-container">
           <v-row>
             <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
             <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
@@ -93,6 +94,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Error from '~/components/errors.vue'
@@ -112,6 +114,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
     Error
@@ -160,35 +163,6 @@ export default {
 </script>
 
 <style>
-.whole-wrapper {
-  height: 100vh;
-}
-
-.whole-content-wrapper {
-  display: flex;
-  height: 100vh;
-}
-
-.main-content-wrapper {
-  width: 100%;
-}
-
-.comment {
-  z-index: 10;
-  font-size: 30px;
-  margin: 70px 0 0 0;
-  width: 100%;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-}
-
-#saved-task-container {
-  display: flex;
-  justify-content: center;
-  margin: 70px auto 0px;
-}
-
 .saved-box {
   /* display: flex;
   justify-content: center;
@@ -235,10 +209,6 @@ export default {
 .saved-task-v-card-actions {
   display: flex;
   justify-content: flex-end;
-}
-
-.v-dialog {
-  margin-left: 290px;
 }
 
 #delete-task-icon {
