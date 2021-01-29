@@ -1,5 +1,6 @@
 <template>
   <div class="whole-wrapper">
+    <Topbar />
     <div class="whole-content-wrapper">
       <Navbar />
 
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -63,6 +65,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
   },

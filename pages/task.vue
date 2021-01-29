@@ -1,6 +1,7 @@
 <template> 
   <div class="whole-wrapper">
     <Errors :errors="errors" />
+    <Topbar />
     <div class="whole-content-wrapper">
         <Navbar />
         <div class="main-content-wrapper">
@@ -257,6 +258,7 @@
 
 
 <script>
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 export default {
@@ -283,6 +285,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account
   },

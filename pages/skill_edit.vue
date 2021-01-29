@@ -1,6 +1,7 @@
 <template>
     <div class="whole-wrapper">
       <Errors :errors="errors" />
+      <Topbar />
       <div class="whole-content-wrapper">
         <Navbar />
 
@@ -54,6 +55,7 @@
     <v-row justify="center">  
 
     <v-dialog
+      id="dialog"
       v-model="dialog"
       max-width="290"
     >
@@ -92,6 +94,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Topbar from '~/components/top_bar.vue'
 import Navbar from '~/components/navbar.vue'
 import Account from '~/components/account_icon.vue'
 import Error from '~/components/errors.vue'
@@ -110,6 +113,7 @@ export default {
     }
   },
   components: {
+    Topbar,
     Navbar,
     Account,
     Error,

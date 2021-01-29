@@ -79,7 +79,7 @@ export default {
 }
 
 .v-dialog {
-  margin-left: 290px;
+  margin-left: 290px !important;
 }
 
 input:-webkit-autofill {

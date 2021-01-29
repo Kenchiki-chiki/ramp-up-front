@@ -1,6 +1,6 @@
 <template>
-  <div v-if="errors.length" class="">
-    <v-alert type="errors">
+  <div v-if="errors.length">
+    <v-alert type="errors" id="error-alert">
       {{ errors.join('。') }}
     </v-alert>
   </div>
@@ -25,9 +25,12 @@ export default {
 .errors {
   z-index: 998;
   position: absolute;
-  top: 11px;
+  top: 4px;
   left: 270px;
   right: 20px;
   margin: 0 65px 0 45px;
+}
+#error-alert {
+  background-color: #262626;
 }
 </style>
