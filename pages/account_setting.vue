@@ -81,7 +81,11 @@ export default {
             client: localStorage.getItem('client'),
           },
         })
-        .then((response) => {
+          .then((response) => {
+            this.$store.dispatch(`message/setContent`,{
+            content: 'メールアドレスを変更しました',
+            timeout: 2000
+          })
           localStorage.setItem('access-token', response.headers['access-token'])
           localStorage.setItem('client', response.headers.client)
           localStorage.setItem('uid', response.headers.uid)
