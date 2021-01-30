@@ -32,10 +32,12 @@
             <div
                 class="calendar-daily"
                 :class="{outside: currentMonth !== day.month}"
+                @click="fetchThatDayStudyTimes(date(day))"
                 v-for="(day, index) in week"
                 :key="index"
+                :style="`background-color:${day.color}`"
               >
-              <div class="calendar-day" @click="fetchThatDayStudyTimes(date(day))">
+              <div class="calendar-day calendar-event" @click="fetchThatDayStudyTimes(date(day))">
                   {{ day.day }}                
               </div>
 
@@ -44,7 +46,7 @@
                   class="calendar-event"
                   :style="`background-color:${dayEvent.color}`"
                 >
-                  {{ dayEvent.name }}
+                  <!-- {{ dayEvent.name }} -->
                 
                 </div>
               </div>
@@ -78,7 +80,8 @@ export default {
       currentDate: moment(),
       // displayMonth: displayDate()
       current: 0,
-      events: []
+      events: [],
+      colors:[]
     }
   },
   components: {
@@ -208,10 +211,13 @@ export default {
   border-right:1px solid #E0E0E0;
   border-bottom:1px solid #E0E0E0;
   margin-right:-1px;
+  cursor: pointer;
+  position: relative;
 }
 .calendar-day{
   text-align: center;
   cursor: pointer;
+  z-index: 100;
 }
 
 .calendar-youbi{
@@ -228,7 +234,14 @@ export default {
 .calendar-event{
   color:white;
   margin-bottom:1px;
-  height:25px;
+  /* height:25px; */
+  /* margin: 0px; */
   line-height:25px;
+
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 125px;
+  width: 129px;
 }
 </style>
