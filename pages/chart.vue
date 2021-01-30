@@ -1,45 +1,87 @@
 <template>
-<div class="whole-wrapper">
-  <Topbar />
-  <div class="whole-content-wrapper">
-    <Navbar />  
+  <div class="whole-wrapper">
+    <Topbar />
+    <div class="whole-content-wrapper">
+      <Navbar />
+      <div class="main-content-wrapper">
+        <account/> 
+        <v-card
+          class="mx-auto text-center bar-container"
+          color="#121212"
+          dark
+          max-width=""
+        >
+          <BarChart />
 
-    <div class="main-content-wrapper">     
-      <account/>
-      
-      <div class="bar-container">
-        <BarChart />
-      </div>
-
-        <v-container id="pie-container-flex">
-          <div class="pie-row">
-            <div class="pie-rank-wrapper">
-
-              <div v-for="(pieChartData, index) in topThree" :key="index" class="pie-chart-col" >
-
-                  <div class="flex-item">
-                    <div id="pie-responsive-wrapper">
-                      <v-row class="pie_wrapper">
-                        <v-col cols="2" class="pie_wrapper-flex-item"><v-icon class="crown-icon">fas fa-crown</v-icon></v-col>
-                        <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
-                        <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
-                        <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
-                      </v-row>
-                      <hr>
-                    </div>    
-                  </div>
-
-              </div>
+          <v-card-text>
+            <div class="display-1 font-weight-thin">
+              
             </div>
+          </v-card-text>
 
-            <PieChart />
-          </div>
-        </v-container>
+          <v-divider></v-divider>
 
+          <v-card-actions class="justify-center skill-label">
+            スキル別学習時間
+          </v-card-actions>
+        </v-card>
+
+        <v-card
+          class="mx-auto text-center"
+          color="#121212"
+          dark
+          max-width=""
+        >
+          <v-container id="pie-container-flex">
+              <div class="pie-row">
+                <div class="pie-rank-wrapper">
+
+                  <div v-for="(pieChartData, index) in topThree" :key="index" class="pie-chart-col" >
+
+                      <div class="flex-item">
+                        <div id="pie-responsive-wrapper">
+                          <v-row class="pie_wrapper">
+                            <v-col cols="2" class="pie_wrapper-flex-item"><v-icon class="crown-icon">fas fa-crown</v-icon></v-col>
+                            <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
+                            <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
+                            <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
+                          </v-row>
+                          <hr>
+                        </div>    
+                      </div>
+
+                  </div>
+                </div>
+
+                <PieChart />
+              </div>
+            </v-container>
+
+          <!-- <v-card-text>
+            <div class="display-1 font-weight-thin">
+              月別学習時間
+            </div>
+          </v-card-text>
+
+          <v-divider></v-divider>
+
+          <v-card-actions class="justify-center">
+            <v-btn
+              block
+              text
+            >
+              月別学習時間
+            </v-btn>
+          </v-card-actions> -->
+        </v-card>
+      </div>
     </div>
+
   </div>
-</div>
+
+  
 </template>
+
 
 <script>
 import { mapGetters } from 'vuex'
@@ -84,7 +126,8 @@ export default {
 
 <style>
 .bar-container {
-  padding: 60px 0 0 0;
+  /* padding: 60px 0 0 0; */
+  margin: 80px 0 0 0;
 }
 
 #pie-responsive-wrapper {
@@ -113,7 +156,7 @@ export default {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 60px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 .pie-row {
@@ -123,6 +166,18 @@ export default {
 
 .pie-rank-wrapper {
   margin: 0 100px 0 0;
+}
+
+#pie-chart {
+  display: block;
+  height: 400px;
+  width: 400px;
+}
+
+.skill-label {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #616161;
 }
 
 </style>
