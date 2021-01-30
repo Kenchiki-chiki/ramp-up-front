@@ -57,22 +57,6 @@
               </div>
             </v-container>
 
-          <!-- <v-card-text>
-            <div class="display-1 font-weight-thin">
-              月別学習時間
-            </div>
-          </v-card-text>
-
-          <v-divider></v-divider>
-
-          <v-card-actions class="justify-center">
-            <v-btn
-              block
-              text
-            >
-              月別学習時間
-            </v-btn>
-          </v-card-actions> -->
         </v-card>
       </div>
     </div>
