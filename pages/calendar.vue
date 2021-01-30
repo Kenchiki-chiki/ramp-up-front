@@ -4,14 +4,39 @@
     <div class="whole-content-wrapper">
       <Navbar />
 
-      <div id="content" class="main-content-wrapper">
-        <div class="calendar-title">
-          <h2>カレンダー {{ displayMonth }}</h2>
-          <div class="button-area">
-            <button @click="prevMonth" class="button">前の月</button>
-            <button @click="nextMonth" class="button">次の月</button>
-          </div>
-        </div>
+      <div id="calendar-content" class="main-content-wrapper">
+        <v-sheet height="64">
+        <v-toolbar
+          class="calendar-title"
+          color="#121212"                    
+        >
+          <v-btn
+            fab
+            text
+            small
+            color="grey darken-2"
+            @click="prevMonth"
+          >
+            <v-icon small>
+              mdi-chevron-left
+            </v-icon>
+          </v-btn>
+          <v-btn
+            fab
+            text
+            small
+            color="grey darken-2"
+            @click="nextMonth"
+          >
+            <v-icon small>
+              mdi-chevron-right
+            </v-icon>
+          </v-btn>
+          <v-toolbar-title>
+            {{ displayMonth }}
+          </v-toolbar-title>
+        </v-toolbar>
+      </v-sheet>
         <div class="calendar">
           <div class="calendar-weekly">
             <div
@@ -181,20 +206,19 @@ export default {
 
 <style>
 .calendar-title {
-  margin: 48px 0 0 0;
+  margin: 68px 0 24px 0;
 }
 
-#content{
+.calendar-date {
+  font-size: 30px;
+  margin: 0 30px;
+}
+
+#calendar-content{
   margin:2em auto;
   width:900px;
 }
-.button-area{
-  margin:0.5em 0;
-}
-.button{
-  padding:4px 8px;
-  margin-right:8px;
-}
+
 .calendar{
   max-width:900px;
   border-top:1px solid #E0E0E0;
