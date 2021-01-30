@@ -4,14 +4,39 @@
     <div class="whole-content-wrapper">
       <Navbar />
 
-      <div id="content" class="main-content-wrapper">
-        <div class="calendar-title">
-          <h2>カレンダー {{ displayMonth }}</h2>
-          <div class="button-area">
-            <button @click="prevMonth" class="button">前の月</button>
-            <button @click="nextMonth" class="button">次の月</button>
-          </div>
-        </div>
+      <div id="calendar-content" class="main-content-wrapper">
+        <v-sheet height="64">
+        <v-toolbar
+          class="calendar-title"
+          color="#121212"                    
+        >
+          <v-btn
+            fab
+            text
+            small
+            color="grey darken-2"
+            @click="prevMonth"
+          >
+            <v-icon small>
+              mdi-chevron-left
+            </v-icon>
+          </v-btn>
+          <v-btn
+            fab
+            text
+            small
+            color="grey darken-2"
+            @click="nextMonth"
+          >
+            <v-icon small>
+              mdi-chevron-right
+            </v-icon>
+          </v-btn>
+          <v-toolbar-title>
+            {{ displayMonth }}
+          </v-toolbar-title>
+        </v-toolbar>
+      </v-sheet>
         <div class="calendar">
           <div class="calendar-weekly">
             <div
@@ -32,10 +57,12 @@
             <div
                 class="calendar-daily"
                 :class="{outside: currentMonth !== day.month}"
+                @click="fetchThatDayStudyTimes(date(day))"
                 v-for="(day, index) in week"
                 :key="index"
+                :style="`background-color:${day.color}`"
               >
-              <div class="calendar-day" @click="fetchThatDayStudyTimes(date(day))">
+              <div class="calendar-day calendar-event" @click="fetchThatDayStudyTimes(date(day))">
                   {{ day.day }}                
               </div>
 
@@ -44,7 +71,7 @@
                   class="calendar-event"
                   :style="`background-color:${dayEvent.color}`"
                 >
-                  {{ dayEvent.name }}
+                  <!-- {{ dayEvent.name }} -->
                 
                 </div>
               </div>
@@ -78,7 +105,8 @@ export default {
       currentDate: moment(),
       // displayMonth: displayDate()
       current: 0,
-      events: []
+      events: [],
+      colors:[]
     }
   },
   components: {
@@ -178,20 +206,19 @@ export default {
 
 <style>
 .calendar-title {
-  margin: 48px 0 0 0;
+  margin: 68px 0 24px 0;
 }
 
-#content{
+.calendar-date {
+  font-size: 30px;
+  margin: 0 30px;
+}
+
+#calendar-content{
   margin:2em auto;
   width:900px;
 }
-.button-area{
-  margin:0.5em 0;
-}
-.button{
-  padding:4px 8px;
-  margin-right:8px;
-}
+
 .calendar{
   max-width:900px;
   border-top:1px solid #E0E0E0;
@@ -208,10 +235,13 @@ export default {
   border-right:1px solid #E0E0E0;
   border-bottom:1px solid #E0E0E0;
   margin-right:-1px;
+  cursor: pointer;
+  position: relative;
 }
 .calendar-day{
   text-align: center;
   cursor: pointer;
+  z-index: 100;
 }
 
 .calendar-youbi{
@@ -228,7 +258,14 @@ export default {
 .calendar-event{
   color:white;
   margin-bottom:1px;
-  height:25px;
+  /* height:25px; */
+  /* margin: 0px; */
   line-height:25px;
+
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 125px;
+  width: 129px;
 }
 </style>

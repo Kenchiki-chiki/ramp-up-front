@@ -21,7 +21,7 @@ export default {
 </script>
 <style>
 #topbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: #1E1E1E;
