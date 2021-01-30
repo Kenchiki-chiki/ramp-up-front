@@ -45,7 +45,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      pieChartDatas: 'pie_chart/pieChart'
+      pieChartDatas: 'pie_chart/pieChart',
+      percentageDatas: 'pie_chart/percentage',
+      percentageRound: 'pie_chart/percentageRound',
+      skillDatas: 'pie_chart/skillDatas'
     })
   },
   mounted() {
@@ -56,10 +59,10 @@ export default {
   },
   methods: {
       async fetchPieCharts() {
-        const res = await this.$store.dispatch('pie_chart/fetchPieCharts')
-
-        this.chartData.labels = res[0]
-        this.chartData.datasets[0].data = res[1]       
+        await this.$store.dispatch('pie_chart/fetchPieCharts')
+        
+        this.chartData.labels = this.skillDatas
+        this.chartData.datasets[0].data = this.percentageDatas    
       }
     }
   
