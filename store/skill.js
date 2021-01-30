@@ -13,7 +13,7 @@ export const actions = {
     }).catch(() => {
       return { errors: ['エラーが発生しました'] }
     })
-    if (res.errors && res.errors.length !== 0) {
+    if (res.errors) {
       return {
         errors: res.errors
       }
