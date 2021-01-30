@@ -66,12 +66,9 @@
     },
     methods: {
       async addNewSkill() {
-        console.log('===1===')
         this.newSkillName.push(...[this.newSkillInputName])
         const res = await this.$store.dispatch('skill/addSkills', this.newSkillName)
         if (res.errors) {
-          console.log('===5===')
-          console.log(res.errors)
           this.errors = res.errors
           this.newSkillName = []
         } 

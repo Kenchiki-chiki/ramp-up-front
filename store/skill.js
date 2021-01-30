@@ -4,8 +4,6 @@ export const state = () => ({
 
 export const actions = {
   async addSkills({ commit }, skills) {
-    console.log('===2===')
-    console.log(skills)
     const res = await this.$axios.$post('/api/v1/skills', skills , {
       headers: {
           'access-token': localStorage.getItem('access-token'),
@@ -13,12 +11,9 @@ export const actions = {
           client: localStorage.getItem('client'),
         },
     }).catch(() => {
-      console.log('===3===')
-      console.log(res.errors)
       return { errors: ['エラーが発生しました'] }
     })
     if (res.errors) {
-      console.log('===4===')
       return {
         errors: res.errors
       }
