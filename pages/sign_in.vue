@@ -1,6 +1,7 @@
 <template>
   <div class="whole-wrapper">
     <Errors :errors="errors" />
+    <AppNavigation />
 
     <v-container class="devise-token-auth-form">
       <v-card width="400px" class="mx-auto mt-5">
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import AppNavigation from "~/components/AppNavigation";
 export default {
   middleware({ store, redirect }) {
     if(store.$auth.loggedIn) {
@@ -54,6 +56,9 @@ export default {
       showPassword: false,
       errors: []
     }
+  },
+  components: {
+    AppNavigation,
   },
   methods: {
     // loginメソッドの呼び出し
