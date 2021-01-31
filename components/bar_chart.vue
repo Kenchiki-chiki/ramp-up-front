@@ -46,8 +46,3 @@ export default {
 }
 
 </script>
-<style>
-#bar-chart {
-  /* padding-top: 8px; */
-}
-</style>
