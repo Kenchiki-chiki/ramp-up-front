@@ -21,7 +21,7 @@
                 <v-flex xs12  px-3>
                   <div class="skill-edit-item skill-edit-wrapper">   
                     <p id="skill-edit-title">{{ skill.name }}</p>
-                    <v-icon id="delete-skill-icon" class="skill-wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>                      
+                    <v-icon id="delete-skill-icon" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>                      
                   </div>
                 </v-flex>      
 
@@ -139,16 +139,14 @@ export default {
   display: flex;
   justify-content: center;
 }
-#skill-add-btn {
-  padding: 20px 10px;
-  background-color: #424242;
-}
+
 #add-skill-icon {
   margin: 0 4px 0 0;
   font-size: 1.5em;
 }
+
 .skill-add-comment {
-  margin: 0px 0 0 4px;
+  margin: 0 0 0 4px;
 }
 
 #skill_edit_conteiner {
@@ -163,30 +161,9 @@ export default {
   margin-top: 20px;
 }
 
-.skill-edit-flex-item {
-  padding: 8px 16px;
-  /* height: 58px; */
-}
-
 .skill-edit-wrapper {
   display: flex;
   justify-content: center;
-}
-
-.skill-edit-wrapper:last-child {
-  /* justify-content: flex-end; */
-  /* justify-content: space-between; */
-}
-
-#skill-wrapper-flex-item {
-  margin: 10px 0px 10px;
-  padding: 0px 20px 0 5px;
-}
-
-#skill-wrapper-flex-item:last-child {
-  margin: 0 0 0 10px;
-  padding: 0px 5px;
-  justify-content: flex-end;
 }
 
 #delete-skill-icon {
@@ -202,11 +179,8 @@ export default {
 }
 
 .skill-edit-item {
-  /* background:#1E1E1E; */
-  /* background-color:#212121; */
   padding: 20px 10px 20px;
   margin-bottom: 15px;
-  /* box-shadow: -1px 12px 25px rgba(119, 119, 119, 0.2); */
   box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2);
   position: relative;
 }
