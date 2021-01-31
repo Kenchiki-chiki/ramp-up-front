@@ -8,7 +8,7 @@
         <v-sheet height="64">
         <v-toolbar
           class="calendar-title"
-          color="#121212"                    
+          color="#212121"                    
         >
           <v-btn
             fab
@@ -56,13 +56,16 @@
           >
             <div
                 class="calendar-daily"
-                :class="{outside: currentMonth !== day.month}"
+                :class="{outside_daily: currentMonth !== day.month}"
                 @click="fetchThatDayStudyTimes(date(day))"
                 v-for="(day, index) in week"
                 :key="index"
-                :style="`background-color:${day.color}`"
               >
-              <div class="calendar-day calendar-event" @click="fetchThatDayStudyTimes(date(day))">
+              <div 
+                id="calendar-day" 
+                class="calendar-event"
+                :class="{outside_day: currentMonth !== day.month}"
+                @click="fetchThatDayStudyTimes(date(day))">
                   {{ day.day }}                
               </div>
 
@@ -238,7 +241,7 @@ export default {
   cursor: pointer;
   position: relative;
 }
-.calendar-day{
+#calendar-day{
   text-align: center;
   cursor: pointer;
   z-index: 100;
@@ -251,8 +254,17 @@ export default {
   text-align:center;
 }
 
-.outside {
+.outside_daily {
+  background-color: #181823 ;  
+}
+
+.outside_day {
   background-color: #181823;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 123px;
+  width: 100%;
 }
 
 .calendar-event{
@@ -265,7 +277,7 @@ export default {
   position: absolute;
   top: 0px;
   left: 0;
-  height: 125px;
-  width: 129px;
+  height: 100%;
+  width: 100%;
 }
 </style>

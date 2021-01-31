@@ -45,7 +45,7 @@ export default {
 
 <style>
 .whole-wrapper {
-  background-color: #121212;
+  background-color:#212121;
   height: 100%;
 }
 
