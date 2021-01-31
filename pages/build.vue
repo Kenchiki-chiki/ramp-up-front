@@ -139,6 +139,7 @@ export default {
   margin-bottom: 15px;
   /* box-shadow: -1px 12px 25px rgba(119, 119, 119, 0.2); */
   box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2);
+  /* background-color: #1f1f22; */
 }
 
 #skill-title {

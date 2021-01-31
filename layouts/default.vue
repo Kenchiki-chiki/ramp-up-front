@@ -96,6 +96,28 @@ input:-webkit-autofill {
 .devise-token-auth-form {
   margin: 70px 0 0 0 ; 
 }
+
+.task-item {
+  background-color: #212121;
+}
+
+.task-item-card {
+  box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2) !important;
+}
+
+.task-v-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-btn {
+  padding: 0 14px !important;
+}
+
+#task-icon {
+  font-size: 1.2em;
+  margin-left: 4px;
+}
 </style>
 
 
