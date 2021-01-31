@@ -16,7 +16,7 @@
             <v-row>
               <v-col v-for="(skill, index) in skills" :key="skill.id" class="skill-col" cols="12" sm="4" md="4">
                 <v-flex xs12  px-3>
-                  <div class="service-item">   
+                  <div class=" skill-item">   
                     <p id="skill-title">{{ skill.name }}</p>
                     
                       <v-text-field
@@ -132,7 +132,7 @@ export default {
   right: 48px;
 }
 
-.service-item {
+.skill-item {
   /* background:#1E1E1E; */
   /* background-color:#212121; */
   padding: 20px 10px 20px;
