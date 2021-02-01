@@ -110,8 +110,8 @@ export default {
 
 <style>
 .bar-container {
-  /* padding: 60px 0 0 0; */
-  margin: 80px 0 0 0;
+  margin: 65px 0 0 0;
+  padding-top: 10px;
 }
 
 #pie-responsive-wrapper {

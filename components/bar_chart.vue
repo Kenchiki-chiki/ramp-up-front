@@ -46,3 +46,8 @@ export default {
 }
 
 </script>
+<style>
+#bar-chart {
+  height: 415px;
+}
+</style>
