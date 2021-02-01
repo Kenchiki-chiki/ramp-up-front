@@ -3,8 +3,7 @@
     <v-alert
       id="alert"
       color="#181823"
-      dark
-      
+      dark      
     >
     {{ message }}
     </v-alert>
@@ -34,7 +33,7 @@ export default {
   left: 0; 
   }
   #alert {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 </style>
