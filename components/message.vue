@@ -33,7 +33,7 @@ export default {
   left: 0; 
   }
   #alert {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 </style>
