@@ -5,7 +5,7 @@
       <Navbar />  
 
     <div class="main-content-wrapper">
-      <div class="non-flex-comment">
+      <div id="study-comment" class="non-flex-comment">
 
           <div>今日の学習時間は</div>       
           <v-container class="study-time-container">
@@ -54,7 +54,7 @@ import Account from '~/components/account_icon.vue'
 export default {
   middleware({ store, redirect }) {
     if(!store.$auth.loggedIn) {
-      redirect('/sign_in');
+      redirect('/login');
     }
   },
   data() {
@@ -88,6 +88,10 @@ export default {
   display: flex;
   justify-content: center;
   margin: 70px auto;
+}
+
+#study-comment {
+  margin: 200px 0 0 0;
 }
 
 .study-time-col {
