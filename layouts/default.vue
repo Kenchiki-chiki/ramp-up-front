@@ -45,7 +45,7 @@ export default {
 
 <style>
 .whole-wrapper {
-  background-color: #121212;
+  background-color:#212121;
   height: 100%;
 }
 
@@ -61,7 +61,7 @@ export default {
 .comment {
   text-align: center;
   z-index: 10;
-  font-size: 30px;
+  font-size: 26px;
   margin: 100px 0 0 0;
   width: 100%;
   letter-spacing: 0.05em;
@@ -72,7 +72,7 @@ export default {
 .non-flex-comment {
   text-align: center;
   z-index: 10;
-  font-size: 30px;
+  font-size: 26px;
   margin: 100px 0 0 0 ; 
   width: 100%;
   letter-spacing: 0.05em;
@@ -94,6 +94,32 @@ input:-webkit-autofill {
 
 .devise-token-auth-form {
   margin: 70px 0 0 0 ; 
+}
+
+.task-item {
+  background-color: #212121;
+}
+
+.task-item-card {
+  box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2) !important;
+}
+
+.task-v-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-btn {
+  padding: 0 14px !important;
+}
+
+#task-icon {
+  font-size: 1.2em;
+  margin-left: 4px;
+}
+
+.study-time-card {
+  box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2);
 }
 </style>
 

@@ -1,9 +1,9 @@
 <template>
   <div class="message" v-show="message">
     <v-alert
+      id="alert"
       color="#181823"
-      dark
-      dense
+      dark      
     >
     {{ message }}
     </v-alert>
@@ -31,5 +31,9 @@ export default {
   top: 0px;
   right: 0;
   left: 0; 
+  }
+  #alert {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 </style>

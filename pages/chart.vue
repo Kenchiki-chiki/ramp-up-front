@@ -7,7 +7,7 @@
         <account/> 
         <v-card
           class="mx-auto text-center bar-container"
-          color="#121212"
+          color="background-color:#212121;"
           dark
           max-width=""
         >
@@ -28,7 +28,7 @@
 
         <v-card
           class="mx-auto text-center"
-          color="#121212"
+          color="#212121"
           dark
           max-width=""
         >
@@ -110,8 +110,8 @@ export default {
 
 <style>
 .bar-container {
-  /* padding: 60px 0 0 0; */
-  margin: 80px 0 0 0;
+  margin: 65px 0 0 0;
+  padding-top: 10px;
 }
 
 #pie-responsive-wrapper {
@@ -159,8 +159,9 @@ export default {
 }
 
 .skill-label {
-  margin-top: 14px;
+  padding-top: 14px;
   font-size: 13px;
+  background-color: #212121;
   color: #616161;
 }
 

@@ -62,20 +62,6 @@ export default {
       timeout: 2000
       })
     },
-    deleteUser() {
-      this.$axios
-        .delete('http://localhost:3000/api/v1/auth', {
-          headers: {
-            'access-token': localStorage.getItem('access-token'),
-            uid: localStorage.getItem('uid'),
-            client: localStorage.getItem('client'),
-          },
-        })
-        .then((response) => {
-          this.$auth.logout()
-          window.location.href = '/'
-        })
-    },
   },
   
   

@@ -46,8 +46,3 @@ export default {
 }
 
 </script>
-<style>
-#bar-chart {
-  margin-top: 8px;
-}
-</style>

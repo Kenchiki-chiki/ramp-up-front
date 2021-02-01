@@ -112,7 +112,7 @@ export default {
 #that-day-syudy-time-comment {
   text-align: center;
   z-index: 10;
-  font-size: 30px;
+  font-size: 26px;
   margin: 240px 0 0 0; 
   width: 100%;
   letter-spacing: 0.05em;

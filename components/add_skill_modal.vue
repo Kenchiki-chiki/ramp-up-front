@@ -95,4 +95,10 @@
   width: 250px;
   margin: 0 auto;
 }
+#skill-add-btn {
+  background-color: #424242 !important;
+}
+.skill-add-comment {
+  margin: 0 0 0 3px;
+}
 </style>

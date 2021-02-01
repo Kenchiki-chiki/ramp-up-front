@@ -31,7 +31,6 @@ export default {
 }
 
 .intro-title {
-  text-transform: uppercase;
   margin: 0 0 20px;
 }
 

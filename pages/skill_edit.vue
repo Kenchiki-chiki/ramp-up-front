@@ -18,30 +18,17 @@
           <v-container id="skill_edit_conteiner">
             <v-row class="skill-row">
               <v-col v-for="skill in skills" :key="skill.id" class="skill-edit-col" cols="12" sm="4" md="3">
-
-                <v-card width="200px" class="skill_edit_card">
-                <v-card-text class="skill-edit-flex-item" >
-
-                  <v-responsive
-                    max-width="400"
-                    class="skill-edit-wrapper"
-                  >
-                  <div class="skill-edit-wrapper">
-
-                    <p id="skill-wrapper-flex-item">{{ skill.name }}</p>
-                    <v-icon id="delete-skill-icon" class="skill-wrapper-flex-item" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>   
-                    
+                <v-flex xs12  px-3>
+                  <div class="skill-edit-item skill-edit-wrapper">   
+                    <p id="skill-edit-title">{{ skill.name }}</p>
+                    <v-icon id="delete-skill-icon" @click="deleteSkillBtn(skill.id)">fa fa-trash-alt</v-icon>                      
                   </div>
-                  </v-responsive>    
+                </v-flex>      
 
-                </v-card-text>
-
-              </v-card>
               </v-col>
             </v-row>
           </v-container>
-          <v-card-actions>
-          </v-card-actions>
+          
 
         </div>      
 
@@ -152,15 +139,14 @@ export default {
   display: flex;
   justify-content: center;
 }
-#skill-add-btn {
-  padding: 20px 10px;
-}
+
 #add-skill-icon {
   margin: 0 4px 0 0;
   font-size: 1.5em;
 }
+
 .skill-add-comment {
-  margin: 0px 0 0 4px;
+  margin: 0 0 0 4px;
 }
 
 #skill_edit_conteiner {
@@ -175,33 +161,37 @@ export default {
   margin-top: 20px;
 }
 
-.skill-edit-flex-item {
-  padding: 8px 16px;
-  /* height: 58px; */
-}
-
 .skill-edit-wrapper {
   display: flex;
   justify-content: center;
 }
 
-#skill-wrapper-flex-item {
-  margin: 10px 0px 10px;
-  padding: 0px 20px 0 5px;
-}
-
-#skill-wrapper-flex-item:last-child {
-  margin: 0 0 0 10px;
-  padding: 0px 5px;
-}
-
 #delete-skill-icon {
   font-size: 1.5em;
+  position: absolute;
+    top: 41px;
+    right: 20px;
 }
 
 .new-skill-form {
   width: 250px;
   margin: 0 auto;
+}
+
+.skill-edit-item {
+  padding: 20px 10px 20px;
+  margin-bottom: 15px;
+  box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2);
+  position: relative;
+}
+
+#skill-edit-title {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
 </style>

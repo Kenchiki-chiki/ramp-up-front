@@ -11,32 +11,45 @@
 
         <v-container id="task-container">
           <v-row>
-            <v-col v-for="task in tasks" :key="task.id" class="" cols="12" sm="6" md="3">
-            <!-- <v-col v-for="(task, index) in tasks" class="" cols="12" sm="6" md="3" :id="['saved-task-v-col-'+ [index + 1] ]"> -->
-              
-              <v-card height="140px" id="saved-task-v-card">
-                <v-card-title id="saved-task-v-card-title-bar" class="blue white--text">
-                  <span class="headline"></span>
-                  <v-spacer></v-spacer>
-                </v-card-title>
-                <form class="saved-box">
-                  <div class="box-item saved-task-form" id="task_wrapper-flex-item">
-                    {{ task.name }}
-                    <v-icon id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
-                  </div>
-                </form>          
-              </v-card>                          
-            </v-col>
+
+            <v-col
+                class="task-item"
+                v-for="task in tasks" :key="task.id"
+                cols="12"
+                sm="6"
+                md="3"
+              >
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
+                    <form class="saved-box">
+                      <div class="box-item saved-task-form" id="task_wrapper-flex-item">
+                        {{ task.name }}
+                        <v-icon small id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
+                      </div>
+                    </form>          
+                  </v-card-actions>
+                </v-card>
+              </v-col>
 
             <v-col>
-            <v-card-actions class="saved-task-v-card-actions">
+            <v-card-actions class="task-v-card-actions">
               <v-btn
                 @click="deleteTasks"
                 color="#666666"
-                class="white--text delete-task-btn"
+                class="white--text task-btn"
               >
                 削除
-                <v-icon id="delete-task-icon">fa fa-trash-alt</v-icon>   
+                <v-icon id="task-icon">fa fa-trash-alt</v-icon>   
               </v-btn>
             </v-card-actions>
             </v-col>    
@@ -170,16 +183,8 @@ export default {
   height: 116px;
 } 
 
-/* #saved-task-v-col-1 #saved-task-v-card-title-bar {
-  background-color: ;
-} */
-
 .v-card__subtitle, .v-card__text, .v-card__title {
     padding: 12px;
-}
-
-#saved-task-v-card {
-  position: relative;
 }
 
 .saved-task-form {
@@ -202,18 +207,8 @@ export default {
 #edit-task-icon {
   font-size: 1.2em;
   position: absolute;
-  top: 2px;
+  top: 3px;
   right: 0px;
-}
-
-.saved-task-v-card-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#delete-task-icon {
-  font-size: 1.2em;
-  margin-left: 4px;
 }
   
 </style>

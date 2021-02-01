@@ -10,32 +10,51 @@
           </div>
           <v-container id="task-container">
             <v-row>
+              
+
+
               <v-col
+              class="task-item"
                 cols="12"
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-blue" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task1" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
+              
               <v-col
                 cols="12"
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-blue" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task2" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -43,13 +62,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-blue" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task3" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -57,13 +83,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-blue" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task4" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -71,13 +104,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-green" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task5" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -85,13 +125,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-green" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task6" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -99,13 +146,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-green" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task7" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -113,13 +167,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-green" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task8" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -127,13 +188,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-yellow" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task9" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -141,13 +209,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-yellow" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task10" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -155,13 +230,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-yellow" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task11" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -169,13 +251,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-yellow" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task12" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -183,13 +272,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-red" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task13" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -197,13 +293,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-red" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task14" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -211,13 +314,20 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-red" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task15" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col
@@ -225,27 +335,36 @@
                 sm="6"
                 md="3"
               >
-                <v-card height="140px">
-                  <v-card-title id="task-v-card-title-bar-red" class="blue white--text">
-                    <span class="headline"></span>
-                    <v-spacer></v-spacer>
-                  </v-card-title>
+                <v-card
+                  class="mx-auto text-center task-item-card"
+                  color="#1f1f22"                 
+                  dark
+                >
+                  <v-card-text>
+                    <div class="display-1 font-weight-thin">
+                      
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="justify-center">
                     <input v-model="task16" type="text" class="task-form">
-                  
+                  </v-card-actions>
                 </v-card>
               </v-col>
+
               <v-col>
                 <v-card-actions class="task-v-card-actions">
                   <v-btn
                     @click="saveTasks"
                     color="#666666"
-                    class="white--text save-task-btn"
+                    class="white--text task-btn"
                   >
                     保存
-                    <v-icon id="save-task-icon">fas fa-save</v-icon>  
+                    <v-icon id="task-icon">fas fa-save</v-icon>  
                   </v-btn>
                 </v-card-actions>
-              </v-col>
+              </v-col>             
+
             </v-row>
           </v-container>
         </div>
@@ -323,48 +442,6 @@ export default {
 </script>
 
 <style>
-.task-col {
-  display: flex;
-  justify-content: center;
-  /* margin-top: 20px; */
-  padding: 0px;
-  width: inherit;
-}
-
-.task_wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.box {
-  background-color: #1E1E1E;
-  width: 250px;
-  height: 130px;
-}
-
-.box-bar {
-  background-color: aqua;
-  height: 10px;
-  width: 100%;
-}
-
-/* #task-v-card-title-bar-blue {
-  background-color: #039BE5;
-}
-#task-v-card-title-bar-green {
-  background-color: #43A047;
-}
-#task-v-card-title-bar-yellow {
-  background-color:#FDD835;
-}
-#task-v-card-title-bar-red {
-  background-color: #E53935;
-} */
-
-.v-card__subtitle, .v-card__text, .v-card__title {
-    padding: 12px;
-}
-
 .task-form {
   color: white;
   border: none;
@@ -376,14 +453,8 @@ export default {
   /* resize: none; */
 }
 
-.task-v-card-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#save-task-icon {
-  font-size: 1.2em;
-  margin-left: 4px;
+.v-card__subtitle, .v-card__text, .v-card__title {
+    padding: 12px;
 }
   
 </style>

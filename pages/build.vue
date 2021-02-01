@@ -12,50 +12,38 @@
             <div>学習時間を入力しましょう。</div>       
           </div>
             
-          <v-container class="build-cantainer">
-            
+          <v-container class="build-cantainer">           
             <v-row>
               <v-col v-for="(skill, index) in skills" :key="skill.id" class="skill-col" cols="12" sm="4" md="4">
-
-                <v-card width="300px" class="card">
-                <v-card-text class="flex-item">
-
-                  <v-responsive
-                    max-width="400"
-                    class="skill_wrapper"
-                  >
-                  <div class="skill_wrapper">
-
-                    <p>{{ skill.name }}</p>
-                    <v-text-field
-                      class="study_hours_form"
-                      v-model="studyHours[index]"
-                      type="number"
-                      label="学習時間"
-                      min="0"
-                      max="24"
-                      step="0.5"
-                    ></v-text-field>
-
+                <v-flex xs12  px-3>
+                  <div class=" skill-item">   
+                    <p id="skill-title">{{ skill.name }}</p>
                     
+                      <v-text-field
+                        class="study_hours_form"
+                        v-model="studyHours[index]"
+                        type="number"
+                        label="学習時間"
+                        min="0"
+                        max="24"
+                        step="0.5"
+                      ></v-text-field>
                   </div>
-                  </v-responsive>    
+                </v-flex>                   
+              </v-col>              
 
-                </v-card-text>
-
-              </v-card>
-              </v-col>
               <v-col class="build-btn-col" cols="12">
                 <v-card-actions class="build-v-card-actions">
-                  <v-btn
-                    @click="onSubmit"
-                    color="#666666"
-                    class="white--text build-btn"
-                  >
-                    入力完了
-                  </v-btn>
                 </v-card-actions>
+                <v-btn
+                  @click="onSubmit"
+                  color="#616161"
+                  class="white--text build-btn"
+                >
+                  入力完了
+                </v-btn>                
               </v-col>
+              
             </v-row>
           </v-container>
        </div>    
@@ -126,19 +114,12 @@ export default {
 
 <style>
 .build-cantainer {
-  /* display: flex;
-  justify-content: center; */
   margin: 60px auto 40px;
 }
 
 .skill-col {
   display: flex;
   justify-content: center;
-}
-
-.build-v-card-actions{
-  display: flex;
-  justify-content: flex-end;
 }
 
 .build-btn-col {
@@ -150,5 +131,23 @@ export default {
   top: 48px;
   right: 48px;
 }
-  
+
+.skill-item {
+  /* background:#1E1E1E; */
+  /* background-color:#212121; */
+  padding: 20px 10px 20px;
+  margin-bottom: 15px;
+  /* box-shadow: -1px 12px 25px rgba(119, 119, 119, 0.2); */
+  box-shadow: -1px 3px 12px rgba(119, 119, 119, 0.2);
+  /* background-color: #1f1f22; */
+}
+
+#skill-title {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
 </style>
