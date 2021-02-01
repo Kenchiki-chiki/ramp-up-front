@@ -32,7 +32,6 @@ export default {
 
 .intro-title {
   margin: 0 0 20px;
-  /* font-size: 24px; */
 }
 
 .intro-meta {
