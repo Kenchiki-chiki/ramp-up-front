@@ -92,11 +92,9 @@ export default {
           localStorage.setItem('token-type', response.headers['token-type'])
           this.$router.push('/build')     
         },
-        (error) => {
-        this.errors = ['入力内容が正しくありません。']
-        return error
-        }      
-        )
+        ).catch((errors) => {
+        this.errors = errors.response.data.errors.full_messages
+      })
     },
   },
 }

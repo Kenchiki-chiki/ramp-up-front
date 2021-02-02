@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     registerUser() {
-      console.log('===1===')
       const res = this.$axios.post('/api/v1/auth', this.user ,{
         headers: {
             'access-token': localStorage.getItem('access-token'),
@@ -80,8 +79,7 @@ export default {
           },
       }
       
-      )
-      .then((response) => {
+      ).then((response) => {
         this.$auth.loginWith('local',{
             data: this.user
         })
@@ -97,12 +95,13 @@ export default {
       this.$router.push({ path: '/skill' })
       return response
       },
-      (error) => {
-        this.errors = ['入力内容が正しくありません。']
-        return error
-      }      
-      )
+      
+      ).catch((errors) => {
+        this.errors = errors.response.data.errors.full_messages
+      })
+      
     },
+    
   },
 }
 </script>

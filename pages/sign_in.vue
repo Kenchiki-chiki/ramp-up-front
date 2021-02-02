@@ -64,7 +64,7 @@ export default {
     // loginメソッドの呼び出し
     async loginWithAuthModule() {
 
-      await this.$auth
+      const res = await this.$auth
         .loginWith('local', {
          // emailとpasswordの情報を送信
           data: {
@@ -85,13 +85,10 @@ export default {
             localStorage.setItem('token-type', response.headers['token-type'])
             this.$router.push({ path: '/build' })
             return response         
-          },
-          (error) => {
-            this.errors = ['入力内容が正しくありません。']
-            return error
-          }          
-          
-        )
+          }
+        ).catch((errors) => {
+        this.errors = errors.response.data.errors
+      })
     },
   },
 }
