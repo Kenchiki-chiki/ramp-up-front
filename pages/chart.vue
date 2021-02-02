@@ -42,7 +42,7 @@
                         <div id="pie-responsive-wrapper">
                           <v-row class="pie_wrapper">
                             <v-col cols="2" class="pie_wrapper-flex-item"><v-icon class="crown-icon">fas fa-crown</v-icon></v-col>
-                            <v-col cols="3" class="pie_wrapper-flex-item">No. {{ index + 1 }}</v-col>
+                            <v-col cols="3" class="pie_wrapper-flex-item">No. {{ rankDatas[index] }}</v-col>
                             <v-col cols="3" class="pie_wrapper-flex-item">{{ pieChartData[0] }}</v-col>
                             <v-col cols="4" class="pie_wrapper-flex-item">{{ pieChartData[1] + '時間' }} {{ '(' + percentageRound[index] + '%' + ')' }}</v-col>
                           </v-row>
@@ -91,7 +91,8 @@ export default {
     ...mapGetters({
       pieChartDatas: 'pie_chart/pieChart',
       percentageDatas: 'pie_chart/percentage',
-      percentageRound: 'pie_chart/percentageRound'
+      percentageRound: 'pie_chart/percentageRound',
+      rankDatas: 'pie_chart/rankDatas'
     }),
     topThree: function() {
       return this.pieChartDatas.slice(0,3)
