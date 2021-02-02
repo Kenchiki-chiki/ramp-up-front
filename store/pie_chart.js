@@ -2,7 +2,8 @@ export const state = () => ({
   pieChartDatas: [],
   percentageDatas: [],
   percentageRoundDatas: [],
-  skillDatas: []
+  skillDatas: [],
+  rankDatas: []
 })
 export const actions = {
   async fetchPieCharts({ commit }) {
@@ -49,6 +50,10 @@ export const mutations = {
     }
     let sortStudyTime = array.map(studyTimeArrayFunction)
 
+    let ranks = sortStudyTime.slice().map(function(x){return sortStudyTime.indexOf(x) + 1});
+    state.rankDatas = []
+    state.rankDatas = state.rankDatas.concat(ranks)
+
     state.percentageDatas = []
     state.percentageRoundDatas = []
     state.percentageDatas = state.percentageDatas.concat(sortStudyTime)
@@ -88,6 +93,9 @@ export const getters = {
   },
   skillDatas(state) {
     return state.skillDatas
+  },
+  rankDatas(state) {
+    return state.rankDatas
   }
 
 }
