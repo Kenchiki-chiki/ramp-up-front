@@ -39,7 +39,7 @@
                 class="white--text"
                 @click="registerUser"
               >
-                新規登録
+                登録する
               </v-btn>
             </v-card-actions>
           </v-form>
