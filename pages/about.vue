@@ -2,7 +2,7 @@
   <div>
     <AppNavigation/>
 
-    <div class="layout row wrap align-center">
+    <div id="picture-wrap" class="layout row wrap align-center">
       <v-flex xs12 sm4 px-3>
           <div class="about-thumb text-xs-center mb-4">
             <v-img
@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="layout row wrap align-center">
+    <div id="presentation-wrap" class="layout row wrap align-center">
 
       <v-flex xs-12 sm4 px-3>
           <div class="section-head">
@@ -120,5 +120,15 @@ export default {
 <style>
 .nuxt-rails-img {
   opacity: 0.8;
+}
+
+#picture-wrap {
+  margin: 0 auto;
+  padding: 64px 148px 36px 148px;
+}
+
+#presentation-wrap {
+  margin: 0 auto;
+  padding: 0 148px 0px 148px;
 }
 </style>
