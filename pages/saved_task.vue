@@ -30,9 +30,9 @@
                     </div>
                   </v-card-text>
                   <v-divider></v-divider>
-                  <v-card-actions class="justify-center">
+                  <v-card-actions class="justify-center" id="saved-task-v-card-actions">
                     <form class="saved-box">
-                      <div class="box-item saved-task-form" id="task_wrapper-flex-item">
+                      <div class="box-item" id="saved-task-form">
                         {{ task.name }}
                         <v-icon small id="edit-task-icon" @click="editTaskBtn(task.id)">fas fa-edit</v-icon>
                       </div>
@@ -187,10 +187,15 @@ export default {
     padding: 12px;
 }
 
-.saved-task-form {
+#saved-task-v-card-actions {
+  margin: 0 0 0 6px;
+}
+
+#saved-task-form {
   color: white;
   border: none;
-  text-align: center;
+  text-align: initial !important;
+  /* text-align: center; */
   /* width: 100%; */
   height: 100%;
   /* resize: none; */
