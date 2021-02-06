@@ -10,7 +10,7 @@ export default {
             datasets: [
                 {
                 label: ['月別学習時間'],
-                backgroundColor: '#f87979',
+                backgroundColor: 'rgba(248,121,121,0.9)',
                 data: []
                 }
             ]
