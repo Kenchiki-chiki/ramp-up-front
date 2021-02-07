@@ -1,3 +1,6 @@
+<img width="1790" alt="Ramp Up top" src="https://user-images.githubusercontent.com/65106886/107134839-043b9c80-6939-11eb-871c-3a081f507854.png">
+
+
 ## Ramp Up
 Ramp Upは、学習記録を可視化するアプリです。手軽に学習時間を記録して、振り返りをすることができます。
 
