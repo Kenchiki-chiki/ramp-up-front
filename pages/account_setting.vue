@@ -18,7 +18,7 @@
                 <v-text-field
                   v-model="user.email"
                   prepend-icon="mdi-email"
-                  label="新しいメールアドレス"
+                  label="new email"
                 />
                 <v-text-field
                   v-model="user.password"
@@ -26,7 +26,7 @@
                   prepend-icon="mdi-lock"
                   v-bind:type="showPassword ? 'text' : 'password'"
                   @click:append="showPassword = !showPassword"
-                  label="パスワード"
+                  label="password"
                 />
                 <v-card-actions>
                   <v-btn
