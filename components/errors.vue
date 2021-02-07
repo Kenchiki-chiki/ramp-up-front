@@ -1,7 +1,7 @@
 <template>
   <div v-if="errors.length">
     <v-alert type="errors" id="error-alert">
-      {{ errors.join('。') }}
+      {{ errors.join('.') }}
     </v-alert>
   </div>
 </template>
